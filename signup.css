@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+@media (max-width){
+    
+}
+
+body {
+  
+  background-color: #ffffff;
+  
+}
+.maincontainer {
+  display: flex;
+}
+.left {
+  position: absolute;
+  width: 602px;
+  height: 1024px;
+  left: 0px;
+  top: 0px;
+  background: #939292;
+}
+.left img {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  left: 102px;
+  top: 52px;
+}
+.heading {
+  position: absolute;
+  width: 746px;
+  height: 52px;
+  left: 629px;
+  top: 92px;
+}
+.heading h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 62px;
+  color: #393939;
+}
+.paragraph {
+  position: absolute;
+  width: 368px;
+  height: 72px;
+  left: 818px;
+  top: 144px;
+  line-height: 62px;
+}
+.paragraph p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #393939;
+  width: max-content;
+}
+.paragraph a {
+  text-decoration: none;
+  color: #393939;
+}
+.fullname {
+  position: absolute;
+  width: 520px;
+  height: 132px;
+  left: 742px;
+  top: 240px;
+}
+.email {
+  position: absolute;
+  width: 520px;
+  height: 132px;
+  left: 742px;
+  top: 380px;
+}
+.password {
+  position: absolute;
+  width: 520px;
+  height: 132px;
+  left: 742px;
+  top: 520px;
+}
+
+
+ .fullname label {
+  width: 112px;
+  height: 62px;
+  left: 742px;
+  top: 240px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 62px;
+}
+.email label {
+  width: 161px;
+  height: 62px;
+  left: 742px;
+  top: 380px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 62px;
+}
+.password label {
+  width: 111px;
+  height: 62px;
+  left: 742px;
+  top: 520px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 62px;
+}
+.fullname input,
+.email input,
+.password input {
+  width: 520px;
+  height: 72px;
+  border-radius: 8px;
+  border: 1px solid #606060;
+  background-color: #cfcfcf;
+}
+.btn {
+  position: absolute;
+  width: 414px;
+  left: 795px;
+  top: 724px;
+}
+.btn input {
+  border-radius: 8px;
+  padding: 16px, 128px;
+  width: 414px;
+  height: 68px;
+  background: #3e3e3e;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  color: #ffff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  border: none;
+}
+
+.termsAndCondition {
+  position: absolute;
+  width: 666px;
+  height: 80px;
+  left: 668px;
+  top: 832px;
+}
+.termsAndCondition p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 40px;
+  color: #393939;
+  text-align: center;
+  color: #393939;
+}
+
+/* media query */
+@media (max-width: 1024px) {
+  main {
+    background-color: orange;
+  }
+  .maincontainer {
+    display: flex;
+  }
+  .left {
+    position: absolute;
+    width: 320px;
+    height: 1194px;
+    left: 0px;
+    top: 0px;
+  }
+  .left img {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: 134px;
+    top: 52px;
+  }
+  .heading {
+    position: absolute;
+    width: 388px;
+    height: 62px;
+    left: 369px;
+    top: 96px;
+  }
+  .heading h3 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 62px;
+    color: #393939;
+  }
+  .paragraph {
+    position: absolute;
+    width: 290px;
+    height: 62px;
+    left: 418px;
+    top: 148px;
+  }
+  .paragraph p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 62px;
+    color: #393939;
+  }
+  .paragraph a {
+    text-decoration: none;
+    color: #393939;
+  }
+  .fullname {
+    position: absolute;
+    width: 365px;
+    height: 96px;
+    left: 381px;
+    top: 306px;
+  }
+  .email {
+    position: absolute;
+    width: 365px;
+    height: 96px;
+    left: 381px;
+    top: 410px;
+  }
+  .password {
+    position: absolute;
+    width: 365px;
+    height: 96px;
+    left: 381px;
+    top: 514px;
+  }
+  .fullname label {
+    width: 75px;
+    height: 51px;
+    left: 381px;
+    top: 306px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    color: #000000;
+  }
+  .email label {
+    width: 107px;
+    height: 51px;
+    left: 381px;
+    top: 410px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    color: #000000;
+  }
+  .password label {
+    width: 74px;
+    height: 51px;
+    left: 381px;
+    top: 514px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    color: #000000;
+  }
+  .fullname input {
+    width: 365px;
+    height: 52px;
+    left: 381px;
+    top: 350px;
+
+    background: #cfcfcf;
+
+    border: 0.819231px solid #606060;
+    border-radius: 8px;
+  }
+  .email input {
+    width: 365px;
+    height: 52px;
+    left: 381px;
+    top: 454px;
+
+    background: #cfcfcf;
+    border: 0.819231px solid #606060;
+    border-radius: 8px;
+  }
+  .password input {
+    width: 365px;
+    height: 52px;
+    left: 381px;
+    top: 558px;
+
+    background: #cfcfcf;
+    border: 0.819231px solid #606060;
+    border-radius: 8px;
+  }
+  .btn {
+    position: absolute;
+    width: 269px;
+    height: 52px;
+    left: 427px;
+    top: 746px;
+  }
+  .btn input {
+    background: #3e3e3e;
+    border-radius: 5.3913px;
+    justify-content: center;
+    align-items: center;
+    padding: 10.7826px 86.2609px;
+    gap: 5.39px;
+    color: #ffff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16.1739px;
+    line-height: 41px;
+    border: none;
+  }
+
+  .termsAndCondition {
+    position: absolute;
+    width: 402px;
+    height: 42px;
+    left: 353px;
+    top: 982px;
+  }
+  .termsAndCondition p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #393939;
+  }
+  html,
+  main {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .maincontainer {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    display: block;
+  }
+
+  .left {
+    width: 100%;
+    background-color: #ffffff;
+  }
+  .left img {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: 164px;
+    top: 55px;
+
+    background: #d8d7d7;
+    border-radius: 40px;
+  }
+  .heading {
+    position: absolute;
+    width: 327px;
+    height: 62px;
+    left: 24px;
+    top: 117px;
+    place-content: center;
+  }
+  .heading h3 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 62px;
+    color: #393939;
+    text-align: center;
+   
+  }
+  .paragraph {
+    position: absolute;
+    width: 214px;
+    height: 62px;
+    left: 80px;
+    top: 147px;
+    place-content: center;
+    
+  }
+  .paragragh p {
+    font-family: "Inter";
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #393939;
+  }
+  .fullname {
+    /* position: absolute; */
+    width: 294.34px;
+    height: 77.42px;
+    left: 42.58px;
+    top: 233px;
+  }
+  .email {
+    position: absolute;
+    width: 294.34px;
+    height: 77.42px;
+    left: 42.58px;
+    top: 316.87px;
+  }
+  .password {
+    position: absolute;
+    width: 294.34px;
+    height: 77.42px;
+    left: 42.58px;
+    top: 400.73px;
+  }
+  .fullname label {
+    width: 61px;
+    height: 41px;
+    left: 42.58px;
+    top: 233px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.9025px;
+    line-height: 41px;
+
+    color: #000000;
+  }
+  .email label {
+    width: 87px;
+    height: 41px;
+    left: 42.58px;
+    top: 316.87px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.9025px;
+    line-height: 41px;
+    color: #000000;
+  }
+  .password label {
+    width: 60px;
+    height: 41px;
+    left: 42.58px;
+    top: 400.73px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.9025px;
+    line-height: 41px;
+    color: #000000;
+  }
+  .fullname input {
+    width: 294.34px;
+    height: 41.93px;
+    left: 42.58px;
+    top: 268.48px;
+
+    background: #cfcfcf;
+
+    border: 0.660633px solid #606060;
+    border-radius: 6.45125px;
+  }
+  .email input {
+    width: 294.34px;
+    height: 41.93px;
+    left: 42.58px;
+    top: 352.35px;
+    background: #cfcfcf;
+
+    border: 0.660633px solid #606060;
+    border-radius: 6.45125px;
+  }
+  .password input {
+    width: 294.34px;
+    height: 41.93px;
+    left: 42.58px;
+    top: 436.21px;
+    background: #cfcfcf;
+    border: 0.660633px solid #606060;
+    border-radius: 6.45125px;
+  }
+  .btn  {
+    position: absolute;
+    width: 216.92px;
+    height: 41.93px;
+    left: 79px;
+    right: 79px;
+    top: 510.15px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 8.69517px 69.5613px;
+    border-radius: 4.34758px;
+  }
+  .btn input {
+    background: #3e3e3e;
+    align-items: center;
+    gap: 4.35px;
+    color: #ffffff;
+    width: 73px;
+    height: 34px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.0428px;
+    line-height: 33px;
+    margin: auto;
+
+  }
+  .btn input[type = submit]{
+    text-align: center;
+  }
+  .termsAndCondition {
+    position: absolute;
+    width: 324px;
+    height: 34px;
+    left: 25px;
+    top: 648.08px;
+  }
+  .termsAndCondition p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11.2897px;
+    line-height: 17px;
+    text-align: center;
+    color: #393939;
+  }
+}
