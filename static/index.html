@@ -20,40 +20,110 @@
                 <div class="col-lg-12 text-center mb-4">
                     <h3>Operations</h3>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">Diff Checker</div>
-                    <div class="card-body">
-                        <form id="diff_checker_form">
-                            <div class="form-group">
-                                <label>File 1:</label>
-                                <input
-                                    type="file"
-                                    name="file1"
-                                    class="form-control"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label>File 2:</label>
-                                <input
-                                    type="file"
-                                    name="file2"
-                                    class="form-control"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <button
-                                    type="submit"
-                                    class="btn btn-primary mr-4"
-                                >
-                                    Compare
-                                </button>
-                                <span class="server_reponse"
-                                    >Server response</span
-                                >
-                            </div>
-                        </form>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">Diff Checker</div>
+                        <div class="card-body">
+                            <form id="diff_checker_form">
+                                <div class="form-group">
+                                    <label>File 1:</label>
+                                    <input
+                                        type="file"
+                                        name="file1"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label>File 2:</label>
+                                    <input
+                                        type="file"
+                                        name="file2"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary mr-4"
+                                    >
+                                        Compare
+                                    </button>
+                                    <span class="server_reponse"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Highlight Duplicates and Return 2 Files
+                        </div>
+                        <div class="card-body">
+                            <form id="highlight_duplicates2_form">
+                                <div class="form-group">
+                                    <label>File:</label>
+                                    <input
+                                        type="file"
+                                        name="file"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label>Unique Columns:</label>
+                                    <input
+                                        type="text"
+                                        name="unique_columns"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary mr-4"
+                                    >
+                                        Go
+                                    </button>
+                                    <span class="server_reponse"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Remove Duplicates and Return 2 Files
+                        </div>
+                        <div class="card-body">
+                            <form id="remove_duplicates2_form">
+                                <div class="form-group">
+                                    <label>File:</label>
+                                    <input
+                                        type="file"
+                                        name="file"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label>Unique Columns:</label>
+                                    <input
+                                        type="text"
+                                        name="unique_columns"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary mr-4"
+                                    >
+                                        Go
+                                    </button>
+                                    <span class="server_reponse"></span>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,6 +166,50 @@
                             submit_button
                                 .removeAttr("disabled")
                                 .html("Compare");
+                        },
+                    });
+                });
+                $("#highlight_duplicates2_form").submit(function (e) {
+                    e.preventDefault();
+
+                    const submit_button = $(this).find(`button[type="submit"]`);
+                    submit_button
+                        .html(`<span class="fas fa-spinner faspin"></span>`)
+                        .attr("disabled", "disabled");
+
+                    const form_data = new FormData(this);
+
+                    $.ajax({
+                        type: "POST",
+                        data: form_data,
+                        url: "api/v1/operations/highlight_duplicates2/",
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            console.log(data);
+                            submit_button.removeAttr("disabled").html("Go");
+                        },
+                    });
+                });
+                $("#remove_duplicates2_form").submit(function (e) {
+                    e.preventDefault();
+
+                    const submit_button = $(this).find(`button[type="submit"]`);
+                    submit_button
+                        .html(`<span class="fas fa-spinner faspin"></span>`)
+                        .attr("disabled", "disabled");
+
+                    const form_data = new FormData(this);
+
+                    $.ajax({
+                        type: "POST",
+                        data: form_data,
+                        url: "api/v1/operations/remove_duplicates2/",
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            console.log(data);
+                            submit_button.removeAttr("disabled").html("Go");
                         },
                     });
                 });

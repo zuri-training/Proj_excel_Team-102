@@ -1,4 +1,3 @@
-from functools import reduce
 from os import path
 
 from openpyxl import load_workbook, Workbook
