@@ -9,4 +9,11 @@ Comparely is a web application that compare the contents of excel files
 3. Remove duplicates and return 2 files
 4. Highlight duplicates and return 2 file
 
+## Technologies
+
+1. ReactJS
+2. Python/FastAPI
+3. PostgreSQL
+
 ## Application Structure
+
