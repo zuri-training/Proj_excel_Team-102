@@ -1,1 +1,3 @@
-# Team-_102_Proj_excel-comp
+# Comparely React Frontend
+
+Single page application for comparely operations
