@@ -1,16 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
 }
-@media (max-width){
-    
+
+@media (max-width) {
 }
 
 body {
-  
   background-color: #ffffff;
-  
 }
 .maincontainer {
   display: flex;
@@ -87,8 +86,7 @@ body {
   top: 520px;
 }
 
-
- .fullname label {
+.fullname label {
   width: 112px;
   height: 62px;
   left: 742px;
@@ -402,7 +400,6 @@ body {
     line-height: 62px;
     color: #393939;
     text-align: center;
-   
   }
   .paragraph {
     position: absolute;
@@ -411,7 +408,6 @@ body {
     left: 80px;
     top: 147px;
     place-content: center;
-    
   }
   .paragragh p {
     font-family: "Inter";
@@ -512,7 +508,7 @@ body {
     border: 0.660633px solid #606060;
     border-radius: 6.45125px;
   }
-  .btn  {
+  .btn {
     position: absolute;
     width: 216.92px;
     height: 41.93px;
@@ -539,9 +535,8 @@ body {
     font-size: 13.0428px;
     line-height: 33px;
     margin: auto;
-
   }
-  .btn input[type = submit]{
+  .btn input[type="submit"] {
     text-align: center;
   }
   .termsAndCondition {
