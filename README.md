@@ -11,9 +11,9 @@ Comparely is a web application that compare the contents of excel files
 
 ## Technologies
 
-1.  ReactJS
-2.  Python/FastAPI
-3.  PostgreSQL
+1.  Frontend: ReactJS
+2.  Backend: Python/FastAPI
+3.  Database: PostgreSQL
 
 ## Relevant links
 
@@ -23,4 +23,3 @@ Comparely is a web application that compare the contents of excel files
 4.  [Figma for Comparely](https://www.figma.com/files/team/1132070814445153118/Team-Comparely?fuid=966361942960488413)
 
 ## Application Structure
-
