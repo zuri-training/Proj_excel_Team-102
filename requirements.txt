@@ -12,6 +12,7 @@ cryptography==37.0.4
 dnspython==2.2.1
 ecdsa==0.18.0
 email-validator==1.2.1
+et-xmlfile==1.1.0
 fastapi==0.79.0
 greenlet==1.1.2
 h11==0.13.0
@@ -21,6 +22,7 @@ itsdangerous==2.1.2
 Jinja2==3.1.2
 Mako==1.2.1
 MarkupSafe==2.1.1
+openpyxl==3.0.10
 orjson==3.7.8
 passlib==1.7.4
 psycopg2==2.9.3
