@@ -11,16 +11,26 @@ Comparely is a web application that compare the contents of excel files
 
 ## Technologies
 
-1.  ReactJS
-2.  Python/FastAPI
-3.  PostgreSQL
+1.  Frontend: ReactJS
+2.  Backend: Python/FastAPI
+3.  Database: PostgreSQL
 
-## Relevant links
+## Project links
 
-1.  [Research plan](https://docs.google.com/document/d/1Ubt80LYAmhLlCYm8FNXiISw22LKr4rnuALn264E_3Bc/edit?usp=sharing)
-2.  [User journey map](https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=0%3A1)
-3.  [Documentation](https://docs.google.com/spreadsheets/d/1UTNCewbsxr01ZKZDGQjCSsBh5cEHOPwKCCMqThdZR2M/edit?usp=sharing)
-4.  [Figma for Comparely](https://www.figma.com/files/team/1132070814445153118/Team-Comparely?fuid=966361942960488413)
+[Database schema](https://docs.google.com/document/d/1geaFUnZrwOcbsShBW3d561GXhLzWcI54WwcNxlIWluk/edit?usp=sharing)
+
+[Figma](https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=0%3A1)
+
+[Sketch](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=694%3A5239)
+
+[Figma low-fi](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2%3A3)
+
+[Prototype for low-fi](https://www.figma.com/proto/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=138%3A164&scaling=min-zoom&page-id=2%3A2&starting-point-node-id=138%3A164)
+
+[Presentation slide](https://www.figma.com/proto/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=858%3A7112&scaling=scale-down&page-id=41%3A4&starting-point-node-id=858%3A7112)
+
+[Notion link](https://www.notion.so/Design-Process-e54a3e15b4cb436b92c5387282730556)
+
+[Team members](https://docs.google.com/spreadsheets/d/1UTNCewbsxr01ZKZDGQjCSsBh5cEHOPwKCCMqThdZR2M/edit?usp=sharing)
 
 ## Application Structure
-
