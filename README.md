@@ -15,7 +15,7 @@ Comparely is a web application that compare the contents of excel files
 2.  Backend: Python/FastAPI
 3.  Database: PostgreSQL
 
-## Relevant links
+## Project links
 
 [Database schema](https://docs.google.com/document/d/1geaFUnZrwOcbsShBW3d561GXhLzWcI54WwcNxlIWluk/edit?usp=sharing)
 
@@ -23,7 +23,9 @@ Comparely is a web application that compare the contents of excel files
 
 [Sketch](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=694%3A5239)
 
-[Figma low fi](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2%3A3)
+[Figma low-fi](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2%3A3)
+
+[Prototype for low-fi](https://www.figma.com/proto/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=138%3A164&scaling=min-zoom&page-id=2%3A2&starting-point-node-id=138%3A164)
 
 [Presentation slide](https://www.figma.com/proto/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=858%3A7112&scaling=scale-down&page-id=41%3A4&starting-point-node-id=858%3A7112)
 
