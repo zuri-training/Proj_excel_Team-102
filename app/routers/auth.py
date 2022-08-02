@@ -26,7 +26,12 @@ def user_login(response: Response, db: Session = Depends(get_db), form_data: OAu
     
     access_token = create_access_token({"user_id": user.id})
 
-    return {"message": "Login successfully", "access_token": access_token, "token_type": "Bearer"}
+    return {
+        "message": "Login successfully", 
+        "access_token": access_token, 
+        "token_type": "Bearer", 
+        "user_info": user
+    }
 
 @router.get("/verify", status_code=status.HTTP_200_OK)
 def verify_user(auth: dict = Depends(get_current_user)):

@@ -4,7 +4,8 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import Users
-from app.schemas import AddUser, GetUser
+from app.oauth import create_access_token
+from app.schemas import AddUser, Login
 from app.utils import get_password_hash
 
 router = APIRouter(
@@ -12,7 +13,7 @@ router = APIRouter(
     tags=["Users"]
 )
 
-@router.post("/", status_code=status.HTTP_201_CREATED, response_model=GetUser)
+@router.post("/", status_code=status.HTTP_201_CREATED, response_model=Login)
 def add_user(user_add: AddUser, response: Response, db: Session = Depends(get_db)):
 
     email_exists = db.query(Users).filter(Users.email_address == user_add.email_address).count()
@@ -28,4 +29,11 @@ def add_user(user_add: AddUser, response: Response, db: Session = Depends(get_db
     db.commit()
     db.refresh(user)
 
-    return {"message": "User created successfully", "user": user}
+    access_token = create_access_token({"user_id": user.id})
+
+    return {
+        "message": "Account created successfully", 
+        "access_token": access_token, 
+        "token_type": "Bearer", 
+        "user_info": user
+    }
