@@ -32,6 +32,7 @@ pydantic==1.9.1
 python-dotenv==0.20.0
 python-jose==3.3.0
 python-multipart==0.0.5
+pywin32==304
 PyYAML==6.0
 requests==2.28.1
 rsa==4.9
@@ -45,3 +46,4 @@ urllib3==1.26.11
 uvicorn==0.17.6
 watchgod==0.8.2
 websockets==10.3
+xlwings==0.27.11
