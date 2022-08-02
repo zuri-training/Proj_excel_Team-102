@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact page</title>
+  <link rel="stylesheet" href="contact.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+    @media (max-width: 600px) {
+            .header {
+              display: none;
+            }
+    }
+    @media (max-width: 834px) {
+      .mobile_container {
+        display: none;
+      }
+}
+@media (max-width: 1024px) {
+  .mobile_container {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+      <div class="mobile_container"></div>
+  <header>
+   
+      <nav class="header">
+        <img src="Desktop-8.png" alt="company's logo">
+        <div id="first_container">
+          <button type="clickable"><a href="index.html">About</a></button>
+        <button type="clickable" class="product_features">Product</button>
+        <button type="clickable" class="product_features">Features</button>
+        <button type="clickable"><a href="contact.html">Contact us</a></button></div>
+       <div id="signup_login">
+        <button type="clickable" id="login"><a href="login.html">Signin</a></button>
+        <button type="clickable" id="signup"><a href="signup.html">Signup</a></button>
+        </div> 
+      </nav>
+    </header>
+
+    <main class="container_main">
+      <div class="main_container">
+          <div class="container_info">
+            <h3>Contact us anytime</h3>
+            <p>We are avaliable to answer you immediately your emails sent during business hour from 9am to 4am. Any email gotten during non business hours will be visited as soon as resumption starts.</p>
+
+            <p id="disclaimer">DISCLAIMER: ALL YOUR PERSONAL INFORMATION SENT IN WILL NOT BE USED OUTSIDE THE SCOPE OF CONTEXT.</p>
+          </div>
+          <div class="form_container">
+            <form action="">
+              <div class="fullname">
+                <label for="name">Full Name<span>*</span></label><br>
+                <input type="text" name="fname"    required></div>
+
+                <div class="email">
+                  <label for="email">Email Address<span>*</span></label><br>
+                  <input type="email" name="email"    required></div>
+
+
+                  <div class="contact_message"><p id="message">How can we be better<span>*</span></p>
+                  <textarea name="" id="message_container" cols="25px" rows="10px"  minlength="10" maxlength="500" placeholder="Write your suggestion here ..."></textarea></div>
+                  <div id="btn"><button type="summit">Submit</button></div>
+                  
+            </form>
+          </div>
+        </div>
+
+        </main>
+        <footer>
+          <div class="footer_container">
+            <div class="footer_logo">
+            <img src="Desktop-8.png" alt="company's logo">
+           <p><small>The best tool for comparing <br>CSV, Excel files, Text,Images.</small></p> </div>
+
+            <div class="quick_link">
+              <ol>
+                <h4>Quick Links</h4>
+                <li>About us</li> 
+                <li>Features</li>
+                <!-- for the organisation contacts -->
+                <li>Contact</li>
+              
+            </ol>
+            </div>
+
+            <div class="useful_link">
+              <ol>
+                <h4>Useful Links</h4>
+                <li>Privacy policy</li>
+                <li>Terms and conditions</li>
+                <li>Disclaimer</li>
+                <li>FAQ's</li>
+              </ol>
+            </div>
+
+            <div class="help_link">
+              
+            <ol>
+              <h4>Need help?</h4>
+              <li>Contact us today</li>
+            <li><button id="call_today">call today</button></li></ol>
+          </div>
+        
+          </div>
+
+        </footer>
+      </body>
+      </html>

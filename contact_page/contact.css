@@ -1,0 +1,441 @@
+*{
+  box-sizing: border-box;
+  margin: 0%;
+  max-width: 100%;
+  padding: 0%;
+}
+
+html,body{
+  max-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  /* overflow: hidden; */
+}
+
+/* header container */
+.header{
+  padding:0px,40px,30px, 40px;
+  margin: 30px;
+  display:flex;
+  border: 10px;
+ justify-content: space-around;
+ gap: 8px;
+ height: 45px;
+}
+
+/* the header link */
+.header a{
+  font-size: 20px;
+}
+
+.header img{
+  width: 150px;
+  height: 60px;
+  margin: -5px;
+}
+
+/* this is for the about, product, 
+feature and contact at the heading */
+#first_container button{
+ padding-left: 10px;
+ padding-right: 10px;
+ border: none;
+ background: none;
+ margin: 15px;
+}
+/* the signup link */
+#signup{
+  background-color: #24067A;
+  margin-top: auto;
+  width: 90px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+/* the signup link */
+#signup a{
+  color: #E5E5E5;
+  font-style: normal;
+   font-weight: 400;
+  
+}
+#login{
+  border: 2px solid #606060;
+  padding: 5px;
+  width: 90px;
+  height: 40px;
+  background: none;
+  color: #E5E5E5;
+  border-radius: 8px;
+}
+ 
+/* the whole form container */
+.main_container {
+   width:550px;
+  margin:0 auto;
+  padding: 20px;
+  color: #24067A;
+}
+/* the product and feature on the header */
+.product_features{
+  color: #24067A;
+  font-size: 20px;
+}
+
+/* the contact page heading */
+.container_info h3 {
+  text-align: center;
+  width: 484px;
+  padding-bottom: 15px; 
+  font-size: 20px;
+  color: #24067A;
+}
+
+/* the p containing disclaimer */
+#disclaimer{
+  font-weight: 400;
+  font-size: large;
+  color: #24067A;
+ padding-bottom: 75px;
+ padding-top: 7px;
+}
+
+/* for the two paragraphs after the h3 */
+.container_info p{
+  font-size: 15px;
+  font: lighter;
+  font-style: normal;
+   font-weight: 100;
+  
+}
+
+/* fullname and email input holder */
+input{
+  width: 738px;
+  background-color: #fcfcfc;
+  border: 1px solid #E5E5E5;
+  height: 52px;
+  border-radius: 8px;
+  margin-bottom: 75px;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+/* textarea */
+textarea{
+  width: 738px;
+  height: 250px;
+  background-color: #cfcfcf;
+  border: 1px solid #E5E5E5;
+  background: none;
+  border-radius: 8px;
+}
+
+/* paragraph for textarea */
+ .contact_message p{
+padding-bottom: 15px;
+}
+
+/* send button container */
+#btn{
+  justify-content: center;
+  align-items: center;
+  padding-top: 22px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  border: none;
+  text-align: center;  
+}
+
+/* submit button */
+#btn button{
+  width: 738px;
+  height: 52px;
+  color: #ffff;
+  background-color:  #24067A;
+  border-radius: 10.82px;
+  border: none;
+  padding-bottom: 2px;
+}
+
+/* fonter container */
+.footer_container{
+  padding: 20px, 50px, 20, 20px;
+  margin: 100px;
+  display:flex;
+  border: 10px;
+ justify-content: space-around;
+ gap: 8px;
+ 
+}
+
+/*   footer logo container */
+.footer_logo{
+  padding: 10px;
+}
+.footer_logo img{
+  width: 150px;
+  height: 60px;
+  margin-top: -15px;
+}
+
+/* the paragraph in  footer logo container */
+.footer_logo p{
+  padding: 0;
+  font-size: 20px;
+  color:#24067A;
+}
+
+/* footer quick links container */
+.quick_link ol{ 
+  gap: 8px;
+}
+
+
+.quick_link ol,
+ .useful_link ol, 
+ .help_link ol{
+
+list-style: none;
+  font-size: 15px;
+  color:#24067A;
+  padding: 10px;
+}
+/* all links */
+a{
+  text-decoration: none;
+  color: #24067A;
+  font-size: 15px;
+ 
+}
+/* span for asterisk */
+span{
+  color: red;
+}
+/* links in the footer */
+input:hover, textarea:hover{
+  border: 1px solid #24076A;
+  background: none;
+  border-radius: 8;
+  opacity: 0.32;
+}
+
+
+textarea::placeholder{
+  padding: 5px;
+  color: #24067A;
+  opacity: 0.6;
+}
+/* the call button at the footer */
+#call_today {
+border-radius: 8px;
+background-color: #24067A;
+opacity: 0.32;
+color: #CFCFCF;
+font-size: 8px;
+font-size: medium;
+height: 30px;
+width: 130px;
+}
+
+/* media query */
+
+@media (min-width: 375px) 
+and (max-width: 1024px) {
+  body{
+    background-color: #ffffff;
+    height: 1440px;
+  }
+
+  .header{
+    padding:0px,20px,30px, 20px;
+    /* margin: 10px; */
+    display:flex;
+    border: 10px;
+   justify-content: space-evenly;
+   gap: 8px;
+   height: 45px;
+  }
+  }
+  @media (min-width: 601px) 
+  and (max-width: 834px) {  
+    html,body{
+      background-color: #ffffff;
+    
+    }
+    .header{
+      margin: 5px;
+      padding: 15px, 24px;
+      gap: 5px;
+    }
+    .header a{
+      font-size: 15px;
+      font-weight: 300;
+    }
+    .header img{
+      margin: 15px;
+      height: 17px;
+      width: 51px;
+    }
+    #first_container button{
+      padding-left: 5px;
+      padding-right: 5px;
+      border: none;
+      background: none;
+      margin: 15px;
+      
+     }
+     #signup{
+      background-color: #24067A;
+      width: 90px;
+      height: 40px;
+      border-radius: 8px;
+      margin-right: -5px;
+    }
+    #login{
+      border: 2px solid #606060;
+      width: 90px;
+      height: 40px;
+      background: none;
+      color: #E5E5E5;
+      border-radius: 8px;
+    }
+    .main_container {
+      width:500px;
+     margin:0 auto;
+     left: 50%;
+     top: 50%;
+     margin-top: 70px;
+     height: 800px;
+     padding: 0,100px, 0, 100px;
+     color: #393939;
+     margin-bottom: 200px;
+   }
+   .product_features{
+    color: #393939;
+    font-size: 15px;
+  }
+  .container_info h3 {
+    text-align: center;
+    width: 400px;
+    padding-bottom: 5px; 
+    font-size: 20px;
+    color: #393939;
+  }
+  #disclaimer{
+    font-weight: 300;
+    font-size: large;
+    color: #393939;
+   padding-bottom: 35px;
+   padding-top: 3px;
+  }
+  .container_info p{
+    font-size: 15px;
+    font: lighter;
+    font-style: normal;
+     font-weight: 100;
+  }
+  input{
+    width: 442px;
+    background-color: #fcfcfc;
+    border: 1px solid #606060;
+    opacity: 0.82;
+    height: 52px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    margin-top: 7px;
+  }
+  textarea{
+    width: 442px;
+    height: 100px;
+    background-color: #cfcfcf;
+    border: 1px solid #606060;
+    opacity: 0.82;
+    background: none;
+    border-radius: 8px;
+  }
+  .contact_message p{
+    padding-bottom: 7px;
+    }
+    #btn{
+      justify-content: center;
+      align-items: center;
+      padding-top: 25px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      border: none;
+      text-align: center;  
+    }
+    #btn button{
+      width: 269px;
+      height: 32px;
+      color: #ffff;
+      background-color:  #3e3e3e;
+      border-radius: 5.39px;
+      border: none;
+      padding-bottom: 3px;
+    }
+    .footer_container{
+      padding: 10px;
+      margin:120px;
+      display:flex;
+      border: 10px;
+     justify-content: space-between;
+     gap: 5px;
+     margin: 0 auto;
+     color: #888888;
+    }
+
+    .footer_logo{
+      padding: 20px;
+    }
+    
+    .footer_logo img{
+      height: 20px;
+      width: 110.76px;
+
+    }
+
+    .footer_logo p{
+      padding: 2px;
+      font-size: 15px;
+      color: #393939;
+    }
+    .quick_link ol,
+    .useful_link ol, 
+    .help_link ol{
+      list-style: none;
+     font-size: 15px;
+      color: #393939;
+      padding: 5px;
+    }
+    a{
+      text-decoration: none;
+      color: #393939;
+      font-size: 11px;
+  }
+  #call_today {
+    border-radius: 8px;
+    background-color: #24067A;
+    opacity: 0.32;
+    color: #CFCFCF;
+    font-size: 8px;
+    font-size: medium;
+    height: 20px;
+    width: 90px;
+    }
+  }
+  @media (min-width: 375px) and 
+  (max-width: 600px) {
+    html,body{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .mobile_container{
+      height: 139px;
+      width: 150px;
+    }
+  }
+  
