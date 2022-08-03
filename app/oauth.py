@@ -50,6 +50,6 @@ def get_current_user(db: Session = Depends(get_db), token: str = Depends(oauth2_
         if not user:
             raise credentials_exception
         else:
-            return {"user": user}
+            return user
     else:
         raise credentials_exception

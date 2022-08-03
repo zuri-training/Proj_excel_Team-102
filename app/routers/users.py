@@ -1,3 +1,4 @@
+import os
 from fastapi import APIRouter, Depends, Response, status
 
 from sqlalchemy.orm import Session
@@ -28,6 +29,9 @@ def add_user(user_add: AddUser, response: Response, db: Session = Depends(get_db
     db.add(user)
     db.commit()
     db.refresh(user)
+
+    # create user directory
+    os.mkdir(f"static/dc/{user.id}/")
 
     access_token = create_access_token({"user_id": user.id})
 

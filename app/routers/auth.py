@@ -34,5 +34,5 @@ def user_login(response: Response, db: Session = Depends(get_db), form_data: OAu
     }
 
 @router.get("/verify", status_code=status.HTTP_200_OK)
-def verify_user(auth: dict = Depends(get_current_user)):
-    return {"message": "User verified successfully", "user": auth["user"]}
+def verify_user(user: Users = Depends(get_current_user)):
+    return {"message": "User verified successfully", "user": user}

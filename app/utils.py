@@ -4,6 +4,8 @@ from datetime import datetime
 
 import aiofiles
 
+from openpyxl import load_workbook
+
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_password_hash(password):
@@ -37,3 +39,21 @@ async def upload_file(filepath, file):
     async with aiofiles.open(filepath, 'wb') as out_file:
         while content := await file.read(1024):  
             await out_file.write(content)
+
+def get_excel_contents(filepath):
+    workbook = load_workbook(filename=filepath)
+
+    worksheet = workbook.active
+
+    data = []
+
+    for row in worksheet.rows:
+        row_data = []
+        for cell in row:
+            row_data.append({
+                "value": cell.value,
+                "background": cell.fill.fgColor.rgb
+            })
+        data.append(row_data)
+
+    return data
