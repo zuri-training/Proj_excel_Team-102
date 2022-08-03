@@ -1,19 +1,19 @@
 from datetime import datetime
 from app.database import get_db
-from app.models import Files, HighlightDuplicates2, RemoveDuplicates2, Users
+from app.models import DiffChecker, Files, HighlightDuplicates2, RemoveDuplicates2, Users
 from app.oauth import get_current_user
 from app.utils import get_excel_contents, get_unique_dir, get_unique_filepath, upload_file
-from fastapi import APIRouter, Depends, Response, UploadFile, Form, status
+from fastapi import APIRouter, Depends, Response, UploadFile, status
 
 from sqlalchemy.orm import Session
 
 import os
 
-from app.operations.diff_checker import diff_checker
+from app.operations.diff_checker import diff_checker as op__diff_checker
 from app.operations.highlight_duplicates2 import highlight_duplicates2 as op__highlight_duplicates2
 from app.operations.remove_duplicates2 import remove_duplicates2 as op__remove_duplicates2
 
-from app.schemas import GetFile, GetHighlightDuplicates2, GetRemoveDuplicates2, NewHighlightDuplicates2, NewRemoveDuplicates2
+from app.schemas import GetDiffChecker, GetFile, GetHighlightDuplicates2, GetRemoveDuplicates2, NewDiffChecker, NewHighlightDuplicates2, NewRemoveDuplicates2
 
 router = APIRouter(
     prefix="/api/v1/operations",
@@ -194,26 +194,79 @@ db: Session = Depends(get_db), user: Users = Depends(get_current_user)):
         "data": remove_duplicates2
     }
 
-@router.post("/diff_checker/")
-async def do_diff_checker(file1: UploadFile, file2: UploadFile):
+@router.post("/diff_checker/", status_code=status.HTTP_201_CREATED, response_model=GetDiffChecker)
+async def do_diff_checker(diff_checker: NewDiffChecker, response: Response, db: Session = Depends(get_db), 
+user: Users = Depends(get_current_user)):
 
-    # create unique directory
-    unique_dirname = get_unique_dir()
-    os.mkdir(unique_dirname)
+    # file 1 exists
+    file1 = db.query(Files).filter(Files.id == diff_checker.file1, Files.user_id == user.id).first()
 
-    # upload file 1
-    file1_path = get_unique_filepath(file1.filename, unique_dirname)
-    await upload_file(file1_path, file1)
+    if not file1:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error identifying file"}
+    # end file 1 exists
 
-    # upload file 2
-    file2_path = get_unique_filepath(file2.filename, unique_dirname)
-    await upload_file(file2_path, file2)
+    # file 2 exists
+    file2 = db.query(Files).filter(Files.id == diff_checker.file2, Files.user_id == user.id).first()
 
-    # do diff checker
-    checked1, checked2 = diff_checker(unique_dirname, file1_path, file2_path)
+    if not file2:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error identifying file"}
+    # end file 2 exists
+
+    # create operation entry
+    diff_checker = DiffChecker(**diff_checker.dict(), user_id = user.id)
+
+    db.add(diff_checker)
+    db.commit()
+    db.refresh(diff_checker)
+    # end create operation entry
+
+    # do operation
+    files_root_path = f"static/dc/{user.id}/"
+
+    file1_path = f"{files_root_path}{file1.file_name}"
+    file2_path = f"{files_root_path}{file2.file_name}"
+
+    mismatch_found, highlighted_file1name, highlighted_file2name = op__diff_checker(files_root_path, file1_path, file2_path)
+    
+    highlighted_file1 = Files(user_id=user.id, file_name=highlighted_file1name)
+    db.add(highlighted_file1)
+    db.commit()
+    db.refresh(highlighted_file1)
+
+    highlighted_file2 = Files(user_id=user.id, file_name=highlighted_file2name)
+    db.add(highlighted_file2)
+    db.commit()
+    db.refresh(highlighted_file2)
+
+    diff_checker_query = db.query(DiffChecker).filter(DiffChecker.id == diff_checker.id)
+    diff_checker_query.update({
+        "mismatch_found": mismatch_found,
+        "highlighted_file1": highlighted_file1.id,
+        "highlighted_file2": highlighted_file1.id,
+        "time_completed": datetime.now()
+    }, synchronize_session=False)
+    db.commit()
+
+    diff_checker = diff_checker_query.first()
+    # end operation
+
+    # add file contents
+    file1.file_content = get_excel_contents(f"{files_root_path}{file1.file_name}")
+    file2.file_content = get_excel_contents(f"{files_root_path}{file2.file_name}")
+    highlighted_file1.file_content = get_excel_contents(f"{files_root_path}{highlighted_file1.file_name}")
+    highlighted_file2.file_content = get_excel_contents(f"{files_root_path}{highlighted_file2.file_name}")
+    # end add file contents
+
+    # final response
+    diff_checker.file1_details = file1
+    diff_checker.file2_details = file2
+    diff_checker.highlighted_file1_details = highlighted_file1
+    diff_checker.highlighted_file2_details = highlighted_file2
+    # end final response
 
     return {
         "message": "Operation Completed Successfully", 
-        "checked_file_1": checked1.replace("static/", ""), 
-        "checked_file_2": checked2.replace("static/", "")
+        "data": diff_checker
     }

@@ -93,3 +93,28 @@ class RemoveDuplicates2(NewRemoveDuplicates2):
 class GetRemoveDuplicates2(BaseModel):
     message: str
     data: Optional[RemoveDuplicates2] 
+
+
+class NewDiffChecker(BaseModel):
+    file1: int
+    file2: int
+
+    class Config:
+        orm_mode = True
+
+class DiffChecker(NewDiffChecker):
+    id: int
+    user_id: int
+    time_requested: datetime
+    mismatch_found: int
+    highlighted_file1: int
+    highlighted_file2: int
+    time_completed: datetime
+    file1_details: File
+    file2_details: File
+    highlighted_file1_details: File
+    highlighted_file2_details: File
+
+class GetDiffChecker(BaseModel):
+    message: str
+    data: Optional[DiffChecker]

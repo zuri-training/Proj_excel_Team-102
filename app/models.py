@@ -31,7 +31,7 @@ class DiffChecker(Base):
     file1 = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=False)
     file2 = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=False)
     time_requested = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
-    diff_match = Column(Integer, nullable=True)
+    mismatch_found = Column(Integer, nullable=True)
     highlighted_file1 = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
     highlighted_file2 = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
     time_completed = Column(TIMESTAMP(timezone=True), nullable=True)
