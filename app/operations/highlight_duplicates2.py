@@ -1,3 +1,4 @@
+from datetime import datetime
 from functools import reduce
 from os import path
 
@@ -45,7 +46,8 @@ def highlight_duplicates2(dir, file, columns):
                 else:
                     column_check[j][cell.value] = 0
 
-    highlighted = f"{dir}/highlighted.xlsx"
+    highlighted_filename = f"{abs(hash(datetime.now()))}_highlighted.xlsx"
+    highlighted = f"{dir}/{highlighted_filename}"
 
     wb.save(highlighted)
 
@@ -63,8 +65,9 @@ def highlight_duplicates2(dir, file, columns):
 
         sws.append([headers[column_index], repeated_values, repeated_rows])
 
-    analytics = f"{dir}/analytics.xlsx"
+    analytics_filename = f"{abs(hash(datetime.now()))}_analytics.xlsx"
+    analytics = f"{dir}/{analytics_filename}"
 
     swb.save(analytics)
 
-    return highlighted, analytics
+    return len(duplicate_rows), highlighted_filename, analytics_filename

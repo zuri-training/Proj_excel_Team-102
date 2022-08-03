@@ -43,3 +43,27 @@ class GetFile(BaseModel):
 
     class Config:
         orm_mode = True 
+
+class NewHighlightDuplicates2(BaseModel):
+    file: int
+    unique_columns: str
+
+    class Config:
+        orm_mode = True
+
+
+class HighlightDuplicates2(NewHighlightDuplicates2):
+    id: int
+    user_id: int
+    time_requested: datetime
+    duplicate_rows: int
+    highlighted_file: int
+    analytics_file: int
+    time_completed: datetime
+    file_details: File
+    highlighted_file_details: File
+    analytics_file_details: File
+
+class GetHighlightDuplicates2(BaseModel):
+    message: str
+    data: Optional[HighlightDuplicates2] 
