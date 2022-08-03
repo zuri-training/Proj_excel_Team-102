@@ -1,3 +1,4 @@
+from datetime import datetime
 from functools import reduce
 from os import path
 
@@ -61,7 +62,8 @@ def remove_duplicates2(dir, file, columns):
         current_row += 1
         dws[f"{last_col}{current_row}"].fill = PatternFill("solid", fgColor="D3E06E");
 
-    duplicates = f"{dir}/duplicates.xlsx"
+    duplicates_filename = f"{abs(hash(datetime.now()))}_duplicates.xlsx"
+    duplicates = f"{dir}/{duplicates_filename}"
 
     dwb.save(duplicates)
 
@@ -73,8 +75,9 @@ def remove_duplicates2(dir, file, columns):
     for data in new_data:
         ws.append(data)
 
-    without_duplicates = f"{dir}/without_duplicates.xlsx"
+    without_duplicates_filename = f"{abs(hash(datetime.now()))}_without_duplicates.xlsx"
+    without_duplicates = f"{dir}/{without_duplicates_filename}"
 
     wb.save(without_duplicates)
 
-    return duplicates, without_duplicates
+    return len(duplicate_rows), duplicates_filename, without_duplicates_filename

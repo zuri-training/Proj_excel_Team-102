@@ -1,6 +1,6 @@
 from datetime import datetime
 from app.database import get_db
-from app.models import Files, HighlightDuplicates2, Users
+from app.models import Files, HighlightDuplicates2, RemoveDuplicates2, Users
 from app.oauth import get_current_user
 from app.utils import get_excel_contents, get_unique_dir, get_unique_filepath, upload_file
 from fastapi import APIRouter, Depends, Response, UploadFile, Form, status
@@ -11,9 +11,9 @@ import os
 
 from app.operations.diff_checker import diff_checker
 from app.operations.highlight_duplicates2 import highlight_duplicates2 as op__highlight_duplicates2
-from app.operations.remove_duplicates2 import remove_duplicates2
+from app.operations.remove_duplicates2 import remove_duplicates2 as op__remove_duplicates2
 
-from app.schemas import GetFile, GetHighlightDuplicates2, NewHighlightDuplicates2
+from app.schemas import GetFile, GetHighlightDuplicates2, GetRemoveDuplicates2, NewHighlightDuplicates2, NewRemoveDuplicates2
 
 router = APIRouter(
     prefix="/api/v1/operations",
@@ -128,6 +128,72 @@ db: Session = Depends(get_db), user: Users = Depends(get_current_user)):
         "data": highlight_duplicates2
     }
 
+@router.post("/remove_duplicates2/", status_code=status.HTTP_201_CREATED, response_model=GetRemoveDuplicates2)
+async def do_remove_duplicates2(remove_duplicates2: NewRemoveDuplicates2, response: Response, 
+db: Session = Depends(get_db), user: Users = Depends(get_current_user)):
+
+    # file exists
+    file = db.query(Files).filter(Files.id == remove_duplicates2.file, Files.user_id == user.id).first()
+
+    if not file:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error identifying file"}
+    # end file exists
+
+    # create operation entry
+    remove_duplicates2 = RemoveDuplicates2(**remove_duplicates2.dict(), user_id = user.id)
+
+    db.add(remove_duplicates2)
+    db.commit()
+    db.refresh(remove_duplicates2)
+    # end create operation entry
+
+    # do operation
+    files_root_path = f"static/dc/{user.id}/"
+
+    file_path = f"{files_root_path}{file.file_name}"
+
+    duplicate_rows, duplicates_filename, without_duplicates_filename = op__remove_duplicates2(files_root_path, file_path, remove_duplicates2.unique_columns)
+    
+    duplicates_file = Files(user_id=user.id, file_name=duplicates_filename)
+    db.add(duplicates_file)
+    db.commit()
+    db.refresh(duplicates_file)
+
+    without_duplicates_file = Files(user_id=user.id, file_name=without_duplicates_filename)
+    db.add(without_duplicates_file)
+    db.commit()
+    db.refresh(without_duplicates_file)
+
+    remove_duplicates2_query = db.query(RemoveDuplicates2).filter(RemoveDuplicates2.id == remove_duplicates2.id)
+    remove_duplicates2_query.update({
+        "duplicate_rows": duplicate_rows,
+        "duplicates_file": duplicates_file.id,
+        "without_duplicates_file": without_duplicates_file.id,
+        "time_completed": datetime.now()
+    }, synchronize_session=False)
+    db.commit()
+
+    remove_duplicates2 = remove_duplicates2_query.first()
+    # end operation
+
+    # add file contents
+    file.file_content = get_excel_contents(f"{files_root_path}{file.file_name}")
+    duplicates_file.file_content = get_excel_contents(f"{files_root_path}{duplicates_file.file_name}")
+    without_duplicates_file.file_content = get_excel_contents(f"{files_root_path}{without_duplicates_file.file_name}")
+    # end add file contents
+
+    # final response
+    remove_duplicates2.file_details = file
+    remove_duplicates2.duplicates_file_details = duplicates_file
+    remove_duplicates2.without_duplicates_file_details = without_duplicates_file
+    # end final response
+
+    return {
+        "message": "Operation Completed Successfully", 
+        "data": remove_duplicates2
+    }
+
 @router.post("/diff_checker/")
 async def do_diff_checker(file1: UploadFile, file2: UploadFile):
 
@@ -150,24 +216,4 @@ async def do_diff_checker(file1: UploadFile, file2: UploadFile):
         "message": "Operation Completed Successfully", 
         "checked_file_1": checked1.replace("static/", ""), 
         "checked_file_2": checked2.replace("static/", "")
-    }
-
-@router.post("/remove_duplicates2/")
-async def do_remove_duplicates2(file: UploadFile, unique_columns: str = Form()):
-
-    # create unique directory
-    unique_dirname = get_unique_dir()
-    os.mkdir(unique_dirname)
-
-    # upload file 1
-    file_path = get_unique_filepath(file.filename, unique_dirname)
-    await upload_file(file_path, file)
-
-    # do highlight duplicates
-    duplicates, without_duplicates = remove_duplicates2(unique_dirname, file_path, unique_columns)
-
-    return {
-        "message": "Operation Completed Successfully", 
-        "highlighted": duplicates.replace("static/", ""), 
-        "analytics": without_duplicates.replace("static/", "")
     }
