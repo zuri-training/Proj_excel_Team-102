@@ -75,41 +75,43 @@ const Register = () => {
                             <Link to="/login">Login</Link>
                         </p>
                         <form className="auth-form" onSubmit={handleSubmit}>
-                            <div>
-                                <label
-                                    htmlFor="first_name"
-                                    className="auth-label"
-                                >
-                                    First Name
-                                </label>
-                                <input
-                                    type="text"
-                                    name="first_name"
-                                    placeholder="Enter first name"
-                                    autoComplete="off"
-                                    className="auth-input"
-                                    required
-                                    value={user_details.first_name}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div>
-                                <label
-                                    htmlFor="last_name"
-                                    className="auth-label"
-                                >
-                                    Last Name
-                                </label>
-                                <input
-                                    type="text"
-                                    name="last_name"
-                                    placeholder="Enter last name"
-                                    autoComplete="off"
-                                    className="auth-input"
-                                    required
-                                    value={user_details.last_name}
-                                    onChange={handleChange}
-                                />
+                            <div className="grid grid--2-cols">
+                                <div>
+                                    <label
+                                        htmlFor="first_name"
+                                        className="auth-label"
+                                    >
+                                        First Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="first_name"
+                                        placeholder="Enter first name"
+                                        autoComplete="off"
+                                        className="auth-input"
+                                        required
+                                        value={user_details.first_name}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        htmlFor="last_name"
+                                        className="auth-label"
+                                    >
+                                        Last Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="last_name"
+                                        placeholder="Enter last name"
+                                        autoComplete="off"
+                                        className="auth-input"
+                                        required
+                                        value={user_details.last_name}
+                                        onChange={handleChange}
+                                    />
+                                </div>
                             </div>
                             <div>
                                 <label htmlFor="email" className="auth-label">

@@ -12,6 +12,7 @@ const Register = lazy(() => import("./pages/Register"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const AddNewFile = lazy(() => import("./pages/AddNewFile"));
 const NewOperation = lazy(() => import("./pages/NewOperation"));
+const PreviewFile = lazy(() => import("./pages/PreviewFile"));
 
 const App = () => {
     return (
@@ -62,11 +63,21 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/new_operation/:file"
+                    path="/new_operation/:files"
                     element={
                         <Auth>
                             <Suspense fallback={<Preloader />}>
                                 <NewOperation />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/preview_file/:file_id"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <PreviewFile />
                             </Suspense>
                         </Auth>
                     }

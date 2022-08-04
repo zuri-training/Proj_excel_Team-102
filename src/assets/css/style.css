@@ -14,11 +14,22 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: #ffffff;
     color: #393939;
+
+    scroll-behavior: smooth;
 }
 
 /* Reusable */
 .text-center {
     text-align: center;
+}
+
+.grid {
+    display: grid;
+    column-gap: 2rem;
+}
+
+.grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 /* Preloader */
@@ -39,7 +50,7 @@ body {
 .modal {
     background-color: #fff;
     border-radius: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.07);
     z-index: 999;
 
@@ -114,13 +125,13 @@ body {
 /* Auth Pages */
 .auth-server-response {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-top: 2rem;
 }
 
 .auth-container {
     display: grid;
-    grid-template-columns: 40fr 60fr;
+    grid-template-columns: 30fr 70fr;
 }
 
 .auth-left {
@@ -147,19 +158,19 @@ body {
 }
 
 .auth-content {
-    width: 80%;
+    width: 70%;
     padding: 4.8rem 0;
 }
 
 .auth-title {
-    font-size: 3.6rem;
+    font-size: 2.6rem;
     line-height: 1.2;
     text-align: center;
     margin-bottom: 1.2rem;
 }
 
 .auth-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
 }
 
@@ -173,11 +184,11 @@ body {
 .auth-form {
     display: block;
     width: 80%;
-    margin: 5.2rem auto;
+    margin: 2.4rem auto 5.2rem;
 }
 
 .auth-label {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     font-weight: 600;
 }
 
@@ -188,25 +199,25 @@ body {
     background-color: #cfcfcf;
     margin-bottom: 2.4rem;
     outline: none;
-    font-size: 1.8rem;
-    padding: 2rem;
+    font-size: 1.6rem;
+    padding: 1.2rem;
     font-family: inherit;
 }
 
 .auth-btn {
     border-radius: 0.8rem;
-    padding: 1.6rem 0;
+    padding: 1.2rem 0;
     width: 100%;
     background-color: #3e3e3e;
     color: #ffff;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     border: none;
     font-family: inherit;
     cursor: pointer;
 }
 
 .auth-tandcs {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     text-align: center;
 }
@@ -214,11 +225,12 @@ body {
 /* Dashboard */
 .main-content {
     padding: 4rem;
+    padding-left: 30rem;
 }
 
 .upload-file-box {
     border: 2px dashed #393939;
-    padding: 9.6em 0;
+    padding: 9.6rem 0;
     cursor: pointer;
 
     display: flex;
@@ -230,9 +242,9 @@ body {
 .upload-info1,
 .upload-info2 {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 
-    margin-bottom: 1.2rem;
+    margin-bottom: 2px;
 }
 
 .upload-icon-box {
@@ -240,8 +252,8 @@ body {
 }
 
 .upload-icon {
-    width: 20rem;
-    height: 20rem;
+    width: 12rem;
+    height: 12rem;
     color: #777;
     visibility: visible;
 }
@@ -256,7 +268,7 @@ body {
     justify-content: center;
     gap: 2rem;
 
-    margin-top: 3.6rem;
+    margin-top: 4.8rem;
 }
 
 .upload-file-icon {
@@ -275,4 +287,112 @@ body {
     color: #777;
     text-align: center;
     margin-top: 2.4rem;
+}
+
+/* File Table */
+.file-table {
+    border: 1px solid #777;
+    width: 100%;
+    font-size: 1.2rem;
+    border-collapse: collapse;
+}
+
+.file-table tr,
+.file-table th,
+.file-table td {
+    border: 1px solid #777;
+}
+
+.file-table th,
+.file-table td {
+    padding: 1rem;
+}
+
+/* Files Preview */
+.files-preview {
+    display: flex;
+    gap: 4.8rem;
+}
+
+.file {
+    flex: 1;
+
+    overflow-x: hidden;
+}
+
+.file-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+
+    margin-bottom: 2.4rem;
+}
+
+.file-name {
+    font-size: 1.8rem;
+}
+
+.change-file-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background-color: #777;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-preview-box {
+    margin-bottom: 2.4rem;
+
+    overflow-x: scroll;
+}
+
+.file-preview-box::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.file-preview-box::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+}
+.file-preview-box::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.file-preview-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+.file-preview-box::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.files-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+
+    margin-top: 3.6rem;
+}
+
+.file-action {
+    padding: 3.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #777;
+    color: #fff;
+    cursor: pointer;
+}
+
+.file-action-icon-text {
+    text-align: center;
+    margin-bottom: 2.4rem;
+}
+
+.file-action-icon {
+    width: 2.4rem;
+    height: 2.4rem;
 }
