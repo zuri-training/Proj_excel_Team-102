@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import users, auth, operations
+from app.routers import users, auth, files, operations
 
 app = FastAPI()
 
@@ -23,6 +23,7 @@ def root():
 
 app.include_router(users.router)
 app.include_router(auth.router)
+app.include_router(files.router)
 app.include_router(operations.router)
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
