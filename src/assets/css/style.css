@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff;
+    color: #393939;
+}
+
+/* Reusable */
+.text-center {
+    text-align: center;
+}
+
+/* Preloader */
+.preloader {
+    font-size: 4.4rem;
+    color: #777;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+/* Modal */
+.modal {
+    background-color: #fff;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.07);
+    z-index: 999;
+
+    pointer-events: none;
+    opacity: 0;
+
+    transition: all 0.4s;
+
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+}
+
+.modal-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 2.4rem;
+}
+
+.modal-header {
+    position: relative;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.modal-header span {
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    position: absolute;
+    right: 2.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.modal-body,
+.modal-footer {
+    text-align: center;
+}
+
+.modal-btn {
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    border: none;
+    background-color: #777;
+    color: #fff;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+
+    margin-right: 1.2rem;
+}
+
+.modal-btn:last-child {
+    margin-right: 0;
+}
+
+/* Auth Pages */
+.auth-server-response {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+}
+
+.auth-left {
+    background-color: #939292;
+    height: 100vh;
+    position: relative;
+}
+
+.auth-left img {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: 52px;
+    top: 52px;
+}
+
+.auth-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.auth-content {
+    width: 80%;
+    padding: 4.8rem 0;
+}
+
+.auth-title {
+    font-size: 3.6rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.auth-subtitle {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.auth-subtitle a:link,
+.auth-subtitle a:visited {
+    text-decoration: none;
+    color: #393939;
+    font-weight: 600;
+}
+
+.auth-form {
+    display: block;
+    width: 80%;
+    margin: 5.2rem auto;
+}
+
+.auth-label {
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.auth-input {
+    width: 100%;
+    border-radius: 0.8rem;
+    border: 1px solid #606060;
+    background-color: #cfcfcf;
+    margin-bottom: 2.4rem;
+    outline: none;
+    font-size: 1.8rem;
+    padding: 2rem;
+    font-family: inherit;
+}
+
+.auth-btn {
+    border-radius: 0.8rem;
+    padding: 1.6rem 0;
+    width: 100%;
+    background-color: #3e3e3e;
+    color: #ffff;
+    font-size: 2.4rem;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.auth-tandcs {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Dashboard */
+.main-content {
+    padding: 4rem;
+}
+
+.upload-file-box {
+    border: 2px dashed #393939;
+    padding: 9.6em 0;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.upload-icon-box,
+.upload-info1,
+.upload-info2 {
+    text-align: center;
+    font-size: 1.8rem;
+
+    margin-bottom: 1.2rem;
+}
+
+.upload-icon-box {
+    margin-bottom: 2.4rem;
+}
+
+.upload-icon {
+    width: 20rem;
+    height: 20rem;
+    color: #777;
+    visibility: visible;
+}
+
+.upload-info2 {
+    font-weight: 600;
+}
+
+.upload-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    margin-top: 3.6rem;
+}
+
+.upload-file-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: #333;
+    visibility: visible;
+}
+
+.upload-info p {
+    font-size: 1.6rem;
+}
+
+.upload-progress {
+    font-size: 3.2rem;
+    color: #777;
+    text-align: center;
+    margin-top: 2.4rem;
+}

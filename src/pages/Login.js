@@ -1,5 +1,3 @@
-import "../assets/css/auth.css";
-
 import placeholder_img from "../assets/img/Frame-6@2x.png";
 
 import { Link, useNavigate } from "react-router-dom";

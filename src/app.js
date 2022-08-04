@@ -10,6 +10,8 @@ const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
+const AddNewFile = lazy(() => import("./pages/AddNewFile"));
+const NewOperation = lazy(() => import("./pages/NewOperation"));
 
 const App = () => {
     return (
@@ -45,6 +47,26 @@ const App = () => {
                         <Auth>
                             <Suspense fallback={<Preloader />}>
                                 <Dashboard />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/add_new_file"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <AddNewFile />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/new_operation/:file"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <NewOperation />
                             </Suspense>
                         </Auth>
                     }
