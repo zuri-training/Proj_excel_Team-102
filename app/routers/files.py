@@ -7,7 +7,7 @@ from app.schemas import GetFile
 from app.database import get_db
 from app.oauth import get_current_user
 
-from app.utils import upload_file, get_excel_contents
+from app.utils import upload_file as op__upload_file, get_excel_contents
 
 from datetime import datetime
 
@@ -20,9 +20,9 @@ router = APIRouter(
 )
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=GetFile)
-async def file_upload(file: UploadFile, response: Response, db: Session = Depends(get_db), 
+async def upload_file(file: UploadFile, response: Response, db: Session = Depends(get_db), 
 user: Users = Depends(get_current_user), replace: int = 0):
-    
+
     file_extension = file.filename.split(".")[-1]
 
     if file_extension not in ["xlsx", "csv"]:
@@ -50,7 +50,7 @@ user: Users = Depends(get_current_user), replace: int = 0):
         pass
 
     file_path = f"{files_root_path}{file.filename}"
-    await upload_file(file_path, file)
+    await op__upload_file(file_path, file)
 
     new_file = Files(user_id=user.id, file_name=file.filename)
     db.add(new_file)
@@ -60,3 +60,19 @@ user: Users = Depends(get_current_user), replace: int = 0):
     new_file.file_content = get_excel_contents(file_path)
 
     return {"message": "File uploaded successfully", "file": new_file}
+
+@router.get("/{file_id}", status_code=status.HTTP_200_OK, response_model=GetFile)
+def get_file(file_id: int, response: Response, db: Session = Depends(get_db), user: Users = Depends(get_current_user)):
+
+    file = db.query(Files).filter(Files.id == file_id, Files.user_id == user.id).first()
+
+    if not file:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error identifying file"}
+
+    files_root_path = f"static/dc/{user.id}/"
+
+    file_path = f"{files_root_path}{file.file_name}"
+    file.file_content = get_excel_contents(file_path)
+
+    return {"message": "File fetched sucessfully", "file": file}
