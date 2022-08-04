@@ -159,6 +159,9 @@ padding-bottom: 15px;
   padding-bottom: 2px;
 }
 
+#subscribe{
+  margin-left: 250px;
+}
 /* fonter container */
 .footer_container{
   padding: 20px, 50px, 20, 20px;
@@ -257,6 +260,7 @@ and (max-width: 1024px) {
    gap: 8px;
    height: 45px;
   }
+  
   }
   @media (min-width: 601px) 
   and (max-width: 834px) {  
@@ -432,10 +436,99 @@ and (max-width: 1024px) {
     html,body{
       margin-top: 0;
       margin-bottom: 0;
+      height: 1900;
+
     }
     .mobile_container{
-      height: 139px;
-      width: 150px;
+      height: 150px;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      justify-content: center;
+      background-color: #D7D7D7;
+      margin-bottom: 20px;
     }
+    .main_container {
+     left: 50%;
+     top: 50%;
+     margin-top: 80px;
+     height: 1200px;
+     padding: 10px,60px, 0, 60px;
+     color: #393939;
+   }
+   .main_container h3{
+    margin-bottom: -10px;
+   }
+   #first_paragraph{
+    text-align: center;
+
+   }
+   #btn{
+    justify-content: center;
+    align-items: center;
+    padding-top: 35px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    border: none;
+    text-align: center;  
   }
-  
+  #btn button{
+    width: 216.92px;
+    height: 41.93px;
+    color: #ffffff;
+    background-color: #3e3e3e;
+    border-radius: 4.35px;
+    border: none;
+    padding-bottom: 3px;
+  }
+  }
+  #subscribe{
+    height: 181px;
+    width: 600px;
+    background-color: #B0B0B0;
+    /* margin-bottom: 30px; */
+  }
+  #subscribe h4{
+    text-align: center;
+    padding-top: 35px;
+  }
+  #update{
+    margin: 0;
+   
+  }
+  #subscribe input,
+  #subscribe button{
+    /* margin: 0; */
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 8px;
+    border: none;
+    
+  }
+  #subscribe input{
+    width: 280px;
+    height: 56px;
+    margin: 0;
+    margin-left: 80px;
+    background-color: #CACACA;
+    color: #888888
+  }
+  #subscribe button{
+    width: 170.69px;
+    height: 53px;
+    color: #E5E5E5;
+    background-color: #CACACA;
+  }
+  .footer_container{
+    border: 10px;
+    flex-direction: column;
+    justify-items: center;
+   margin-left:120px ; 
+   margin-top: 0; 
+   color: #888888;
+   text-align: center;
+   margin-top: 20px;
+  }
+ 

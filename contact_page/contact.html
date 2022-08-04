@@ -18,16 +18,22 @@
       .mobile_container {
         display: none;
       }
+      #subscribe {
+        display: none;
+      }
 }
 @media (max-width: 1024px) {
   .mobile_container {
     display: none;
   }
+  #subscribe  {
+    display: none;
+  }                                                                                                                                                                                         
 }
   </style>
 </head>
 <body>
-      <div class="mobile_container"></div>
+      
   <header>
    
       <nav class="header">
@@ -46,9 +52,10 @@
 
     <main class="container_main">
       <div class="main_container">
+        <div class="mobile_container"></div>
           <div class="container_info">
             <h3>Contact us anytime</h3>
-            <p>We are avaliable to answer you immediately your emails sent during business hour from 9am to 4am. Any email gotten during non business hours will be visited as soon as resumption starts.</p>
+            <p id="first_paragraph">We are avaliable to answer you immediately your emails sent during business hour from 9am to 4am. Any email gotten during non business hours will be visited as soon as resumption starts.</p>
 
             <p id="disclaimer">DISCLAIMER: ALL YOUR PERSONAL INFORMATION SENT IN WILL NOT BE USED OUTSIDE THE SCOPE OF CONTEXT.</p>
           </div>
@@ -68,9 +75,18 @@
                   <div id="btn"><button type="summit">Submit</button></div>
                   
             </form>
+              
           </div>
         </div>
-
+        <div id="subscribe">
+          <h4>Subscribe for your updates</h4>
+              <div id="update">
+                <form action="">
+            <input type="email" name="email"   placeholder="Email address">
+            <button type="submit">Submit</button>
+          </form></div>
+        
+        </div>
         </main>
         <footer>
           <div class="footer_container">
