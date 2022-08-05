@@ -1,15 +1,10 @@
 from datetime import datetime
 from functools import reduce
-from os import path
 
 from openpyxl import load_workbook, Workbook
 from openpyxl.styles import PatternFill
 
 def remove_duplicates2(dir, file, columns):
-
-    if not path.exists(file):
-        print("Could not resolve file"); return
-
     if columns:
         columns = columns.split(",")
 

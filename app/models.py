@@ -36,6 +36,18 @@ class DiffChecker(Base):
     highlighted_file2 = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
     time_completed = Column(TIMESTAMP(timezone=True), nullable=True)
 
+class HighlightDuplicates(Base):
+    __tablename__ = "highlight_duplicates"
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="RESTRICT"), nullable=False)
+    file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=False)
+    unique_columns = Column(String, nullable=False)
+    time_requested = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
+    duplicate_rows = Column(Integer, nullable=True)
+    highlighted_file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
+    time_completed = Column(TIMESTAMP(timezone=True), nullable=True)
+
 class HighlightDuplicates2(Base):
     __tablename__ = "highlight_duplicates2"
 
@@ -47,6 +59,18 @@ class HighlightDuplicates2(Base):
     duplicate_rows = Column(Integer, nullable=True)
     highlighted_file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
     analytics_file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
+    time_completed = Column(TIMESTAMP(timezone=True), nullable=True)
+
+class RemoveDuplicates(Base):
+    __tablename__ = "remove_duplicates"
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="RESTRICT"), nullable=False)
+    file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=False)
+    unique_columns = Column(String, nullable=False)
+    time_requested = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
+    duplicate_rows = Column(Integer, nullable=True)
+    without_duplicates_file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
     time_completed = Column(TIMESTAMP(timezone=True), nullable=True)
 
 class RemoveDuplicates2(Base):

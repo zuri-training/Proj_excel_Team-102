@@ -44,6 +44,29 @@ class GetFile(BaseModel):
     class Config:
         orm_mode = True 
 
+
+class NewHighlightDuplicates(BaseModel):
+    file: int
+    unique_columns: str
+
+    class Config:
+        orm_mode = True
+
+class HighlightDuplicates(NewHighlightDuplicates):
+    id: int
+    user_id: int
+    time_requested: datetime
+    duplicate_rows: int
+    highlighted_file: int
+    time_completed: datetime
+    file_details: File
+    highlighted_file_details: File
+
+class GetHighlightDuplicates(BaseModel):
+    message: str
+    data: Optional[HighlightDuplicates] 
+
+
 class NewHighlightDuplicates2(BaseModel):
     file: int
     unique_columns: str
@@ -69,6 +92,28 @@ class GetHighlightDuplicates2(BaseModel):
     data: Optional[HighlightDuplicates2] 
 
 
+class NewRemoveDuplicates(BaseModel):
+    file: int
+    unique_columns: str
+
+    class Config:
+        orm_mode = True
+
+
+class RemoveDuplicates(NewRemoveDuplicates):
+    id: int
+    user_id: int
+    time_requested: datetime
+    duplicate_rows: int
+    without_duplicates_file: int
+    time_completed: datetime
+    file_details: File
+    without_duplicates_file_details: File
+
+class GetRemoveDuplicates(BaseModel):
+    message: str
+    data: Optional[RemoveDuplicates] 
+
 
 class NewRemoveDuplicates2(BaseModel):
     file: int
@@ -76,7 +121,6 @@ class NewRemoveDuplicates2(BaseModel):
 
     class Config:
         orm_mode = True
-
 
 class RemoveDuplicates2(NewRemoveDuplicates2):
     id: int
@@ -92,7 +136,8 @@ class RemoveDuplicates2(NewRemoveDuplicates2):
 
 class GetRemoveDuplicates2(BaseModel):
     message: str
-    data: Optional[RemoveDuplicates2] 
+    data: Optional[RemoveDuplicates2]
+
 
 
 class NewDiffChecker(BaseModel):
