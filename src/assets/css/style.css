@@ -63,7 +63,7 @@ body {
 
     transition: all 0.4s;
 
-    position: absolute;
+    position: fixed;
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
@@ -508,6 +508,7 @@ body {
     text-decoration: none;
     padding: 1.2rem 2.4rem;
     color: #180451;
+    border: 1px solid #180451;
     border-radius: 0.8rem;
     font-size: 1.8rem;
 
@@ -683,6 +684,126 @@ body {
     border-radius: 0.8rem;
 }
 
+/*Features section*/
+.features2-section {
+    padding-bottom: 9.6rem;
+}
+
+.features2-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4.8rem;
+}
+
+.feature {
+    cursor: pointer;
+    padding: 2.4rem 1.2rem;
+    text-align: center;
+
+    transition: all 0.2s;
+}
+
+.feature:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1.2rem 2.4rem 0 rgba(0, 0, 0, 0.07);
+}
+
+.feature-icon-box {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: #c2aefb;
+
+    margin-bottom: 2.4rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    visibility: visible;
+}
+
+.feature-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/*Video Section*/
+.video-section {
+    padding: 9.6rem 0;
+    background-color: rgba(36, 5, 122, 0.2);
+}
+
+.video-title {
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 3.6rem;
+}
+
+.video {
+    width: 100%;
+    border-radius: 1.6rem;
+}
+
+/*Video Section*/
+.newsletter-section {
+    padding: 9.6rem 0;
+}
+
+.newsletter-container {
+    padding: 6.2rem 9.6rem;
+    background-color: #24067a;
+    border-radius: 1.2rem;
+}
+
+.newsletter-title {
+    font-size: 3.6rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2.4rem;
+}
+
+.newsletter-form {
+    background-color: #fff;
+    padding: 1.2rem;
+    border-radius: 1rem;
+
+    display: flex;
+    gap: 1.2rem;
+}
+
+.newsletter-form input {
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    font-family: inherit;
+    padding: 1.2rem;
+
+    flex: 1;
+}
+
+.newsletter-form button {
+    background-color: #24067a;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 1.2rem 2.4rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    font-family: inherit;
+}
+
 /*Footer Section*/
 .footer {
     padding: 9.6rem 0;
@@ -731,6 +852,150 @@ body {
 .footer-btn:link,
 .footer-btn:visited {
     display: inline-block;
+    text-decoration: none;
+    padding: 1.2rem 2.4rem;
+    background-color: #180451;
+    color: #fff;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+}
+
+/*Dashboard section*/
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 15fr 85fr;
+}
+
+.dashboard-sidenav {
+    height: 100vh;
+    background-color: #845cf7;
+
+    position: relative;
+}
+
+.sidenav-logo {
+    padding: 2.4rem;
+    text-align: center;
+
+    margin-bottom: 5rem;
+}
+
+.sidenav-logo img {
+    /* width: 100%; */
+}
+
+.dashboard-menu {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-menu-footer {
+    padding-bottom: 2.4rem;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.dashboard-menu-item {
+    padding: 1.2rem 2.4rem;
+    cursor: pointer;
+
+    transition: all 0.3s;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.dashboard-menu-item:hover,
+.dashboard-menu-item.active {
+    background-image: linear-gradient(
+        90deg,
+        #e5e5e5 37.24%,
+        rgba(229, 229, 229, 0.23) 100%
+    );
+}
+
+.dashboard-menu-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: #fff;
+    visibility: visible;
+}
+
+.dashboard-menu-link:link,
+.dashboard-menu-link:visited {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.dashboard-content {
+    height: 100vh;
+    overflow: scroll;
+}
+
+.dashboard-header {
+    padding: 1.2rem 2.4rem;
+
+    background-color: #eee;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.dashboard-user {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.dashboard-user-img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.dashboard-user-name {
+    font-size: 1.6rem;
+}
+
+.caret {
+    width: 2.4rem;
+    height: 2.4rem;
+    visibility: visible;
+}
+
+.dashboard-main {
+    padding: 4.8rem;
+}
+
+.dashboard-breadcrumb {
+    margin-bottom: 4.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-breadcrumb-title {
+    font-size: 3.2rem;
+}
+
+.dashboard-breadcrumb-text {
+    font-size: 1.6rem;
+}
+
+.dashboard-breadcrumb-link:link,
+.dashboard-breadcrumb-link:visited {
+    display: inline-flex;
+    gap: 1.2rem;
+    align-items: center;
     text-decoration: none;
     padding: 1.2rem 2.4rem;
     background-color: #180451;

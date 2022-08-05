@@ -30,6 +30,7 @@ const ContactUs = () => {
                                 type="text"
                                 name="full_name"
                                 className="contact-form-input"
+                                placeholder="Enter full name"
                                 required
                             />
                         </div>
@@ -41,6 +42,7 @@ const ContactUs = () => {
                                 type="email"
                                 name="email"
                                 className="contact-form-input"
+                                placeholder="Enter email address"
                                 required
                             />
                         </div>

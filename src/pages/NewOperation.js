@@ -8,6 +8,9 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { user_actions } from "../store";
 
+import DashboardSidebar from "../components/DashboardSidebar";
+import DashboardHeader from "../components/DashboardHeader";
+
 const NewOperation = () => {
     const { files } = useParams();
 
@@ -226,450 +229,512 @@ const NewOperation = () => {
 
     return (
         <>
-            <section className="main-content">
-                <div className="files-preview">
-                    <div className="file">
-                        <div className="file-header">
-                            <h3 className="file-name">{file1.file_name}</h3>
-                            <button className="change-file-btn">Change</button>
+            <main className="dashboard-container">
+                <DashboardSidebar />
+                <div className="dashbard-content">
+                    <DashboardHeader />
+                    <section className="dashboard-main">
+                        <div className="dashboard-breadcrumb">
+                            <div className="dashboard-breadcrumb-left">
+                                <h3 className="dashboard-breadcrumb-title">
+                                    New operation
+                                </h3>
+                                <p className="dashboard-breadcrumb-text">
+                                    Perform an operation on uploaded file from
+                                    the provided operations below
+                                </p>
+                            </div>
+                            <div className="dashboard-breadcrumb-right"></div>
                         </div>
-                        <div className="file-preview-box">
-                            <table className="file-table">
-                                <thead>
-                                    <tr>
-                                        {file1.file_content[0].map(
-                                            (cell, i) => {
-                                                return (
-                                                    <th
-                                                        key={i}
-                                                        style={{
-                                                            backgroundColor: `#${cell.background}`,
-                                                        }}
-                                                    >
-                                                        {cell.value}
-                                                    </th>
-                                                );
-                                            }
-                                        )}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {file1.file_content
-                                        .slice(1)
-                                        .map((row, i) => {
-                                            return (
-                                                <tr key={i}>
-                                                    {row.map((cell, j) => {
+                        <div className="files-preview">
+                            <div className="file">
+                                <div className="file-header">
+                                    <h3 className="file-name">
+                                        {file1.file_name}
+                                    </h3>
+                                    <button className="change-file-btn">
+                                        Change
+                                    </button>
+                                </div>
+                                <div className="file-preview-box">
+                                    <table className="file-table">
+                                        <thead>
+                                            <tr>
+                                                {file1.file_content[0].map(
+                                                    (cell, i) => {
                                                         return (
-                                                            <td
-                                                                key={j}
+                                                            <th
+                                                                key={i}
                                                                 style={{
                                                                     backgroundColor: `#${cell.background}`,
                                                                 }}
                                                             >
                                                                 {cell.value}
-                                                            </td>
+                                                            </th>
                                                         );
-                                                    })}
-                                                </tr>
-                                            );
-                                        })}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    {file2 && (
-                        <div className="file">
-                            <div className="file-header">
-                                <h3 className="file-name">{file2.file_name}</h3>
-                                <button className="change-file-btn">
-                                    Change
-                                </button>
-                            </div>
-                            <div className="file-preview-box">
-                                <table className="file-table">
-                                    <thead>
-                                        <tr>
-                                            {file2.file_content[0].map(
-                                                (cell, i) => {
+                                                    }
+                                                )}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {file1.file_content
+                                                .slice(1)
+                                                .map((row, i) => {
                                                     return (
-                                                        <th
-                                                            key={i}
-                                                            style={{
-                                                                backgroundColor: `#${cell.background}`,
-                                                            }}
-                                                        >
-                                                            {cell.value}
-                                                        </th>
+                                                        <tr key={i}>
+                                                            {row.map(
+                                                                (cell, j) => {
+                                                                    return (
+                                                                        <td
+                                                                            key={
+                                                                                j
+                                                                            }
+                                                                            style={{
+                                                                                backgroundColor: `#${cell.background}`,
+                                                                            }}
+                                                                        >
+                                                                            {
+                                                                                cell.value
+                                                                            }
+                                                                        </td>
+                                                                    );
+                                                                }
+                                                            )}
+                                                        </tr>
                                                     );
-                                                }
-                                            )}
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {file2.file_content
-                                            .slice(1)
-                                            .map((row, i) => {
-                                                return (
-                                                    <tr key={i}>
-                                                        {row.map((cell, j) => {
+                                                })}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            {file2 && (
+                                <div className="file">
+                                    <div className="file-header">
+                                        <h3 className="file-name">
+                                            {file2.file_name}
+                                        </h3>
+                                        <button className="change-file-btn">
+                                            Change
+                                        </button>
+                                    </div>
+                                    <div className="file-preview-box">
+                                        <table className="file-table">
+                                            <thead>
+                                                <tr>
+                                                    {file2.file_content[0].map(
+                                                        (cell, i) => {
                                                             return (
-                                                                <td
-                                                                    key={j}
+                                                                <th
+                                                                    key={i}
                                                                     style={{
                                                                         backgroundColor: `#${cell.background}`,
                                                                     }}
                                                                 >
                                                                     {cell.value}
-                                                                </td>
+                                                                </th>
                                                             );
-                                                        })}
-                                                    </tr>
-                                                );
-                                            })}
-                                    </tbody>
-                                </table>
+                                                        }
+                                                    )}
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {file2.file_content
+                                                    .slice(1)
+                                                    .map((row, i) => {
+                                                        return (
+                                                            <tr key={i}>
+                                                                {row.map(
+                                                                    (
+                                                                        cell,
+                                                                        j
+                                                                    ) => {
+                                                                        return (
+                                                                            <td
+                                                                                key={
+                                                                                    j
+                                                                                }
+                                                                                style={{
+                                                                                    backgroundColor: `#${cell.background}`,
+                                                                                }}
+                                                                            >
+                                                                                {
+                                                                                    cell.value
+                                                                                }
+                                                                            </td>
+                                                                        );
+                                                                    }
+                                                                )}
+                                                            </tr>
+                                                        );
+                                                    })}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        <div className="files-actions">
+                            <div
+                                className="file-action"
+                                onClick={() =>
+                                    set_current_operation(
+                                        "search_and_highlight"
+                                    )
+                                }
+                            >
+                                <p className="file-action-icon-text">
+                                    <ion-icon
+                                        name="document-outline"
+                                        class="file-action-icon"
+                                    ></ion-icon>
+                                </p>
+                                <p>Search and Highlight</p>
+                            </div>
+                            <div
+                                className="file-action"
+                                onClick={() =>
+                                    set_current_operation("search_and_replace")
+                                }
+                            >
+                                <p className="file-action-icon-text">
+                                    <ion-icon
+                                        name="document-outline"
+                                        class="file-action-icon"
+                                    ></ion-icon>
+                                </p>
+                                <p>Search and Replace</p>
+                            </div>
+                            <div
+                                className="file-action"
+                                onClick={() =>
+                                    set_current_operation(
+                                        "highlight_duplicates"
+                                    )
+                                }
+                            >
+                                <p className="file-action-icon-text">
+                                    <ion-icon
+                                        name="document-outline"
+                                        class="file-action-icon"
+                                    ></ion-icon>
+                                </p>
+                                <p>Highlight Duplicates</p>
+                            </div>
+                            <div
+                                className="file-action"
+                                onClick={() =>
+                                    set_current_operation("remove_duplicates")
+                                }
+                            >
+                                <p className="file-action-icon-text">
+                                    <ion-icon
+                                        name="document-outline"
+                                        class="file-action-icon"
+                                    ></ion-icon>
+                                </p>
+                                <p>Remove Duplicates</p>
+                            </div>
+                            <div
+                                className="file-action"
+                                onClick={() =>
+                                    set_current_operation(
+                                        "highlight_duplicates2"
+                                    )
+                                }
+                            >
+                                <p className="file-action-icon-text">
+                                    <ion-icon
+                                        name="document-outline"
+                                        class="file-action-icon"
+                                    ></ion-icon>
+                                </p>
+                                <p>
+                                    Highlight Duplicates <br />
+                                    and Return 2 Files
+                                </p>
+                            </div>
+                            <div
+                                className="file-action"
+                                onClick={() =>
+                                    set_current_operation("remove_duplicates2")
+                                }
+                            >
+                                <p className="file-action-icon-text">
+                                    <ion-icon
+                                        name="document-outline"
+                                        class="file-action-icon"
+                                    ></ion-icon>
+                                </p>
+                                <p>
+                                    Remove Duplicates <br /> and Return 2 Files
+                                </p>
                             </div>
                         </div>
-                    )}
-                </div>
-                <div className="files-actions">
-                    <div
-                        className="file-action"
-                        onClick={() =>
-                            set_current_operation("search_and_highlight")
-                        }
-                    >
-                        <p className="file-action-icon-text">
-                            <ion-icon
-                                name="document-outline"
-                                class="file-action-icon"
-                            ></ion-icon>
-                        </p>
-                        <p>Search and Highlight</p>
-                    </div>
-                    <div
-                        className="file-action"
-                        onClick={() =>
-                            set_current_operation("search_and_replace")
-                        }
-                    >
-                        <p className="file-action-icon-text">
-                            <ion-icon
-                                name="document-outline"
-                                class="file-action-icon"
-                            ></ion-icon>
-                        </p>
-                        <p>Search and Replace</p>
-                    </div>
-                    <div
-                        className="file-action"
-                        onClick={() =>
-                            set_current_operation("highlight_duplicates")
-                        }
-                    >
-                        <p className="file-action-icon-text">
-                            <ion-icon
-                                name="document-outline"
-                                class="file-action-icon"
-                            ></ion-icon>
-                        </p>
-                        <p>Highlight Duplicates</p>
-                    </div>
-                    <div
-                        className="file-action"
-                        onClick={() =>
-                            set_current_operation("remove_duplicates")
-                        }
-                    >
-                        <p className="file-action-icon-text">
-                            <ion-icon
-                                name="document-outline"
-                                class="file-action-icon"
-                            ></ion-icon>
-                        </p>
-                        <p>Remove Duplicates</p>
-                    </div>
-                    <div
-                        className="file-action"
-                        onClick={() =>
-                            set_current_operation("highlight_duplicates2")
-                        }
-                    >
-                        <p className="file-action-icon-text">
-                            <ion-icon
-                                name="document-outline"
-                                class="file-action-icon"
-                            ></ion-icon>
-                        </p>
-                        <p>
-                            Highlight Duplicates <br />
-                            and Return 2 Files
-                        </p>
-                    </div>
-                    <div
-                        className="file-action"
-                        onClick={() =>
-                            set_current_operation("remove_duplicates2")
-                        }
-                    >
-                        <p className="file-action-icon-text">
-                            <ion-icon
-                                name="document-outline"
-                                class="file-action-icon"
-                            ></ion-icon>
-                        </p>
-                        <p>
-                            Remove Duplicates <br /> and Return 2 Files
-                        </p>
-                    </div>
-                </div>
-                {current_operation === "search_and_highlight" && (
-                    <div className="operation">
-                        <h3 className="operation-title">
-                            Search and Highlight
-                        </h3>
-                        <p className="operation-text">
-                            For the search and highlight operation our system is
-                            going to look through the uploaded excel file and
-                            check every cell any cell that matches the searched
-                            keyword would be highlighted.
-                        </p>
-                        <p className="operation-text">
-                            <strong>Note:</strong> we would only be considering
-                            the first sheet
-                        </p>
-                        <form>
-                            <div className="form-group">
-                                <label>Search keyword</label>
-                                <input
-                                    type="text"
-                                    name="search_keyword"
-                                    placeholder="Enter value to search for"
-                                    className="form-input"
-                                />
-                            </div>
-                            <div className="form-group">
-                                <button
-                                    type="submit"
-                                    className="operation-action"
-                                >
+                        {current_operation === "search_and_highlight" && (
+                            <div className="operation">
+                                <h3 className="operation-title">
                                     Search and Highlight
-                                </button>
+                                </h3>
+                                <p className="operation-text">
+                                    For the search and highlight operation our
+                                    system is going to look through the uploaded
+                                    excel file and check every cell any cell
+                                    that matches the searched keyword would be
+                                    highlighted.
+                                </p>
+                                <p className="operation-text">
+                                    <strong>Note:</strong> we would only be
+                                    considering the first sheet
+                                </p>
+                                <form>
+                                    <div className="form-group">
+                                        <label>Search keyword</label>
+                                        <input
+                                            type="text"
+                                            name="search_keyword"
+                                            placeholder="Enter value to search for"
+                                            className="form-input"
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <button
+                                            type="submit"
+                                            className="operation-action"
+                                        >
+                                            Search and Highlight
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                )}
-                {current_operation === "search_and_replace" && (
-                    <div className="operation">
-                        <h3 className="operation-title">Search and Replace</h3>
-                        <p className="operation-text">
-                            For the search and relace operation our system is
-                            going to look through the uploaded excel file and
-                            check every cell any cell that matches the searched
-                            keyword would be replaced with the given replace
-                            value.
-                        </p>
-                        <p className="operation-text">
-                            <strong>Note:</strong> we would only be considering
-                            the first sheet
-                        </p>
-                        <form>
-                            <div className="form-group">
-                                <label>Search keyword</label>
-                                <input
-                                    type="text"
-                                    name="search_keyword"
-                                    placeholder="Enter value to search for"
-                                    className="form-input"
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Replace With</label>
-                                <input
-                                    type="text"
-                                    name="replace_with"
-                                    placeholder="Enter value to replace with"
-                                    className="form-input"
-                                />
-                            </div>
-                            <div className="form-group">
-                                <button
-                                    type="submit"
-                                    className="operation-action"
-                                >
+                        )}
+                        {current_operation === "search_and_replace" && (
+                            <div className="operation">
+                                <h3 className="operation-title">
                                     Search and Replace
-                                </button>
+                                </h3>
+                                <p className="operation-text">
+                                    For the search and relace operation our
+                                    system is going to look through the uploaded
+                                    excel file and check every cell any cell
+                                    that matches the searched keyword would be
+                                    replaced with the given replace value.
+                                </p>
+                                <p className="operation-text">
+                                    <strong>Note:</strong> we would only be
+                                    considering the first sheet
+                                </p>
+                                <form>
+                                    <div className="form-group">
+                                        <label>Search keyword</label>
+                                        <input
+                                            type="text"
+                                            name="search_keyword"
+                                            placeholder="Enter value to search for"
+                                            className="form-input"
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Replace With</label>
+                                        <input
+                                            type="text"
+                                            name="replace_with"
+                                            placeholder="Enter value to replace with"
+                                            className="form-input"
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <button
+                                            type="submit"
+                                            className="operation-action"
+                                        >
+                                            Search and Replace
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                )}
-                {current_operation === "highlight_duplicates" && (
-                    <div className="operation">
-                        <h3 className="operation-title">
-                            Highlight Duplicates
-                        </h3>
-                        <p className="operation-text">
-                            For the highlight duplicates operation our system is
-                            going to look through the uploaded excel file and
-                            check every row that contains a duplicate value for
-                            the specified unique columns and highlight them.
-                        </p>
-                        <p className="operation-text">
-                            <strong>Note:</strong> we would only be considering
-                            the first sheet
-                        </p>
-                        <form onSubmit={doHighlightDuplicates}>
-                            <div className="form-group">
-                                <label>Unique Columns</label>
-                                <input
-                                    type="text"
-                                    name="uniqu_columns"
-                                    placeholder="Enter unique columns separated by comma"
-                                    className="form-input"
-                                    value={unique_columns}
-                                    onChange={(e) =>
-                                        set_unique_columns(e.target.value)
-                                    }
-                                />
-                            </div>
-                            <div className="form-group">
-                                <button
-                                    type="submit"
-                                    className="operation-action"
-                                    ref={highlight_duplicates_btn}
-                                >
+                        )}
+                        {current_operation === "highlight_duplicates" && (
+                            <div className="operation">
+                                <h3 className="operation-title">
                                     Highlight Duplicates
-                                </button>
+                                </h3>
+                                <p className="operation-text">
+                                    For the highlight duplicates operation our
+                                    system is going to look through the uploaded
+                                    excel file and check every row that contains
+                                    a duplicate value for the specified unique
+                                    columns and highlight them.
+                                </p>
+                                <p className="operation-text">
+                                    <strong>Note:</strong> we would only be
+                                    considering the first sheet
+                                </p>
+                                <form onSubmit={doHighlightDuplicates}>
+                                    <div className="form-group">
+                                        <label>Unique Columns</label>
+                                        <input
+                                            type="text"
+                                            name="uniqu_columns"
+                                            placeholder="Enter unique columns separated by comma"
+                                            className="form-input"
+                                            value={unique_columns}
+                                            onChange={(e) =>
+                                                set_unique_columns(
+                                                    e.target.value
+                                                )
+                                            }
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <button
+                                            type="submit"
+                                            className="operation-action"
+                                            ref={highlight_duplicates_btn}
+                                        >
+                                            Highlight Duplicates
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                )}
-                {current_operation === "remove_duplicates" && (
-                    <div className="operation">
-                        <h3 className="operation-title">Remove Duplicates</h3>
-                        <p className="operation-text">
-                            For the remove duplicates operation our system is
-                            going to look through the uploaded excel file and
-                            check every row that contains a duplicate value for
-                            the specified unique columns and remove them.
-                        </p>
-                        <p className="operation-text">
-                            <strong>Note:</strong> we would only be considering
-                            the first sheet
-                        </p>
-                        <form onSubmit={doRemoveDuplicates}>
-                            <div className="form-group">
-                                <label>Unique Columns</label>
-                                <input
-                                    type="text"
-                                    name="uniqu_columns"
-                                    placeholder="Enter unique columns separated by comma"
-                                    className="form-input"
-                                    value={unique_columns}
-                                    onChange={(e) =>
-                                        set_unique_columns(e.target.value)
-                                    }
-                                />
-                            </div>
-                            <div className="form-group">
-                                <button
-                                    type="submit"
-                                    className="operation-action"
-                                    ref={remove_duplicates_btn}
-                                >
+                        )}
+                        {current_operation === "remove_duplicates" && (
+                            <div className="operation">
+                                <h3 className="operation-title">
                                     Remove Duplicates
-                                </button>
+                                </h3>
+                                <p className="operation-text">
+                                    For the remove duplicates operation our
+                                    system is going to look through the uploaded
+                                    excel file and check every row that contains
+                                    a duplicate value for the specified unique
+                                    columns and remove them.
+                                </p>
+                                <p className="operation-text">
+                                    <strong>Note:</strong> we would only be
+                                    considering the first sheet
+                                </p>
+                                <form onSubmit={doRemoveDuplicates}>
+                                    <div className="form-group">
+                                        <label>Unique Columns</label>
+                                        <input
+                                            type="text"
+                                            name="uniqu_columns"
+                                            placeholder="Enter unique columns separated by comma"
+                                            className="form-input"
+                                            value={unique_columns}
+                                            onChange={(e) =>
+                                                set_unique_columns(
+                                                    e.target.value
+                                                )
+                                            }
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <button
+                                            type="submit"
+                                            className="operation-action"
+                                            ref={remove_duplicates_btn}
+                                        >
+                                            Remove Duplicates
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                )}
-                {current_operation === "highlight_duplicates2" && (
-                    <div className="operation">
-                        <h3 className="operation-title">
-                            Highlight Duplicates and Return 2 files
-                        </h3>
-                        <p className="operation-text">
-                            For the highlight duplicates operation our system is
-                            going to look through the uploaded excel file and
-                            check every row that contains a duplicate value for
-                            the specified unique columns and highlight them and
-                            also generate an analysis of duplicated data.
-                        </p>
-                        <p className="operation-text">
-                            <strong>Note:</strong> we would only be considering
-                            the first sheet
-                        </p>
-                        <form onSubmit={doHighlightDuplicates2}>
-                            <div className="form-group">
-                                <label>Unique Columns</label>
-                                <input
-                                    type="text"
-                                    name="unique_columns"
-                                    placeholder="Enter unique columns separated by comma"
-                                    className="form-input"
-                                    value={unique_columns}
-                                    onChange={(e) =>
-                                        set_unique_columns(e.target.value)
-                                    }
-                                />
+                        )}
+                        {current_operation === "highlight_duplicates2" && (
+                            <div className="operation">
+                                <h3 className="operation-title">
+                                    Highlight Duplicates and Return 2 files
+                                </h3>
+                                <p className="operation-text">
+                                    For the highlight duplicates operation our
+                                    system is going to look through the uploaded
+                                    excel file and check every row that contains
+                                    a duplicate value for the specified unique
+                                    columns and highlight them and also generate
+                                    an analysis of duplicated data.
+                                </p>
+                                <p className="operation-text">
+                                    <strong>Note:</strong> we would only be
+                                    considering the first sheet
+                                </p>
+                                <form onSubmit={doHighlightDuplicates2}>
+                                    <div className="form-group">
+                                        <label>Unique Columns</label>
+                                        <input
+                                            type="text"
+                                            name="unique_columns"
+                                            placeholder="Enter unique columns separated by comma"
+                                            className="form-input"
+                                            value={unique_columns}
+                                            onChange={(e) =>
+                                                set_unique_columns(
+                                                    e.target.value
+                                                )
+                                            }
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <button
+                                            type="submit"
+                                            className="operation-action"
+                                            ref={highlight_duplicates2_btn}
+                                        >
+                                            Highlight Duplicates and Return 2
+                                            Files
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                            <div className="form-group">
-                                <button
-                                    type="submit"
-                                    className="operation-action"
-                                    ref={highlight_duplicates2_btn}
-                                >
-                                    Highlight Duplicates and Return 2 Files
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                )}
-                {current_operation === "remove_duplicates2" && (
-                    <div className="operation">
-                        <h3 className="operation-title">
-                            Remove Duplicates and Return 2 Files
-                        </h3>
-                        <p className="operation-text">
-                            For the remove duplicates operation our system is
-                            going to look through the uploaded excel file and
-                            check every row that contains a duplicate value for
-                            the specified unique columns and remove them and
-                            also return an excel sheet containing the removed
-                            rows.
-                        </p>
-                        <p className="operation-text">
-                            <strong>Note:</strong> we would only be considering
-                            the first sheet
-                        </p>
-                        <form onSubmit={doRemoveDuplicates2}>
-                            <div className="form-group">
-                                <label>Unique Columns</label>
-                                <input
-                                    type="text"
-                                    name="uniqu_columns"
-                                    placeholder="Enter unique columns separated by comma"
-                                    className="form-input"
-                                    value={unique_columns}
-                                    onChange={(e) =>
-                                        set_unique_columns(e.target.value)
-                                    }
-                                />
-                            </div>
-                            <div className="form-group">
-                                <button
-                                    type="submit"
-                                    className="operation-action"
-                                    ref={remove_duplicates2_btn}
-                                >
+                        )}
+                        {current_operation === "remove_duplicates2" && (
+                            <div className="operation">
+                                <h3 className="operation-title">
                                     Remove Duplicates and Return 2 Files
-                                </button>
+                                </h3>
+                                <p className="operation-text">
+                                    For the remove duplicates operation our
+                                    system is going to look through the uploaded
+                                    excel file and check every row that contains
+                                    a duplicate value for the specified unique
+                                    columns and remove them and also return an
+                                    excel sheet containing the removed rows.
+                                </p>
+                                <p className="operation-text">
+                                    <strong>Note:</strong> we would only be
+                                    considering the first sheet
+                                </p>
+                                <form onSubmit={doRemoveDuplicates2}>
+                                    <div className="form-group">
+                                        <label>Unique Columns</label>
+                                        <input
+                                            type="text"
+                                            name="uniqu_columns"
+                                            placeholder="Enter unique columns separated by comma"
+                                            className="form-input"
+                                            value={unique_columns}
+                                            onChange={(e) =>
+                                                set_unique_columns(
+                                                    e.target.value
+                                                )
+                                            }
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <button
+                                            type="submit"
+                                            className="operation-action"
+                                            ref={remove_duplicates2_btn}
+                                        >
+                                            Remove Duplicates and Return 2 Files
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                )}
-            </section>
+                        )}
+                    </section>
+                </div>
+            </main>
         </>
     );
 };

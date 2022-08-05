@@ -8,6 +8,9 @@ import $ from "jquery";
 
 import { user_actions } from "../store";
 
+import DashboardSidebar from "../components/DashboardSidebar";
+import DashboardHeader from "../components/DashboardHeader";
+
 const AddNewFile = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -120,44 +123,61 @@ const AddNewFile = () => {
                 </div>
                 <div className="modal-body">{upload_message}</div>
             </div>
-            <section className="main-content">
-                <div
-                    className="upload-file-box"
-                    onClick={handleUploadBoxClick}
-                    ref={upload_box_ref}
-                >
-                    <div className="upload-icon-box">
-                        <ion-icon
-                            name="cloud-upload-outline"
-                            class="upload-icon"
-                        ></ion-icon>
-                    </div>
-                    <div className="upload-info1">
-                        Drag and Drop your file here
-                    </div>
-                    <div className="upload-info1">Or</div>
-                    <div className="upload-info2">
-                        Click to browse your files
-                    </div>
-                    <div className="upload-info">
-                        <ion-icon
-                            name="document-text-outline"
-                            class="upload-file-icon"
-                        ></ion-icon>
-                        <ion-icon
-                            name="documents-outline"
-                            class="upload-file-icon"
-                        ></ion-icon>
-                        <p>You can upload CSV or Excel Files</p>
-                    </div>
+            <main className="dashboard-container">
+                <DashboardSidebar />
+                <div className="dashbard-content">
+                    <DashboardHeader />
+                    <section className="dashboard-main">
+                        <div className="dashboard-breadcrumb">
+                            <div className="dashboard-breadcrumb-left">
+                                <h3 className="dashboard-breadcrumb-title">
+                                    Add New File
+                                </h3>
+                                <p className="dashboard-breadcrumb-text">
+                                    Upload a file to perform operation on
+                                </p>
+                            </div>
+                            <div className="dashboard-breadcrumb-right"></div>
+                        </div>
+                        <div
+                            className="upload-file-box"
+                            onClick={handleUploadBoxClick}
+                            ref={upload_box_ref}
+                        >
+                            <div className="upload-icon-box">
+                                <ion-icon
+                                    name="cloud-upload-outline"
+                                    class="upload-icon"
+                                ></ion-icon>
+                            </div>
+                            <div className="upload-info1">
+                                Drag and Drop your file here
+                            </div>
+                            <div className="upload-info1">Or</div>
+                            <div className="upload-info2">
+                                Click to browse your files
+                            </div>
+                            <div className="upload-info">
+                                <ion-icon
+                                    name="document-text-outline"
+                                    class="upload-file-icon"
+                                ></ion-icon>
+                                <ion-icon
+                                    name="documents-outline"
+                                    class="upload-file-icon"
+                                ></ion-icon>
+                                <p>You can upload CSV or Excel Files</p>
+                            </div>
+                        </div>
+                        {upload_progress && (
+                            <div className="upload-progress">
+                                <span className="fas fa-spinner fa-spin"></span>{" "}
+                                Uploading...
+                            </div>
+                        )}
+                    </section>
                 </div>
-                {upload_progress && (
-                    <div className="upload-progress">
-                        <span className="fas fa-spinner fa-spin"></span>{" "}
-                        Uploading...
-                    </div>
-                )}
-            </section>
+            </main>
         </>
     );
 };
