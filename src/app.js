@@ -7,12 +7,27 @@ import Preloader from "./components/Preloader";
 import Auth from "./components/Auth";
 
 const Home = lazy(() => import("./pages/Home"));
+const ContactUs = lazy(() => import("./pages/ContactUs"));
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const AddNewFile = lazy(() => import("./pages/AddNewFile"));
 const NewOperation = lazy(() => import("./pages/NewOperation"));
 const PreviewFile = lazy(() => import("./pages/PreviewFile"));
+
+const DiffChecker = lazy(() => import("./pages/operations/DiffChecker"));
+const HighlightDuplicates2 = lazy(() =>
+    import("./pages/operations/HighlightDuplicates2")
+);
+const RemoveDuplicates2 = lazy(() =>
+    import("./pages/operations/RemoveDuplicates2")
+);
+const HighlightDuplicates = lazy(() =>
+    import("./pages/operations/HighlightDuplicates")
+);
+const RemoveDuplicates = lazy(() =>
+    import("./pages/operations/RemoveDuplicates")
+);
 
 const App = () => {
     return (
@@ -23,6 +38,14 @@ const App = () => {
                     element={
                         <Suspense fallback={<Preloader />}>
                             <Home />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/contact_us"
+                    element={
+                        <Suspense fallback={<Preloader />}>
+                            <ContactUs />
                         </Suspense>
                     }
                 />
@@ -78,6 +101,56 @@ const App = () => {
                         <Auth>
                             <Suspense fallback={<Preloader />}>
                                 <PreviewFile />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/diff_checker/:operation_id"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <DiffChecker />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/highlight_duplicates2/:operation_id"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <HighlightDuplicates2 />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/remove_duplicates2/:operation_id"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <RemoveDuplicates2 />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/highlight_duplicates/:operation_id"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <HighlightDuplicates />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/remove_duplicates/:operation_id"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <RemoveDuplicates />
                             </Suspense>
                         </Auth>
                     }
