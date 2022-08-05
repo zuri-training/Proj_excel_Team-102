@@ -150,7 +150,7 @@ flex-grow: 0;
 
 
 .menuframe ul li :hover{
-    color: #321581;
+    color: #ad9ed3;
     transition: 0.4s ease-in-out
 }
 
@@ -168,9 +168,6 @@ color: #0E0E0E;
 
 }
 
-.menuframe ul li a :hover{
-    color: #B0B0B0;
-}
 
 .sig{
     display: flex;
@@ -367,7 +364,7 @@ flex-grow: 0;
     width: 610px;
     height: 72px;
     left: 0px;
-    top: 332.5px;
+    top: 400px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -395,7 +392,7 @@ flex-grow: 0;
     width: 162px;
     height: 40px;
     left: 0px;
-    top: 460.5px;
+    top: 550px;
     
     /* Blue/60 */
     
@@ -726,7 +723,7 @@ flex-grow: 0;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 36px;
+    font-size: 28px;
     line-height: 64px;
     position: relative;
     /* identical to box height, or 178% */
@@ -1055,6 +1052,15 @@ flex-grow: 0;
 
 }
 
+.testimonial{
+    position: absolute;
+    width: 97px;
+    height: 36px;
+    left: 1161px;
+    top: 318px;
+
+}
+
 .subframe8{
     display: flex;
     flex-direction: column;
@@ -1341,6 +1347,12 @@ background: #C2AEFB;
   
 }
 
+.subframe11 ul :hover{
+    color: #8f7fbd;;
+    transition: 0.4s ease-in-out
+    
+}
+
 .subframe11 ul li a{
     font-family: 'Inter';
     font-style: normal;
@@ -1357,7 +1369,7 @@ background: #C2AEFB;
 
 .subframe12{
     height: 130px;
-    width: 126px;
+    width: 160px;
     left: 434px;
     top: 0px;
     border-radius: 0px;
@@ -1403,6 +1415,12 @@ background: #C2AEFB;
     flex: none;
     order: 2;
     flex-grow: 0;
+}
+
+.subframe1 ul :hover{
+    color: #8f7fbd;;
+    transition: 0.4s ease-in-out
+    
 }
 
 
