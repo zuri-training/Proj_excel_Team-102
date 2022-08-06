@@ -1,6 +1,8 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const load_app_state = () => {
+    const type = "development";
+
     const app_state = localStorage.getItem("app_state");
 
     if (app_state) {
@@ -8,7 +10,16 @@ const load_app_state = () => {
     } else {
         const initial_state = {
             app_data: {
-                api_base_url: "http://localhost:8000/api/v1",
+                api_base_url: `${
+                    type === "development"
+                        ? "http://localhost:8000/ap/v1"
+                        : window.location.origin + "/api/v1"
+                }/v1`,
+                root_url: `${
+                    type === "development"
+                        ? "http://localhost:3000/#"
+                        : window.location.origin + "/#"
+                }/v1`,
             },
             user: {
                 logged_in: false,

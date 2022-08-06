@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 import DashboardSidebar from "../components/DashboardSidebar";
 import DashboardHeader from "../components/DashboardHeader";
 
@@ -9,6 +11,8 @@ import operation3_img from "../assets/img/operation-3.png";
 import operation4_img from "../assets/img/operation-4.png";
 
 const Dashboard = () => {
+    const root_url = useSelector((state) => state.app_data.root_url);
+
     return (
         <>
             <main className="dashboard-container">
@@ -72,7 +76,9 @@ const Dashboard = () => {
                             <h3 className="recent-files-title">Recent Files</h3>
                             <div className="recent-files-container">
                                 <div className="recent-file">
-                                    <iframe src="http://localhost:3000/#/preview_file/1"></iframe>
+                                    <iframe
+                                        src={`${root_url}/preview_file/1`}
+                                    ></iframe>
                                     <div>
                                         <h4 className="recent-file-name">
                                             students.xlsx

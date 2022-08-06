@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 
 import $ from "jquery";
 
-import { user_actions } from "../store";
-
 const PreviewFile = () => {
     const { file_id } = useParams();
 
@@ -27,13 +25,12 @@ const PreviewFile = () => {
                 Authorization: `Bearer ${access_token}`,
             },
             success: function (data) {
-                console.log(data.file.file_content);
                 set_file_info(data.file.file_content);
                 set_loading(false);
             },
             statusCode: {
                 401: function () {
-                    dispatch(user_actions.logout());
+                    set_loading(false);
                 },
                 404: function () {
                     set_loading(false);
