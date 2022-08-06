@@ -55,7 +55,7 @@ body {
     background-color: #fff;
     border-radius: 1rem;
     font-size: 1.6rem;
-    box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
     z-index: 999;
 
     pointer-events: none;
@@ -111,7 +111,7 @@ body {
     display: inline-block;
     padding: 1.2rem 2.4rem;
     border: none;
-    background-color: #777;
+    background-color: #180451;
     color: #fff;
     font-weight: 600;
     font-family: inherit;
@@ -349,7 +349,7 @@ body {
     display: inline-block;
     padding: 0.6rem 1.2rem;
     border: none;
-    background-color: #777;
+    background-color: #180451;
     color: #fff;
     font-family: inherit;
     font-size: 1.2rem;
@@ -865,12 +865,16 @@ body {
 .dashboard-container {
     display: grid;
     grid-template-columns: 15fr 85fr;
+
+    overflow: hidden;
 }
 
 .dashboard-sidenav {
+    /* width: 15%; */
     height: 100vh;
     background-color: #845cf7;
 
+    /* position: fixed; */
     position: relative;
 }
 
@@ -936,18 +940,27 @@ body {
 }
 
 .dashboard-content {
+    padding-top: 5.2rem;
+
     height: 100vh;
     overflow: scroll;
+
+    /* grid-column: 2; */
+    position: relative;
 }
 
 .dashboard-header {
     padding: 1.2rem 2.4rem;
-
     background-color: #eee;
 
     display: flex;
     align-items: center;
     justify-content: right;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
 }
 
 .dashboard-user {
@@ -1003,4 +1016,71 @@ body {
     border-radius: 0.8rem;
     font-size: 1.6rem;
     margin-top: 1.2rem;
+}
+
+.dashboard-overview {
+    margin-bottom: 4.8rem;
+}
+
+.dashboard-overview-title {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.dashboard-overview-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4.8rem;
+    row-gap: 2.4rem;
+}
+
+.dashboard-overview-instance {
+    padding: 3.2rem;
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.dashboard-overview-instance p {
+    flex: 1;
+    font-size: 1.6rem;
+}
+
+.recent-files-title {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.recent-files-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 4.8rem;
+}
+
+.recent-file {
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.recent-file iframe {
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.recent-file div {
+    padding: 1.2rem 2.4rem;
+}
+
+.recent-file-name {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.recent-file-date {
+    font-size: 1.6rem;
 }

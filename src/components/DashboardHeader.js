@@ -13,10 +13,10 @@ const DashboardHeader = () => {
                     <p className="dashboard-user-name">
                         {`${user_info.first_name} ${user_info.last_name}`}
                     </p>
-                    <ion-icon
+                    {/* <ion-icon
                         name="chevron-down-outline"
                         class="caret"
-                    ></ion-icon>
+                    ></ion-icon> */}
                 </div>
             </header>
         </>

@@ -8,6 +8,9 @@ import $ from "jquery";
 
 import { user_actions } from "../../store";
 
+import DashboardSidebar from "../../components/DashboardSidebar";
+import DashboardHeader from "../../components/DashboardHeader";
+
 const RemoveDuplicates = () => {
     const { operation_id } = useParams();
 
@@ -56,134 +59,164 @@ const RemoveDuplicates = () => {
 
     return (
         <>
-            <section className="main-content">
-                <div className="files-preview mb-3">
-                    <div className="file">
-                        <div className="file-header">
-                            <h3 className="file-name">
-                                {operation_info.file_details.file_name}
-                            </h3>
-                            <div className="file-action-btns">
-                                <button className="change-file-btn">
-                                    Rename
-                                </button>
-                                <button className="change-file-btn">
-                                    Download
-                                </button>
+            <main className="dashboard-container">
+                <DashboardSidebar />
+                <div className="dashboard-content">
+                    <DashboardHeader />
+                    <section className="dashboard-main">
+                        <div className="dashboard-breadcrumb">
+                            <div className="dashboard-breadcrumb-left">
+                                <h3 className="dashboard-breadcrumb-title">
+                                    Remove Duplicates
+                                </h3>
+                                <p className="dashboard-breadcrumb-text">
+                                    A remove duplicates operation performed by
+                                    you
+                                </p>
                             </div>
+                            <div className="dashboard-breadcrumb-right"></div>
                         </div>
-                        <div className="file-preview-box">
-                            <table className="file-table">
-                                <thead>
-                                    <tr>
-                                        {operation_info.file_details.file_content[0].map(
-                                            (cell, i) => {
-                                                return (
-                                                    <th
-                                                        key={i}
-                                                        style={{
-                                                            backgroundColor: `#${cell.background}`,
-                                                        }}
-                                                    >
-                                                        {cell.value}
-                                                    </th>
-                                                );
-                                            }
-                                        )}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {operation_info.file_details.file_content
-                                        .slice(1)
-                                        .map((row, i) => {
-                                            return (
-                                                <tr key={i}>
-                                                    {row.map((cell, j) => {
+                        <div className="files-preview mb-3">
+                            <div className="file">
+                                <div className="file-header">
+                                    <h3 className="file-name">
+                                        {operation_info.file_details.file_name}
+                                    </h3>
+                                    <div className="file-action-btns">
+                                        <button className="change-file-btn">
+                                            Rename
+                                        </button>
+                                        <button className="change-file-btn">
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="file-preview-box">
+                                    <table className="file-table">
+                                        <thead>
+                                            <tr>
+                                                {operation_info.file_details.file_content[0].map(
+                                                    (cell, i) => {
                                                         return (
-                                                            <td
-                                                                key={j}
+                                                            <th
+                                                                key={i}
                                                                 style={{
                                                                     backgroundColor: `#${cell.background}`,
                                                                 }}
                                                             >
                                                                 {cell.value}
-                                                            </td>
+                                                            </th>
                                                         );
-                                                    })}
-                                                </tr>
-                                            );
-                                        })}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div className="files-preview">
-                    <div className="file">
-                        <div className="file-header">
-                            <h3 className="file-name">
-                                {
-                                    operation_info
-                                        .without_duplicates_file_details
-                                        .file_name
-                                }
-                            </h3>
-                            <div className="file-action-btns">
-                                <button className="change-file-btn">
-                                    Rename
-                                </button>
-                                <button className="change-file-btn">
-                                    Download
-                                </button>
+                                                    }
+                                                )}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {operation_info.file_details.file_content
+                                                .slice(1)
+                                                .map((row, i) => {
+                                                    return (
+                                                        <tr key={i}>
+                                                            {row.map(
+                                                                (cell, j) => {
+                                                                    return (
+                                                                        <td
+                                                                            key={
+                                                                                j
+                                                                            }
+                                                                            style={{
+                                                                                backgroundColor: `#${cell.background}`,
+                                                                            }}
+                                                                        >
+                                                                            {
+                                                                                cell.value
+                                                                            }
+                                                                        </td>
+                                                                    );
+                                                                }
+                                                            )}
+                                                        </tr>
+                                                    );
+                                                })}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <div className="file-preview-box">
-                            <table className="file-table">
-                                <thead>
-                                    <tr>
-                                        {operation_info.without_duplicates_file_details.file_content[0].map(
-                                            (cell, i) => {
-                                                return (
-                                                    <th
-                                                        key={i}
-                                                        style={{
-                                                            backgroundColor: `#${cell.background}`,
-                                                        }}
-                                                    >
-                                                        {cell.value}
-                                                    </th>
-                                                );
-                                            }
-                                        )}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {operation_info.without_duplicates_file_details.file_content
-                                        .slice(1)
-                                        .map((row, i) => {
-                                            return (
-                                                <tr key={i}>
-                                                    {row.map((cell, j) => {
+                        <div className="files-preview">
+                            <div className="file">
+                                <div className="file-header">
+                                    <h3 className="file-name">
+                                        {
+                                            operation_info
+                                                .without_duplicates_file_details
+                                                .file_name
+                                        }
+                                    </h3>
+                                    <div className="file-action-btns">
+                                        <button className="change-file-btn">
+                                            Rename
+                                        </button>
+                                        <button className="change-file-btn">
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="file-preview-box">
+                                    <table className="file-table">
+                                        <thead>
+                                            <tr>
+                                                {operation_info.without_duplicates_file_details.file_content[0].map(
+                                                    (cell, i) => {
                                                         return (
-                                                            <td
-                                                                key={j}
+                                                            <th
+                                                                key={i}
                                                                 style={{
                                                                     backgroundColor: `#${cell.background}`,
                                                                 }}
                                                             >
                                                                 {cell.value}
-                                                            </td>
+                                                            </th>
                                                         );
-                                                    })}
-                                                </tr>
-                                            );
-                                        })}
-                                </tbody>
-                            </table>
+                                                    }
+                                                )}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {operation_info.without_duplicates_file_details.file_content
+                                                .slice(1)
+                                                .map((row, i) => {
+                                                    return (
+                                                        <tr key={i}>
+                                                            {row.map(
+                                                                (cell, j) => {
+                                                                    return (
+                                                                        <td
+                                                                            key={
+                                                                                j
+                                                                            }
+                                                                            style={{
+                                                                                backgroundColor: `#${cell.background}`,
+                                                                            }}
+                                                                        >
+                                                                            {
+                                                                                cell.value
+                                                                            }
+                                                                        </td>
+                                                                    );
+                                                                }
+                                                            )}
+                                                        </tr>
+                                                    );
+                                                })}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </section>
+            </main>
         </>
     );
 };

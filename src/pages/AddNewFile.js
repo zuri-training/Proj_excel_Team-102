@@ -125,7 +125,7 @@ const AddNewFile = () => {
             </div>
             <main className="dashboard-container">
                 <DashboardSidebar />
-                <div className="dashbard-content">
+                <div className="dashboard-content">
                     <DashboardHeader />
                     <section className="dashboard-main">
                         <div className="dashboard-breadcrumb">
