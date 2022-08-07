@@ -107,6 +107,24 @@ body {
     text-align: center;
 }
 
+.modal-label {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.modal-input {
+    width: 100%;
+    border-radius: 0.8rem;
+    border: 1px solid #24067a;
+    margin-bottom: 2.4rem;
+    outline: none;
+    font-size: 1.6rem;
+    padding: 1.2rem;
+    font-family: inherit;
+}
+
 .modal-btn {
     display: inline-block;
     padding: 1.2rem 2.4rem;
@@ -181,26 +199,27 @@ body {
 .auth-subtitle a:link,
 .auth-subtitle a:visited {
     text-decoration: none;
-    color: #393939;
+    color: #24067a;
     font-weight: 600;
 }
 
 .auth-form {
     display: block;
-    width: 80%;
+    width: 70%;
     margin: 2.4rem auto 5.2rem;
 }
 
 .auth-label {
+    display: inline-block;
     font-size: 1.6rem;
     font-weight: 600;
+    margin-bottom: 1.2rem;
 }
 
 .auth-input {
     width: 100%;
     border-radius: 0.8rem;
-    border: 1px solid #606060;
-    background-color: #cfcfcf;
+    border: 1px solid #24067a;
     margin-bottom: 2.4rem;
     outline: none;
     font-size: 1.6rem;
@@ -211,8 +230,9 @@ body {
 .auth-btn {
     border-radius: 0.8rem;
     padding: 1.2rem 0;
+    text-transform: uppercase;
     width: 100%;
-    background-color: #3e3e3e;
+    background-color: #24067a;
     color: #ffff;
     font-size: 1.6rem;
     border: none;
@@ -295,7 +315,7 @@ body {
 
 /* File Table */
 .file-table {
-    border: 1px solid #777;
+    border: 1px solid #ddd;
     width: 100%;
     font-size: 1.2rem;
     border-collapse: collapse;
@@ -304,11 +324,28 @@ body {
 .file-table tr,
 .file-table th,
 .file-table td {
-    border: 1px solid #777;
+    border: 1px solid #ddd;
 }
 
 .file-table th,
 .file-table td {
+    padding: 1rem;
+}
+
+.preview-file-table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    border-radius: 0.8rem;
+}
+
+.preview-file-table tr,
+.preview-file-table th,
+.preview-file-table td {
+    border: 1px solid #ddd;
+}
+
+.preview-file-table th,
+.preview-file-table td {
     padding: 1rem;
 }
 
@@ -350,6 +387,7 @@ body {
     padding: 0.6rem 1.2rem;
     border: none;
     background-color: #180451;
+    text-decoration: none;
     color: #fff;
     font-family: inherit;
     font-size: 1.2rem;
@@ -943,7 +981,7 @@ body {
     padding-top: 5.2rem;
 
     height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
 
     /* grid-column: 2; */
     position: relative;
@@ -1056,7 +1094,7 @@ body {
 
 .recent-files-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 4.8rem;
 }
 
@@ -1070,10 +1108,13 @@ body {
 .recent-file iframe {
     border: none;
     border-bottom: 1px solid #ddd;
+
+    width: 100%;
+    height: 25rem;
 }
 
 .recent-file div {
-    padding: 1.2rem 2.4rem;
+    padding: 1.6rem 2.4rem;
 }
 
 .recent-file-name {

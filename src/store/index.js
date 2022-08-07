@@ -12,14 +12,19 @@ const load_app_state = () => {
             app_data: {
                 api_base_url: `${
                     type === "development"
-                        ? "http://localhost:8000/ap/v1"
+                        ? "http://localhost:8000/api/v1"
                         : window.location.origin + "/api/v1"
-                }/v1`,
+                }`,
+                base_url: `${
+                    type === "development"
+                        ? "http://localhost:8000/"
+                        : window.location.origin + "/"
+                }`,
                 root_url: `${
                     type === "development"
                         ? "http://localhost:3000/#"
                         : window.location.origin + "/#"
-                }/v1`,
+                }`,
             },
             user: {
                 logged_in: false,

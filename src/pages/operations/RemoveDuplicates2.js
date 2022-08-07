@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { useParams } from "react-router-dom";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import $ from "jquery";
 
@@ -19,8 +19,55 @@ const RemoveDuplicates2 = () => {
     const api_base_url = useSelector((state) => state.app_data.api_base_url);
     const access_token = useSelector((state) => state.user.access_token);
 
+    const base_url = useSelector((state) => state.app_data.base_url);
+    const user_id = useSelector((state) => state.user.user_info.id);
+
     const [loading, set_loading] = useState(true);
     const [operation_info, set_operation_info] = useState("");
+
+    const rn_btn = useRef();
+
+    const [rn_modal_open, set_rn_modal_open] = useState(false);
+    const [rn_file_id, set_rn_file_id] = useState(null);
+    const [new_filename, set_new_filename] = useState("");
+    const [rename_server_response, set_rename_server_response] = useState("");
+
+    const doRenameFile = (e) => {
+        e.preventDefault();
+
+        rn_btn.current.innerHTML = `<span className="fas fa-spinner fa-spin"></span> Renaming file`;
+
+        $.ajax({
+            type: "PATCH",
+            url: `${api_base_url}/files/${rn_file_id}?new_filename=${new_filename}`,
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+            },
+            success: function () {
+                window.location.reload();
+            },
+            statusCode: {
+                406: function ({ responseJSON: response }) {
+                    set_rename_server_response(response.message);
+                    rn_btn.current.innerHTML = "Rename";
+                },
+            },
+        });
+
+        e.stopPropagation();
+    };
+
+    const renameFile = (file_id, filename) => {
+        set_rn_file_id(file_id);
+        set_new_filename(filename);
+        set_rn_modal_open(true);
+    };
+
+    const closeRenameFile = () => {
+        set_rn_modal_open(false);
+        set_rn_file_id(null);
+        set_new_filename("");
+    };
 
     useEffect(() => {
         $.ajax({
@@ -59,6 +106,40 @@ const RemoveDuplicates2 = () => {
 
     return (
         <>
+            {rn_modal_open && (
+                <div className={`modal modal-open`}>
+                    <div className="modal-header">
+                        Rename File{" "}
+                        <span onClick={closeRenameFile}>&times;</span>
+                    </div>
+                    <form onSubmit={doRenameFile}>
+                        <div
+                            className="modal-body"
+                            style={{ textAlign: "left" }}
+                        >
+                            <label className="modal-label">New name</label>
+                            <input
+                                type="text"
+                                className="modal-input"
+                                placeholder="Enter new file name"
+                                value={new_filename}
+                                onChange={(e) =>
+                                    set_new_filename(e.target.value)
+                                }
+                            />
+                        </div>
+                        <div
+                            className="modal-footer"
+                            style={{ textAlign: "right" }}
+                        >
+                            {rename_server_response}&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button className="modal-btn" ref={rn_btn}>
+                                Rename
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            )}
             <main className="dashboard-container">
                 <DashboardSidebar />
                 <div className="dashboard-content">
@@ -83,12 +164,26 @@ const RemoveDuplicates2 = () => {
                                         {operation_info.file_details.file_name}
                                     </h3>
                                     <div className="file-action-btns">
-                                        <button className="change-file-btn">
+                                        <button
+                                            className="change-file-btn"
+                                            onClick={() =>
+                                                renameFile(
+                                                    operation_info.file_details
+                                                        .id,
+                                                    operation_info.file_details
+                                                        .file_name
+                                                )
+                                            }
+                                        >
                                             Rename
                                         </button>
-                                        <button className="change-file-btn">
+                                        <a
+                                            href={`${base_url}dc/${user_id}/${operation_info.file_details.file_name}`}
+                                            target="_new"
+                                            className="change-file-btn"
+                                        >
                                             Download
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="file-preview-box">
@@ -154,12 +249,28 @@ const RemoveDuplicates2 = () => {
                                         }
                                     </h3>
                                     <div className="file-action-btns">
-                                        <button className="change-file-btn">
+                                        <button
+                                            className="change-file-btn"
+                                            onClick={() =>
+                                                renameFile(
+                                                    operation_info
+                                                        .without_duplicates_file_details
+                                                        .id,
+                                                    operation_info
+                                                        .without_duplicates_file_details
+                                                        .file_name
+                                                )
+                                            }
+                                        >
                                             Rename
                                         </button>
-                                        <button className="change-file-btn">
+                                        <a
+                                            href={`${base_url}dc/${user_id}/${operation_info.without_duplicates_file_details.file_name}`}
+                                            target="_new"
+                                            className="change-file-btn"
+                                        >
                                             Download
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="file-preview-box">
@@ -223,12 +334,28 @@ const RemoveDuplicates2 = () => {
                                         }
                                     </h3>
                                     <div className="file-action-btns">
-                                        <button className="change-file-btn">
+                                        <button
+                                            className="change-file-btn"
+                                            onClick={() =>
+                                                renameFile(
+                                                    operation_info
+                                                        .duplicates_file_details
+                                                        .id,
+                                                    operation_info
+                                                        .duplicates_file_details
+                                                        .file_name
+                                                )
+                                            }
+                                        >
                                             Rename
                                         </button>
-                                        <button className="change-file-btn">
+                                        <a
+                                            href={`${base_url}dc/${user_id}/${operation_info.duplicates_file_details.file_name}`}
+                                            target="_new"
+                                            className="change-file-btn"
+                                        >
                                             Download
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="file-preview-box">

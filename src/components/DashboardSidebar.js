@@ -6,7 +6,7 @@ const DashboardSidebar = () => {
     return (
         <>
             <aside className="dashboard-sidenav">
-                <div class="sidenav-logo">
+                <div className="sidenav-logo">
                     <img src={desktop_logo} alt="" />
                 </div>
                 <ul className="dashboard-menu">

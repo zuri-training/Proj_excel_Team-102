@@ -88,6 +88,32 @@ const Dashboard = () => {
                                         </p>
                                     </div>
                                 </div>
+                                <div className="recent-file">
+                                    <iframe
+                                        src={`${root_url}/preview_file/1`}
+                                    ></iframe>
+                                    <div>
+                                        <h4 className="recent-file-name">
+                                            students.xlsx
+                                        </h4>
+                                        <p className="recent-file-date">
+                                            2022-04-04 5:00pm
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="recent-file">
+                                    <iframe
+                                        src={`${root_url}/preview_file/1`}
+                                    ></iframe>
+                                    <div>
+                                        <h4 className="recent-file-name">
+                                            students.xlsx
+                                        </h4>
+                                        <p className="recent-file-date">
+                                            2022-04-04 5:00pm
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>

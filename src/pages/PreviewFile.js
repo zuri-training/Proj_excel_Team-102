@@ -42,38 +42,39 @@ const PreviewFile = () => {
     if (loading) {
         return (
             <div className="preloader">
-                <span className="fas fa-spinner fa-spin"></span> Fetching file
-                contents
+                <span className="fas fa-spinner fa-spin"></span> Fetching
             </div>
         );
     }
 
     if (!file_info) {
-        return <div className="preloader">Error fetching file</div>;
+        return <div className="preloader">Error</div>;
     }
 
     return (
         <>
-            <table className="file-table">
-                <thead>
-                    <tr>
-                        {file_info[0].map((cell, i) => {
-                            return <th key={i}>{cell.value}</th>;
+            <div style={{ width: "100%", height: "100vh", overflow: "hidden" }}>
+                <table className="preview-file-table">
+                    <thead>
+                        <tr>
+                            {file_info[0].map((cell, i) => {
+                                return <th key={i}>{cell.value}</th>;
+                            })}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {file_info.slice(1).map((row, i) => {
+                            return (
+                                <tr key={i}>
+                                    {row.map((cell, j) => {
+                                        return <td key={j}>{cell.value}</td>;
+                                    })}
+                                </tr>
+                            );
                         })}
-                    </tr>
-                </thead>
-                <tbody>
-                    {file_info.slice(1).map((row, i) => {
-                        return (
-                            <tr key={i}>
-                                {row.map((cell, j) => {
-                                    return <td key={j}>{cell.value}</td>;
-                                })}
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 };
