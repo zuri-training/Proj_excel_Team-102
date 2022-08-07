@@ -178,8 +178,31 @@ const Home = () => {
                     <video className="video" controls></video>
                 </div>
             </section>
+            <section className="testimonial-section">
+                <div className="testimonial-container">
+                    <div className="testimonial">
+                        <h3 className="testimonial-title">
+                            &quot;I can't express how happy I am using
+                            Comparely&quot;
+                        </h3>
+                        <p className="testimonial-text">
+                            I can’t express how happy I am using Comparely.
+                            Comparely has made comparing Excel files really easy
+                            for me.. I will always recommend Comparely in years
+                            to come.
+                        </p>
+                        <div className="testimonial-footer">
+                            <ion-icon
+                                name="person-outline"
+                                class="testimonial-footer-icon"
+                            ></ion-icon>
+                            <p className="testimonial-person">Bob Reyes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="newsletter-section">
-                <div className="container newsletter-container">
+                <div className="newsletter-container">
                     <h3 className="newsletter-title">
                         Subscribe for our updates
                     </h3>

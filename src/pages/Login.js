@@ -1,5 +1,3 @@
-import placeholder_img from "../assets/img/Frame-6@2x.png";
-
 import { Link, useNavigate } from "react-router-dom";
 
 import { useState, useRef } from "react";
@@ -61,9 +59,7 @@ const Login = () => {
     return (
         <main>
             <div className="auth-container">
-                <div className="auth-left">
-                    <img src={placeholder_img} alt="" />
-                </div>
+                <div className="auth-left auth-left--login"></div>
                 <div className="auth-right">
                     <div className="auth-content">
                         <h3 className="auth-title">

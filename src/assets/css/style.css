@@ -117,7 +117,7 @@ body {
 .modal-input {
     width: 100%;
     border-radius: 0.8rem;
-    border: 1px solid #24067a;
+    border: 1px solid #180451;
     margin-bottom: 2.4rem;
     outline: none;
     font-size: 1.6rem;
@@ -129,7 +129,7 @@ body {
     display: inline-block;
     padding: 1.2rem 2.4rem;
     border: none;
-    background-color: #180451;
+    background-color: #2f07a2;
     color: #fff;
     font-weight: 600;
     font-family: inherit;
@@ -157,9 +157,17 @@ body {
 }
 
 .auth-left {
-    background-color: #939292;
     height: 100vh;
-    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.auth-left--login {
+    background-image: url("../img/login.jpeg");
+}
+
+.auth-left--signup {
+    background-image: url("../img/signup.jpeg");
 }
 
 .auth-left img {
@@ -386,7 +394,7 @@ body {
     display: inline-block;
     padding: 0.6rem 1.2rem;
     border: none;
-    background-color: #180451;
+    background-color: #2f07a2;
     text-decoration: none;
     color: #fff;
     font-family: inherit;
@@ -422,17 +430,29 @@ body {
 .files-actions {
     display: flex;
     justify-content: center;
-    gap: 1.2rem;
 
     margin: 3.6rem 0;
 }
 
 .file-action {
-    padding: 3.6rem 1.2rem;
+    padding: 3.2rem 2.4rem;
     font-size: 1rem;
-    background-color: #777;
-    color: #fff;
+    background-color: #dacefd;
+    border: 1px solid #845cf7;
     cursor: pointer;
+    font-size: 1.2rem;
+    color: #0b0b0b;
+    font-weight: 600;
+}
+
+.file-action:first-child {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.file-action:last-child {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 .file-action-icon-text {
@@ -441,8 +461,9 @@ body {
 }
 
 .file-action-icon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 6rem;
+    height: 6rem;
+    color: #0b0b0b;
 }
 
 .operation {
@@ -465,6 +486,8 @@ body {
 
 .form-group label {
     font-size: 1.6rem;
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 .form-input {
@@ -474,18 +497,20 @@ body {
     border-radius: 5px;
     font-family: inherit;
     outline: none;
+    border: 1px solid #845cf7;
 }
 
 .operation-action {
     display: inline-block;
     padding: 1.2rem 2.4rem;
     border: none;
-    background-color: #777;
+    background-color: #2f07a2;
     color: #fff;
     font-family: inherit;
     font-size: 1.6rem;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 1.2rem;
 }
 
 /*Reusable component*/
@@ -793,21 +818,62 @@ body {
     border-radius: 1.6rem;
 }
 
-/*Video Section*/
+/*Testimonial Section*/
+.testimonial-section {
+    padding: 9.6rem 0;
+    background-color: #fff;
+}
+
+.testimonial-container {
+    max-width: 100rem;
+    margin: auto;
+}
+
+.testimonial-title {
+    font-size: 3.6rem;
+    text-align: center;
+    color: #24067a;
+    margin-bottom: 2.4rem;
+}
+
+.testimonial-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 3.6rem;
+}
+
+.testimonial-footer {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.testimonial-footer-icon {
+    visibility: visible;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.testimonial-person {
+    font-size: 1.6rem;
+}
+
+/*Newsletter Section*/
 .newsletter-section {
     padding: 9.6rem 0;
+    background-color: rgba(36, 5, 122, 0.2);
 }
 
 .newsletter-container {
-    padding: 6.2rem 9.6rem;
-    background-color: #24067a;
-    border-radius: 1.2rem;
+    max-width: 100rem;
+    margin: auto;
 }
 
 .newsletter-title {
     font-size: 3.6rem;
-    font-weight: 400;
-    color: #fff;
+    font-weight: 600;
+    color: #3b09ca;
     text-align: center;
     margin-bottom: 2.4rem;
 }
@@ -1049,7 +1115,7 @@ body {
     align-items: center;
     text-decoration: none;
     padding: 1.2rem 2.4rem;
-    background-color: #180451;
+    background-color: #2f07a2;
     color: #fff;
     border-radius: 0.8rem;
     font-size: 1.6rem;
