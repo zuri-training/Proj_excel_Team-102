@@ -76,3 +76,35 @@ def get_file(file_id: int, response: Response, db: Session = Depends(get_db), us
     file.file_content = get_excel_contents(file_path)
 
     return {"message": "File fetched sucessfully", "file": file}
+
+@router.patch("/{file_id}", status_code=status.HTTP_200_OK)
+def rename_file(file_id: int, response: Response, db: Session = Depends(get_db), 
+user: Users = Depends(get_current_user), new_filename: str = ""):
+    
+    if not new_filename:
+        response.status_code = status.HTTP_406_NOT_ACCEPTABLE
+        return {"message": "Provide new name to give file"}
+
+    file_query = db.query(Files).filter(Files.id == file_id, Files.user_id == user.id)
+    file = file_query.first()
+
+    if not file:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error identifying file"}
+
+    filename_exists = db.query(Files).filter(Files.file_name == new_filename, Files.user_id == user.id).count()
+
+    if filename_exists:
+        response.status_code = status.HTTP_406_NOT_ACCEPTABLE
+        return {"message": "You already have a file with same name"}
+
+    current_name = file.file_name
+
+    file_query.update({"file_name": new_filename}, synchronize_session=False)
+    db.commit()
+    db.refresh(file)
+
+    files_root_path = f"static/dc/{user.id}/"
+    os.rename(f"{files_root_path}{current_name}", f"{files_root_path}{file.file_name}")
+
+    return {"message": "File renamed successfully"}
