@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, UploadFile, status, Response
 from sqlalchemy.orm import Session
 
 from app.models import Users, Files
-from app.schemas import GetFile
+from app.schemas import GetFile, GetFiles
 from app.database import get_db
 from app.oauth import get_current_user
 
@@ -18,6 +18,11 @@ router = APIRouter(
     prefix="/api/v1/files",
     tags=["Files"]
 )
+
+@router.get("/", status_code=status.HTTP_200_OK, response_model=GetFiles)
+def get_files(response: Response, db: Session = Depends(get_db), user: Users = Depends(get_current_user),
+page: int = 1, division: int = 10):
+    pass
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=GetFile)
 async def upload_file(file: UploadFile, response: Response, db: Session = Depends(get_db), 

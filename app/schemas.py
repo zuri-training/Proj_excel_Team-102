@@ -32,7 +32,7 @@ class File(BaseModel):
     file_name: str
     status: int
     time_added: datetime
-    file_content: List
+    file_content: Optional[List]
 
     class Config:
         orm_mode = True
@@ -41,8 +41,9 @@ class GetFile(BaseModel):
     message: str
     file: Optional[File]
 
-    class Config:
-        orm_mode = True 
+class GetFiles(BaseModel):
+    message: str
+    files: Optional[List[File]]
 
 
 class NewHighlightDuplicates(BaseModel):
