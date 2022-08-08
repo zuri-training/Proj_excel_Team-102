@@ -180,6 +180,14 @@ const Home = () => {
             </section>
             <section className="testimonial-section">
                 <div className="testimonial-container">
+                    <ion-icon
+                        name="chevron-back-circle-outline"
+                        class="testimonial-icon testimonial-icon--left"
+                    ></ion-icon>
+                    <ion-icon
+                        name="chevron-forward-circle-outline"
+                        class="testimonial-icon testimonial-icon--right"
+                    ></ion-icon>
                     <div className="testimonial">
                         <h3 className="testimonial-title">
                             &quot;I can't express how happy I am using

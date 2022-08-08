@@ -58,7 +58,16 @@ const PreviewFile = () => {
                     <thead>
                         <tr>
                             {file_info[0].map((cell, i) => {
-                                return <th key={i}>{cell.value}</th>;
+                                return (
+                                    <th
+                                        key={i}
+                                        style={{
+                                            backgroundColor: `#${cell.background}`,
+                                        }}
+                                    >
+                                        {cell.value}
+                                    </th>
+                                );
                             })}
                         </tr>
                     </thead>
@@ -67,7 +76,16 @@ const PreviewFile = () => {
                             return (
                                 <tr key={i}>
                                     {row.map((cell, j) => {
-                                        return <td key={j}>{cell.value}</td>;
+                                        return (
+                                            <td
+                                                key={j}
+                                                style={{
+                                                    backgroundColor: `#${cell.background}`,
+                                                }}
+                                            >
+                                                {cell.value}
+                                            </td>
+                                        );
                                     })}
                                 </tr>
                             );

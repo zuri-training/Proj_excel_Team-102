@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
+import { useState, useEffect } from "react";
+
+import $ from "jquery";
+
 import DashboardSidebar from "../components/DashboardSidebar";
 import DashboardHeader from "../components/DashboardHeader";
 
@@ -11,7 +15,24 @@ import operation3_img from "../assets/img/operation-3.png";
 import operation4_img from "../assets/img/operation-4.png";
 
 const Dashboard = () => {
+    const api_base_url = useSelector((state) => state.app_data.api_base_url);
     const root_url = useSelector((state) => state.app_data.root_url);
+    const access_token = useSelector((state) => state.user.access_token);
+
+    const [recent_files, set_recent_files] = useState([]);
+
+    useEffect(() => {
+        $.ajax({
+            type: "GET",
+            url: `${api_base_url}/files/?division=3`,
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+            },
+            success: function (data) {
+                set_recent_files(data.files);
+            },
+        });
+    }, [access_token, api_base_url]);
 
     return (
         <>
@@ -34,7 +55,7 @@ const Dashboard = () => {
                                     to="/add_new_file"
                                     className="dashboard-breadcrumb-link"
                                 >
-                                    <ion-icon name="add-outline"></ion-icon>Add
+                                    <ion-icon name="add-outline"></ion-icon> Add
                                     New File
                                 </Link>
                             </div>
@@ -72,50 +93,44 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="recent-files">
-                            <h3 className="recent-files-title">Recent Files</h3>
-                            <div className="recent-files-container">
-                                <div className="recent-file">
-                                    <iframe
-                                        src={`${root_url}/preview_file/1`}
-                                    ></iframe>
-                                    <div>
-                                        <h4 className="recent-file-name">
-                                            students.xlsx
-                                        </h4>
-                                        <p className="recent-file-date">
-                                            2022-04-04 5:00pm
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="recent-file">
-                                    <iframe
-                                        src={`${root_url}/preview_file/1`}
-                                    ></iframe>
-                                    <div>
-                                        <h4 className="recent-file-name">
-                                            students.xlsx
-                                        </h4>
-                                        <p className="recent-file-date">
-                                            2022-04-04 5:00pm
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="recent-file">
-                                    <iframe
-                                        src={`${root_url}/preview_file/1`}
-                                    ></iframe>
-                                    <div>
-                                        <h4 className="recent-file-name">
-                                            students.xlsx
-                                        </h4>
-                                        <p className="recent-file-date">
-                                            2022-04-04 5:00pm
-                                        </p>
-                                    </div>
+                        {recent_files.length > 0 && (
+                            <div className="recent-files">
+                                <h3 className="recent-files-title">
+                                    Recent Files
+                                </h3>
+                                <div className="recent-files-container">
+                                    {recent_files.map((file) => {
+                                        return (
+                                            <div
+                                                className="recent-file"
+                                                key={file.id}
+                                            >
+                                                <iframe
+                                                    src={`${root_url}/preview_file/${file.id}`}
+                                                    title={`Recent file preview - ${file.file_name}`}
+                                                ></iframe>
+                                                <div>
+                                                    <h4
+                                                        title={file.file_name}
+                                                        className="recent-file-name"
+                                                    >
+                                                        {file.file_name.substr(
+                                                            0,
+                                                            20
+                                                        )}
+                                                        {file.file_name.length >
+                                                            20 && "..."}
+                                                    </h4>
+                                                    <p className="recent-file-date">
+                                                        {file.time_added}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
-                        </div>
+                        )}
                     </section>
                 </div>
             </main>

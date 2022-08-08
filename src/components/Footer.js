@@ -22,13 +22,43 @@ const Footer = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/" className="footer-link">
+                            <Link to="/about" className="footer-link">
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/product" className="footer-link">
                                 Product
                             </Link>
                         </li>
                         <li>
-                            <Link to="/" className="footer-link">
+                            <Link to="/features" className="footer-link">
                                 Features
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 className="footer-title">Useful Links</h3>
+                    <ul className="footer-links">
+                        <li>
+                            <Link to="/" className="footer-link">
+                                Privacy Policy
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/" className="footer-link">
+                                Terms and Conditions
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/" className="footer-link">
+                                Disclaimer
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/faqs" className="footer-link">
+                                FAQs
                             </Link>
                         </li>
                     </ul>

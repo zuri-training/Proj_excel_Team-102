@@ -15,6 +15,10 @@ const AddNewFile = lazy(() => import("./pages/AddNewFile"));
 const NewOperation = lazy(() => import("./pages/NewOperation"));
 const PreviewFile = lazy(() => import("./pages/PreviewFile"));
 
+const SearchHighlight = lazy(() =>
+    import("./pages/operations/SearchHighlight")
+);
+const SearchReplace = lazy(() => import("./pages/operations/SearchReplace"));
 const DiffChecker = lazy(() => import("./pages/operations/DiffChecker"));
 const HighlightDuplicates2 = lazy(() =>
     import("./pages/operations/HighlightDuplicates2")
@@ -101,6 +105,26 @@ const App = () => {
                         <Auth>
                             <Suspense fallback={<Preloader />}>
                                 <PreviewFile />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/search_highlight/:operation_id"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <SearchHighlight />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/search_replace/:operation_id"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <SearchReplace />
                             </Suspense>
                         </Auth>
                     }

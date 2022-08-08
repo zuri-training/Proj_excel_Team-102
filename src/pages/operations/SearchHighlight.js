@@ -11,7 +11,7 @@ import { user_actions } from "../../store";
 import DashboardSidebar from "../../components/DashboardSidebar";
 import DashboardHeader from "../../components/DashboardHeader";
 
-const DiffChecker = () => {
+const SearchHighlight = () => {
     const { operation_id } = useParams();
 
     const dispatch = useDispatch();
@@ -72,7 +72,7 @@ const DiffChecker = () => {
     useEffect(() => {
         $.ajax({
             type: "GET",
-            url: `${api_base_url}/operations/diff_checker/${operation_id}`,
+            url: `${api_base_url}/operations/search_highlight/${operation_id}`,
             headers: {
                 Authorization: `Bearer ${access_token}`,
             },
@@ -148,10 +148,11 @@ const DiffChecker = () => {
                         <div className="dashboard-breadcrumb">
                             <div className="dashboard-breadcrumb-left">
                                 <h3 className="dashboard-breadcrumb-title">
-                                    Dif Checker
+                                    Search and Highlight
                                 </h3>
                                 <p className="dashboard-breadcrumb-text">
-                                    A diff checker operation performed by you
+                                    A search and highlight operation performed
+                                    by you
                                 </p>
                             </div>
                             <div className="dashboard-breadcrumb-right"></div>
@@ -160,16 +161,16 @@ const DiffChecker = () => {
                             <div className="file">
                                 <div className="file-header">
                                     <h3 className="file-name">
-                                        {operation_info.file1_details.file_name}
+                                        {operation_info.file_details.file_name}
                                     </h3>
                                     <div className="file-action-btns">
                                         <button
                                             className="change-file-btn"
                                             onClick={() =>
                                                 renameFile(
-                                                    operation_info.file1_details
+                                                    operation_info.file_details
                                                         .id,
-                                                    operation_info.file1_details
+                                                    operation_info.file_details
                                                         .file_name
                                                 )
                                             }
@@ -177,7 +178,7 @@ const DiffChecker = () => {
                                             Rename
                                         </button>
                                         <a
-                                            href={`${base_url}dc/${user_id}/${operation_info.file1_details.file_name}`}
+                                            href={`${base_url}dc/${user_id}/${operation_info.file_details.file_name}`}
                                             target="_new"
                                             className="change-file-btn"
                                         >
@@ -189,7 +190,7 @@ const DiffChecker = () => {
                                     <table className="file-table">
                                         <thead>
                                             <tr>
-                                                {operation_info.file1_details.file_content[0].map(
+                                                {operation_info.file_details.file_content[0].map(
                                                     (cell, i) => {
                                                         return (
                                                             <th
@@ -206,86 +207,7 @@ const DiffChecker = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {operation_info.file1_details.file_content
-                                                .slice(1)
-                                                .map((row, i) => {
-                                                    return (
-                                                        <tr key={i}>
-                                                            {row.map(
-                                                                (cell, j) => {
-                                                                    return (
-                                                                        <td
-                                                                            key={
-                                                                                j
-                                                                            }
-                                                                            style={{
-                                                                                backgroundColor: `#${cell.background}`,
-                                                                            }}
-                                                                        >
-                                                                            {
-                                                                                cell.value
-                                                                            }
-                                                                        </td>
-                                                                    );
-                                                                }
-                                                            )}
-                                                        </tr>
-                                                    );
-                                                })}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div className="file">
-                                <div className="file-header">
-                                    <h3 className="file-name">
-                                        {operation_info.file2_details.file_name}
-                                    </h3>
-                                    <div className="file-action-btns">
-                                        <button
-                                            className="change-file-btn"
-                                            onClick={() =>
-                                                renameFile(
-                                                    operation_info.file2_details
-                                                        .id,
-                                                    operation_info.file2_details
-                                                        .file_name
-                                                )
-                                            }
-                                        >
-                                            Rename
-                                        </button>
-                                        <a
-                                            href={`${base_url}dc/${user_id}/${operation_info.file2_details.file_name}`}
-                                            target="_new"
-                                            className="change-file-btn"
-                                        >
-                                            Download
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="file-preview-box">
-                                    <table className="file-table">
-                                        <thead>
-                                            <tr>
-                                                {operation_info.file2_details.file_content[0].map(
-                                                    (cell, i) => {
-                                                        return (
-                                                            <th
-                                                                key={i}
-                                                                style={{
-                                                                    backgroundColor: `#${cell.background}`,
-                                                                }}
-                                                            >
-                                                                {cell.value}
-                                                            </th>
-                                                        );
-                                                    }
-                                                )}
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {operation_info.file2_details.file_content
+                                            {operation_info.file_details.file_content
                                                 .slice(1)
                                                 .map((row, i) => {
                                                     return (
@@ -322,7 +244,7 @@ const DiffChecker = () => {
                                     <h3 className="file-name">
                                         {
                                             operation_info
-                                                .highlighted_file1_details
+                                                .highlighted_file_details
                                                 .file_name
                                         }
                                     </h3>
@@ -332,10 +254,10 @@ const DiffChecker = () => {
                                             onClick={() =>
                                                 renameFile(
                                                     operation_info
-                                                        .highlighted_file1_details
+                                                        .highlighted_file_details
                                                         .id,
                                                     operation_info
-                                                        .highlighted_file1_details
+                                                        .highlighted_file_details
                                                         .file_name
                                                 )
                                             }
@@ -343,7 +265,7 @@ const DiffChecker = () => {
                                             Rename
                                         </button>
                                         <a
-                                            href={`${base_url}dc/${user_id}/${operation_info.highlighted_file1_details.file_name}`}
+                                            href={`${base_url}dc/${user_id}/${operation_info.highlighted_file_details.file_name}`}
                                             target="_new"
                                             className="change-file-btn"
                                         >
@@ -355,7 +277,7 @@ const DiffChecker = () => {
                                     <table className="file-table">
                                         <thead>
                                             <tr>
-                                                {operation_info.highlighted_file1_details.file_content[0].map(
+                                                {operation_info.highlighted_file_details.file_content[0].map(
                                                     (cell, i) => {
                                                         return (
                                                             <th
@@ -372,92 +294,7 @@ const DiffChecker = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {operation_info.highlighted_file1_details.file_content
-                                                .slice(1)
-                                                .map((row, i) => {
-                                                    return (
-                                                        <tr key={i}>
-                                                            {row.map(
-                                                                (cell, j) => {
-                                                                    return (
-                                                                        <td
-                                                                            key={
-                                                                                j
-                                                                            }
-                                                                            style={{
-                                                                                backgroundColor: `#${cell.background}`,
-                                                                            }}
-                                                                        >
-                                                                            {
-                                                                                cell.value
-                                                                            }
-                                                                        </td>
-                                                                    );
-                                                                }
-                                                            )}
-                                                        </tr>
-                                                    );
-                                                })}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div className="file">
-                                <div className="file-header">
-                                    <h3 className="file-name">
-                                        {
-                                            operation_info
-                                                .highlighted_file2_details
-                                                .file_name
-                                        }
-                                    </h3>
-                                    <div className="file-action-btns">
-                                        <button
-                                            className="change-file-btn"
-                                            onClick={() =>
-                                                renameFile(
-                                                    operation_info
-                                                        .highlighted_file2_details
-                                                        .id,
-                                                    operation_info
-                                                        .highlighted_file2_details
-                                                        .file_name
-                                                )
-                                            }
-                                        >
-                                            Rename
-                                        </button>
-                                        <a
-                                            href={`${base_url}dc/${user_id}/${operation_info.highlighted_file2_details.file_name}`}
-                                            target="_new"
-                                            className="change-file-btn"
-                                        >
-                                            Download
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="file-preview-box">
-                                    <table className="file-table">
-                                        <thead>
-                                            <tr>
-                                                {operation_info.highlighted_file2_details.file_content[0].map(
-                                                    (cell, i) => {
-                                                        return (
-                                                            <th
-                                                                key={i}
-                                                                style={{
-                                                                    backgroundColor: `#${cell.background}`,
-                                                                }}
-                                                            >
-                                                                {cell.value}
-                                                            </th>
-                                                        );
-                                                    }
-                                                )}
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {operation_info.highlighted_file2_details.file_content
+                                            {operation_info.highlighted_file_details.file_content
                                                 .slice(1)
                                                 .map((row, i) => {
                                                     return (
@@ -495,4 +332,4 @@ const DiffChecker = () => {
     );
 };
 
-export default DiffChecker;
+export default SearchHighlight;
