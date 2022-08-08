@@ -1,0 +1,1 @@
+File would contain directories with the user_id as directory name each user directory would contain user files
