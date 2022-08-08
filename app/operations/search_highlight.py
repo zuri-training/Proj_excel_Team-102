@@ -1,16 +1,25 @@
-import openpyxl
 from openpyxl import load_workbook
-from openpyxl.formatting.rule import Rule
-from openpyxl.styles.differential import DifferentialStyle
 from openpyxl.styles import PatternFill
 
-wb = load_workbook('comp 4.xlsx')
-ws = wb.active
-b = input("Enter what to search:")
-cell=ws
-for rows in ws.rows:
-    for cell in rows:
-        if  str(cell.value) == b: 
-            cell.fill = PatternFill(start_color='000000FF',end_color='000000FF',fill_type="solid")
-a= input("Enter what to save it with(.xlsx):")
-wb.save(a)
+from datetime import datetime
+
+def search_and_highlight(dir, file, search_keyword):
+    
+    wb = load_workbook(filename=file)
+    
+    ws = wb.active
+
+    num_match = 0
+
+    for rows in ws.rows:
+        for cell in rows:
+            if  str(cell.value) == search_keyword: 
+                cell.fill = PatternFill("solid", fgColor="D3E06E")
+                num_match += 1
+
+    highlighted_filename = f"{abs(hash(datetime.now()))}_highlighted.xlsx"
+    highlighted = f"{dir}/{highlighted_filename}"
+
+    wb.save(highlighted)
+
+    return num_match, highlighted_filename

@@ -1,13 +1,14 @@
 from fastapi import APIRouter, Depends, UploadFile, status, Response
 
 from sqlalchemy.orm import Session
+from sqlalchemy import func
 
 from app.models import Users, Files
-from app.schemas import GetFile, GetFiles
+from app.schemas import FetchMetaData, GetFile, GetFiles
 from app.database import get_db
 from app.oauth import get_current_user
 
-from app.utils import upload_file as op__upload_file, get_excel_contents
+from app.utils import get_pagination, get_skip, upload_file as op__upload_file, get_excel_contents
 
 from datetime import datetime
 
@@ -20,9 +21,23 @@ router = APIRouter(
 )
 
 @router.get("/", status_code=status.HTTP_200_OK, response_model=GetFiles)
-def get_files(response: Response, db: Session = Depends(get_db), user: Users = Depends(get_current_user),
-page: int = 1, division: int = 10):
-    pass
+def get_files(db: Session = Depends(get_db), user: Users = Depends(get_current_user),
+page: int = 1, division: int = 10, status: int = 1, search: str = ""):
+    
+    files = db.query(Files).filter(Files.user_id == user.id, func.lower(Files.file_name).contains(search.lower()))
+    files = files.filter(Files.status == status)
+
+    num_records = files.count()
+    pagination = get_pagination(num_records, division)
+
+    skip = get_skip(page, division)
+
+    files = files.order_by(Files.id.desc())
+    files = files.limit(division).offset(skip).all()
+
+    meta_data = FetchMetaData(num_records=num_records, pagination=pagination, page=page, division=division)
+
+    return {"message": "Files fetched successfully", "meta_data": meta_data, "files": files}
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=GetFile)
 async def upload_file(file: UploadFile, response: Response, db: Session = Depends(get_db), 

@@ -1,24 +1,204 @@
 from datetime import datetime
 from app.database import get_db
-from app.models import DiffChecker, Files, HighlightDuplicates, HighlightDuplicates2, RemoveDuplicates, RemoveDuplicates2, Users
+from app.models import DiffChecker, Files, HighlightDuplicates, HighlightDuplicates2, RemoveDuplicates, RemoveDuplicates2, SearchHighlight, SearchReplace, Users
 from app.oauth import get_current_user
 from app.utils import get_excel_contents
 from fastapi import APIRouter, Depends, Response, status
 
 from sqlalchemy.orm import Session
 
+from app.operations.search_highlight import search_and_highlight as op__search_and_highlight;
+from app.operations.search_and_replace import search_and_replace as op__search_and_replace;
 from app.operations.diff_checker import diff_checker as op__diff_checker
 from app.operations.highlight_duplicates import highlight_duplicates as op__highlight_duplicates
 from app.operations.remove_duplicates import remove_duplicates as op__remove_duplicates
 from app.operations.highlight_duplicates2 import highlight_duplicates2 as op__highlight_duplicates2
 from app.operations.remove_duplicates2 import remove_duplicates2 as op__remove_duplicates2
 
-from app.schemas import GetDiffChecker, GetHighlightDuplicates, GetHighlightDuplicates2, GetRemoveDuplicates, GetRemoveDuplicates2, NewDiffChecker, NewHighlightDuplicates, NewHighlightDuplicates2, NewRemoveDuplicates, NewRemoveDuplicates2
+from app.schemas import GetDiffChecker, GetHighlightDuplicates, GetHighlightDuplicates2, GetRemoveDuplicates, GetRemoveDuplicates2, GetSearchHighlight, GetSearchReplace, NewDiffChecker, NewHighlightDuplicates, NewHighlightDuplicates2, NewRemoveDuplicates, NewRemoveDuplicates2, NewSearchHighlight, NewSearchReplace
 
 router = APIRouter(
     prefix="/api/v1/operations",
     tags=["Operations"]
 )
+
+@router.post("/search_replace/", status_code=status.HTTP_201_CREATED, response_model=GetSearchReplace)
+def do_search_replace(search_replace: NewSearchReplace, response: Response, db: Session = Depends(get_db), 
+user: Users = Depends(get_current_user)):
+    
+    # file exists
+    file = db.query(Files).filter(Files.id == search_replace.file, Files.user_id == user.id).first()
+
+    if not file:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error identifying file"}
+    # end file exists
+
+    # create operation entry
+    search_replace = SearchReplace(**search_replace.dict(), user_id = user.id)
+
+    db.add(search_replace)
+    db.commit()
+    db.refresh(search_replace)
+    # end create operation entry
+
+    # do operation
+    files_root_path = f"static/dc/{user.id}/"
+
+    file_path = f"{files_root_path}{file.file_name}"
+
+    num_match, replaced_filename = op__search_and_replace(files_root_path, file_path, search_replace.search_keyword, search_replace.replace_with)
+    
+    replaced_file = Files(user_id=user.id, file_name=replaced_filename)
+    db.add(replaced_file)
+    db.commit()
+    db.refresh(replaced_file)
+
+    search_replace_query = db.query(SearchReplace).filter(SearchReplace.id == search_replace.id)
+    search_replace_query.update({
+        "num_match": num_match,
+        "replaced_file": replaced_file.id,
+        "time_completed": datetime.now()
+    }, synchronize_session=False)
+    db.commit()
+
+    search_replace = search_replace_query.first()
+    # end operation
+
+    # add file contents
+    file.file_content = get_excel_contents(f"{files_root_path}{file.file_name}")
+    replaced_file.file_content = get_excel_contents(f"{files_root_path}{replaced_file.file_name}")
+    # end add file contents
+
+    # final response
+    search_replace.file_details = file
+    search_replace.replaced_file_details = replaced_file
+    # end final response
+
+    return {
+        "message": "Operation Completed Successfully", 
+        "data": search_replace
+    }
+
+@router.get("/search_replace/{operation_id}", status_code=status.HTTP_200_OK, response_model=GetSearchReplace)
+def get_search_replace(operation_id: int, response: Response, db: Session = Depends(get_db), 
+user: Users = Depends(get_current_user)):
+
+    search_replace = db.query(SearchReplace).filter(SearchReplace.id == operation_id, SearchReplace.user_id == user.id).first()
+
+    if not search_replace:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error Identifying Operation"}
+
+    file = db.query(Files).filter(Files.id == search_replace.file, Files.user_id == user.id).first()
+    replaced_file = db.query(Files).filter(Files.id == search_replace.replaced_file, Files.user_id == user.id).first()
+
+    files_root_path = f"static/dc/{user.id}/"
+
+    # add file contents
+    file.file_content = get_excel_contents(f"{files_root_path}{file.file_name}")
+    replaced_file.file_content = get_excel_contents(f"{files_root_path}{replaced_file.file_name}")
+    # end add file contents
+
+    # final response
+    search_replace.file_details = file
+    search_replace.replaced_file_details = replaced_file
+    # end final response
+
+    return {
+        "message": "Operation Fetched Successfully", 
+        "data": search_replace
+    }
+
+
+@router.post("/search_highlight/", status_code=status.HTTP_201_CREATED, response_model=GetSearchHighlight)
+def do_search_highlight(search_highlight: NewSearchHighlight, response: Response, db: Session = Depends(get_db), 
+user: Users = Depends(get_current_user)):
+    
+    # file exists
+    file = db.query(Files).filter(Files.id == search_highlight.file, Files.user_id == user.id).first()
+
+    if not file:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error identifying file"}
+    # end file exists
+
+    # create operation entry
+    search_highlight = SearchHighlight(**search_highlight.dict(), user_id = user.id)
+
+    db.add(search_highlight)
+    db.commit()
+    db.refresh(search_highlight)
+    # end create operation entry
+
+    # do operation
+    files_root_path = f"static/dc/{user.id}/"
+
+    file_path = f"{files_root_path}{file.file_name}"
+
+    num_match, highlighted_filename = op__search_and_highlight(files_root_path, file_path, search_highlight.search_keyword)
+    
+    highlighted_file = Files(user_id=user.id, file_name=highlighted_filename)
+    db.add(highlighted_file)
+    db.commit()
+    db.refresh(highlighted_file)
+
+    search_highlight_query = db.query(SearchHighlight).filter(SearchHighlight.id == search_highlight.id)
+    search_highlight_query.update({
+        "num_match": num_match,
+        "highlighted_file": highlighted_file.id,
+        "time_completed": datetime.now()
+    }, synchronize_session=False)
+    db.commit()
+
+    search_highlight = search_highlight_query.first()
+    # end operation
+
+    # add file contents
+    file.file_content = get_excel_contents(f"{files_root_path}{file.file_name}")
+    highlighted_file.file_content = get_excel_contents(f"{files_root_path}{highlighted_file.file_name}")
+    # end add file contents
+
+    # final response
+    search_highlight.file_details = file
+    search_highlight.highlighted_file_details = highlighted_file
+    # end final response
+
+    return {
+        "message": "Operation Completed Successfully", 
+        "data": search_highlight
+    }
+
+@router.get("/search_highlight/{operation_id}", status_code=status.HTTP_200_OK, response_model=GetSearchHighlight)
+def get_search_highlight(operation_id: int, response: Response, db: Session = Depends(get_db), 
+user: Users = Depends(get_current_user)):
+
+    search_highlight = db.query(SearchHighlight).filter(SearchHighlight.id == operation_id, SearchHighlight.user_id == user.id).first()
+
+    if not search_highlight:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error Identifying Operation"}
+
+    file = db.query(Files).filter(Files.id == search_highlight.file, Files.user_id == user.id).first()
+    highlighted_file = db.query(Files).filter(Files.id == search_highlight.highlighted_file, Files.user_id == user.id).first()
+
+    files_root_path = f"static/dc/{user.id}/"
+
+    # add file contents
+    file.file_content = get_excel_contents(f"{files_root_path}{file.file_name}")
+    highlighted_file.file_content = get_excel_contents(f"{files_root_path}{highlighted_file.file_name}")
+    # end add file contents
+
+    # final response
+    search_highlight.file_details = file
+    search_highlight.highlighted_file_details = highlighted_file
+    # end final response
+
+    return {
+        "message": "Operation Fetched Successfully", 
+        "data": search_highlight
+    }
+
 
 @router.post("/highlight_duplicates/", status_code=status.HTTP_201_CREATED, response_model=GetHighlightDuplicates)
 def do_highlight_duplicates(highlight_duplicates: NewHighlightDuplicates, response: Response, 
@@ -446,7 +626,7 @@ user: Users = Depends(get_current_user)):
     diff_checker_query.update({
         "mismatch_found": mismatch_found,
         "highlighted_file1": highlighted_file1.id,
-        "highlighted_file2": highlighted_file1.id,
+        "highlighted_file2": highlighted_file2.id,
         "time_completed": datetime.now()
     }, synchronize_session=False)
     db.commit()
@@ -472,3 +652,40 @@ user: Users = Depends(get_current_user)):
         "message": "Operation Completed Successfully", 
         "data": diff_checker
     }
+
+@router.get("/diff_checker/{operation_id}", status_code=status.HTTP_200_OK, response_model=GetDiffChecker)
+def get_diff_checker(operation_id: int, response: Response, db: Session = Depends(get_db), 
+user: Users = Depends(get_current_user)):
+    
+    diff_checker = db.query(DiffChecker).filter(DiffChecker.id == operation_id, DiffChecker.user_id == user.id).first()
+
+    if not diff_checker:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error Identifying Operation"}
+
+    file1 = db.query(Files).filter(Files.id == diff_checker.file1, Files.user_id == user.id).first()
+    file2 = db.query(Files).filter(Files.id == diff_checker.file2, Files.user_id == user.id).first()
+    highlighted_file1 = db.query(Files).filter(Files.id == diff_checker.highlighted_file1, Files.user_id == user.id).first()
+    highlighted_file2 = db.query(Files).filter(Files.id == diff_checker.highlighted_file2, Files.user_id == user.id).first()
+
+    files_root_path = f"static/dc/{user.id}/"
+
+    # add file contents
+    file1.file_content = get_excel_contents(f"{files_root_path}{file1.file_name}")
+    file2.file_content = get_excel_contents(f"{files_root_path}{file2.file_name}")
+    highlighted_file1.file_content = get_excel_contents(f"{files_root_path}{highlighted_file1.file_name}")
+    highlighted_file2.file_content = get_excel_contents(f"{files_root_path}{highlighted_file2.file_name}")
+    # end add file contents
+
+    # final response
+    diff_checker.file1_details = file1
+    diff_checker.file2_details = file2
+    diff_checker.highlighted_file1_details = highlighted_file1
+    diff_checker.highlighted_file2_details = highlighted_file2
+    # end final response
+
+    return {
+        "message": "Operation Fetched Successfully", 
+        "data": diff_checker
+    }
+

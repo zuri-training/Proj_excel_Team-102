@@ -23,6 +23,31 @@ class Files(Base):
 
     __table_args__ = (UniqueConstraint("user_id", "file_name", name="user_file_uc"),)
 
+class SearchHighlight(Base):
+    __tablename__ = "search_and_highlight"
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="RESTRICT"), nullable=False)
+    file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=False)
+    search_keyword = Column(String, nullable=False)
+    time_requested = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
+    num_match = Column(Integer, nullable=True)
+    highlighted_file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
+    time_completed = Column(TIMESTAMP(timezone=True), nullable=True)
+
+class SearchReplace(Base):
+    __tablename__ = "search_and_replace"
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="RESTRICT"), nullable=False)
+    file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=False)
+    search_keyword = Column(String, nullable=False)
+    replace_with = Column(String, nullable=False)
+    time_requested = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
+    num_match = Column(Integer, nullable=True)
+    replaced_file = Column(Integer, ForeignKey("files.id", ondelete="RESTRICT"), nullable=True)
+    time_completed = Column(TIMESTAMP(timezone=True), nullable=True)
+
 class DiffChecker(Base):
     __tablename__ = "diff_checker"
 

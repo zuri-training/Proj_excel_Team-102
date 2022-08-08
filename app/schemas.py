@@ -3,6 +3,12 @@ from email import message
 from typing import List, Optional
 from pydantic import BaseModel
 
+class FetchMetaData(BaseModel):
+    num_records: int
+    pagination: int
+    page: int
+    division: int
+
 class AddUser(BaseModel):
     first_name: str
     last_name: str
@@ -39,11 +45,57 @@ class File(BaseModel):
 
 class GetFile(BaseModel):
     message: str
+    meta_data: Optional[FetchMetaData]
     file: Optional[File]
 
 class GetFiles(BaseModel):
     message: str
     files: Optional[List[File]]
+
+
+class NewSearchHighlight(BaseModel):
+    file: int
+    search_keyword: str
+
+    class Config:
+        orm_mode = True
+
+class SearchHighlight(NewSearchHighlight):
+    id: int
+    user_id: int
+    time_requested: datetime
+    num_match: int
+    highlighted_file: int
+    time_completed: datetime
+    file_details: File
+    highlighted_file_details: File
+
+class GetSearchHighlight(BaseModel):
+    message: str
+    data: Optional[SearchHighlight] 
+
+
+class NewSearchReplace(BaseModel):
+    file: int
+    search_keyword: str
+    replace_with: str
+
+    class Config:
+        orm_mode = True
+
+class SearchReplace(NewSearchReplace):
+    id: int
+    user_id: int
+    time_requested: datetime
+    num_match: int
+    replaced_file: int
+    time_completed: datetime
+    file_details: File
+    replaced_file_details: File
+
+class GetSearchReplace(BaseModel):
+    message: str
+    data: Optional[SearchReplace] 
 
 
 class NewHighlightDuplicates(BaseModel):
