@@ -1,0 +1,217 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+#body_contents {
+  width: 100%;
+}
+
+/* Destop view starts */
+.content {
+  width: 86%;
+  margin: auto;
+
+  margin-top: 7%;
+}
+
+.comparly_header {
+  text-align: center;
+  margin: auto;
+  width: 86%;
+}
+.comparly_header h2 {
+  font-size: 2.5rem;
+}
+
+.comparly_header p {
+  font-size: 1.2rem;
+}
+
+.comparely_body {
+  margin: 5% 0;
+}
+
+h2 {
+  color: rgba(59, 9, 202, 1);
+}
+
+.exel_high {
+  display: flex;
+  margin-bottom: 1%;
+  width: 100%;
+  height: 118px;
+  justify-content: space-between;
+}
+
+.exel_high .one {
+  background-color: rgb(233, 232, 232);
+  opacity: 1;
+  width: 78%;
+
+  padding: 30px 0 0 30px;
+  display: flex;
+  font-size: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.exel_high .two .iconify {
+  height: 50px;
+  width: 50px;
+  margin: 25px auto;
+  display: block;
+  color: black;
+}
+
+.exel_high .two {
+  width: 17%;
+
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.068);
+}
+
+.exel_high .one::after,
+.exel_high .two::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.exel_high_light {
+  display: flex;
+  margin-bottom: 1%;
+}
+
+.exel_high_light .one_light {
+  padding: 50px 0 0 30px;
+  display: flex;
+  font-size: 20px;
+
+  width: 80%;
+  height: 118px;
+}
+
+.exel_high_light .two_light {
+  height: 118px;
+  width: 18%;
+  margin-left: auto;
+}
+
+.exel_high_light .two_light .iconify {
+  height: 50px;
+  width: 50px;
+  margin: 50px auto;
+  display: block;
+  color: black;
+}
+
+/* Desktop view Ends */
+
+/* Tablets View starts */
+@media only screen and (max-width: 768px) {
+  .comparly_header {
+    margin: 0;
+    width: 100%;
+  }
+
+  .comparly_header h2 {
+    font-size: 2.2rem;
+  }
+  .comparly_header p {
+    font-size: 1.2rem;
+    margin-top: -15px;
+  }
+  .comparely_body h2 {
+    font-size: 1.4rem;
+  }
+  .exel_high {
+    height: 90px;
+    margin-bottom: 0;
+  }
+  .exel_high .one {
+    padding: 15px 0 0 20px;
+    border-radius: 20px;
+  }
+  .exel_high .two {
+    border-radius: 20px;
+  }
+  .exel_high .one::after,
+  .exel_high .two::after {
+    border-radius: 20px;
+  }
+
+  .exel_high .two .iconify {
+    margin: 15px auto;
+  }
+  .exel_high_light .one_light {
+    height: 100%;
+    padding: 30px 0 0 20px;
+  }
+  .exel_high_light .two_light .iconify {
+    margin: 30px auto;
+  }
+}
+
+/* Tablets View Ends */
+
+/* Mobile view Starts */
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .content {
+    width: 95%;
+  }
+
+  .comparly_header {
+    width: 100%;
+  }
+
+  .comparly_header h2 {
+    font-size: 1.3rem;
+  }
+  .comparly_header p {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .comparely_body h2 {
+    font-size: 1.1rem;
+  }
+  .exel_high {
+    height: 60px;
+    margin-bottom: 0;
+  }
+  .exel_high .one {
+    padding: 0px 0 0 5px;
+    font-size: 15px;
+  }
+
+  .exel_high .one .up {
+    line-height: 30px;
+  }
+
+  .exel_high .two .iconify {
+    height: 25px;
+    width: 25px;
+    margin: 20px auto;
+  }
+  .exel_high_light .one_light {
+    padding: 25px 0 0 5px;
+    font-size: 15px;
+  }
+  .exel_high_light .two_light .iconify {
+    height: 25px;
+    width: 25px;
+    margin: 40px auto;
+  }
+}
+
+/* Mobile View Ends */
