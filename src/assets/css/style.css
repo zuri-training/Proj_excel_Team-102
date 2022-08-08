@@ -604,6 +604,7 @@ body {
 .container {
     max-width: 120rem;
     margin: auto;
+    padding: 0 4.8rem;
 }
 
 /*Header section*/
@@ -623,10 +624,23 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 4.8rem;
+}
+
+.brand {
+    flex: 1;
 }
 
 .navbar {
+    flex: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4.8rem;
+}
+
+.navbar-nav {
     list-style: none;
 
     display: flex;
@@ -646,7 +660,7 @@ body {
     color: blue;
 }
 
-.header-right {
+.navbar-right {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -680,6 +694,36 @@ body {
     color: #fff;
     border-radius: 0.8rem;
     font-size: 1.8rem;
+}
+
+.navbar-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    display: none;
+}
+
+.navbar-btn-icon {
+    visibility: visible;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.navbar-btn-icon:first-child {
+    display: inline-block;
+}
+
+.navbar-btn-icon:last-child {
+    display: none;
+}
+
+.navbar-open .navbar-btn-icon:first-child {
+    display: none;
+}
+
+.navbar-open .navbar-btn-icon:last-child {
+    display: inline-block;
 }
 
 /*Hero Content*/
@@ -747,6 +791,7 @@ body {
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
 
     padding: 4.8rem 0;
 }
@@ -768,11 +813,13 @@ body {
 }
 
 .features-img-box {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .features-img {
-    width: 80%;
+    width: 100%;
 }
 
 /*Contact Section*/
@@ -783,6 +830,7 @@ body {
 .contact-container {
     max-width: 60rem;
     margin: auto;
+    padding: 0 4.8rem;
 }
 
 .contact-title {
@@ -913,9 +961,6 @@ body {
 }
 
 .testimonial-container {
-    max-width: 100rem;
-    margin: auto;
-
     position: relative;
 }
 
@@ -927,14 +972,14 @@ body {
 .testimonial-icon--left {
     position: absolute;
     top: 50%;
-    left: -5rem;
+    left: 0;
     transform: translateY(-50%);
 }
 
 .testimonial-icon--right {
     position: absolute;
     top: 50%;
-    right: -5rem;
+    right: 0;
     transform: translateY(-50%);
 }
 
@@ -972,11 +1017,6 @@ body {
 .newsletter-section {
     padding: 9.6rem 0;
     background-color: rgba(36, 5, 122, 0.2);
-}
-
-.newsletter-container {
-    max-width: 100rem;
-    margin: auto;
 }
 
 .newsletter-title {
@@ -1300,4 +1340,128 @@ body {
 
 .recent-file-date {
     font-size: 1.6rem;
+}
+
+@media (max-width: 1300px) {
+    .navbar {
+        flex: 3;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100rem;
+    }
+}
+
+@media (max-width: 1150px) {
+    .navbar-btn {
+        display: inline-block;
+    }
+
+    .navbar {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100vh;
+
+        background-color: rgba(255, 255, 255, 0.904);
+        opacity: 0;
+        pointer-events: none;
+
+        transition: all 0.4s;
+
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar-open .navbar {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-link:link,
+    .navbar-link:visited {
+        font-size: 2.8rem;
+    }
+
+    .login:link,
+    .login:visited,
+    .signup:link,
+    .signup:visited {
+        font-size: 2.8rem;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 55%;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin-bottom: 6.2rem;
+    }
+
+    .hero-img {
+        width: 70%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .features-container {
+        width: 60%;
+    }
+
+    .features-img-box {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .testimonial-container {
+        margin: 0 4.8rem;
+    }
+    .footer-container {
+        width: 60%;
+        grid-template-columns: 1fr;
+        row-gap: 4.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 50%;
+    }
+    .hero-title {
+        font-size: 3.6rem;
+        margin-top: 2.4rem;
+    }
+    .features-container {
+        width: 100%;
+    }
+    .testimonial-title {
+        font-size: 2.8rem;
+    }
+    .footer-container {
+        width: 80%;
+        grid-template-columns: 1fr;
+        row-gap: 4.8rem;
+    }
 }
