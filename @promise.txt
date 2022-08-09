@@ -1,1 +1,123 @@
-whatever it is you've done in the this project
+1. I worked on the brainstorming features.
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/44
+
+https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=29%3A899
+
+There was no issue deriving that.
+
+
+2. I created the buttons so it would be easy for we designers and developers to iterate it into our work. 
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/36
+
+https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=90%3A268
+
+The issue I got at first whilst creating the buttons, is that they appeared too big for the mobile and tablet view.
+
+I had to create the buttons into different sizes so it would be easy for the views we are creating.
+
+
+3. I worked on Color Gradients
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/36
+
+https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=658%3A5972
+
+There were no challenges, cause I had to consider the colors that will be carrying out the required operations.
+
+
+4. I worked on the HI-FI Prototype of all designs to check out the flow will be and see if there need to be any changes.
+
+Github Link - https://github.com/zuri-training/Proj_excel_Team-102/issues/23
+
+https://www.figma.com/proto/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=850%3A7321&scaling=contain&page-id=2%3A3&starting-point-node-id=850%3A7321&show-proto-sidebar=1
+
+There are 3 flows
+
+The Web view flow
+The mobile view flow and the tablet flow
+
+
+5.  I worked on the Idea Priortization 
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/44
+
+https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=29%3A894
+
+This was gotten after brainstorming on Features that would solve the problem of our users having to look for someone to do the job or been embarrassed. 
+
+
+6. I worked on the User Persona
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/44
+
+https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=0%3A1
+
+There was no issue.
+
+
+7. I worked on the Wow features 
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/44
+
+https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=101%3A639
+
+
+8. Myself and Favour Martins worked on the Wireframes landing pages and it was shared into 4 pages.
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/68
+
+Landing Page - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=138%3A164
+
+About Us- https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=206%3A1042
+
+Features Page -https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=199%3A861
+
+Product Page - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=240%3A1305
+
+There were no challenges working on the designs. 
+
+
+9. The Landing Page are of Four pages, which myself and favour worked on.
+
+The challenges we got was to select a perfect view components that will resonate on what we are doing.
+
+Our landing page, about us page and features page, were changed in the Hi-fi stage, after we got reviews from the team on how best it can be done.
+
+Here is the link for the pages:
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/27, https://github.com/zuri-training/Proj_excel_Team-102/issues/74 , https://github.com/zuri-training/Proj_excel_Team-102/issues/77 , https://github.com/zuri-training/Proj_excel_Team-102/issues/69
+
+Landing Page - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=850%3A7321
+
+About us - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1010%3A7487
+
+Features Page - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1045%3A7455
+
+Products Page - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=812%3A5758
+
+
+10. Here is the link to our documentation:
+
+Github link - https://github.com/zuri-training/Proj_excel_Team-102/issues/4 , https://github.com/zuri-training/Proj_excel_Team-102/issues/3 , https://github.com/zuri-training/Proj_excel_Team-102/issues/2
+
+The documentation consists of everything we have done so far and also improving on it likewise. 
+
+Github - https://github.com/zuri-training/Proj_excel_Team-102/issues/82
+
+https://feline-space-8a7.notion.site/Proj_team_102-460d4d8074724d38b10ae2d488f10711
+
+
+11. I worked on the Presentation Slides
+
+Github Link - https://github.com/zuri-training/Proj_excel_Team-102/issues/83
+
+https://www.figma.com/proto/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=858%3A7112&scaling=min-zoom&page-id=41%3A4&starting-point-node-id=858%3A7112&show-proto-sidebar=1
+
+
+12. I did the First Presentation
+
+Github - https://github.com/zuri-training/Proj_excel_Team-102/issues/81
+
+https://drive.google.com/file/d/1VrGdcHbRDg1mcKouWP5hng53ldT1KyGX/view?usp=sharing
