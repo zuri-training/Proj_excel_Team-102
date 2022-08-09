@@ -1,13 +1,29 @@
 Contributions of Aishat Dosunmu
 
-https://github.com/zuri-training/Proj_excel_Team-102/issues/63
-https://github.com/zuri-training/Proj_excel_Team-102/issues/62
-https://github.com/zuri-training/Proj_excel_Team-102/issues/61
-https://github.com/zuri-training/Proj_excel_Team-102/issues/60
-https://github.com/zuri-training/Proj_excel_Team-102/issues/45
-https://github.com/zuri-training/Proj_excel_Team-102/issues/42
-https://github.com/zuri-training/Proj_excel_Team-102/issues/37
-https://github.com/zuri-training/Proj_excel_Team-102/issues/26
-https://github.com/zuri-training/Proj_excel_Team-102/issues/23
-https://github.com/zuri-training/Proj_excel_Team-102/issues/6
-https://github.com/zuri-training/Proj_excel_Team-102/issues/5
+I worked on the following tasks:
+
+- Low Fi Prototype
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/63
+
+- Hi-Fi Protype
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/23
+  
+- File screen, Upload screen and File overview screen - Low-Fi Designs
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/61
+ 
+- File screen, Upload screen and File overview screen - High-Fi Designs
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/62
+
+- Mobile nav bar
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/60
+- Creation of Survey
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/45
+
+- Input text box style and notification
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/37
+  
+- User flow
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/42
+  
+- Research Survey - Both Quantitative and Qualitative Interview
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/6
