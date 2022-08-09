@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { useState, useEffect } from "react";
 
 import $ from "jquery";
 
+import { user_actions } from "../store";
+
 import DashboardSidebar from "../components/DashboardSidebar";
 import DashboardHeader from "../components/DashboardHeader";
+import DashboardFooter from "../components/DashboardFooter";
 
 import operation1_img from "../assets/img/operation-1.png";
 import operation2_img from "../assets/img/operation-2.png";
@@ -15,6 +18,8 @@ import operation3_img from "../assets/img/operation-3.png";
 import operation4_img from "../assets/img/operation-4.png";
 
 const Dashboard = () => {
+    const dispatch = useDispatch();
+
     const api_base_url = useSelector((state) => state.app_data.api_base_url);
     const root_url = useSelector((state) => state.app_data.root_url);
     const access_token = useSelector((state) => state.user.access_token);
@@ -31,8 +36,13 @@ const Dashboard = () => {
             success: function (data) {
                 set_recent_files(data.files);
             },
+            statusCode: {
+                401: function() {
+                    dispatch(user_actions.logout());
+                }
+            }
         });
-    }, [access_token, api_base_url]);
+    }, [access_token, api_base_url, dispatch]);
 
     return (
         <>
@@ -132,6 +142,7 @@ const Dashboard = () => {
                             </div>
                         )}
                     </section>
+                    <DashboardFooter />
                 </div>
             </main>
         </>

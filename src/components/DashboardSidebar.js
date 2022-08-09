@@ -56,7 +56,7 @@ const DashboardSidebar = () => {
                             name="log-out-outline"
                             class="dashboard-menu-icon"
                         ></ion-icon>
-                        <Link to="/login" className="dashboard-menu-link">
+                        <Link to="/logout" className="dashboard-menu-link">
                             Logout
                         </Link>
                     </li>

@@ -1,3 +1,5 @@
+import logo from "../assets/img/logo.png";
+
 import { Link, useNavigate } from "react-router-dom";
 
 import { useState, useRef } from "react";
@@ -62,6 +64,9 @@ const Login = () => {
                 <div className="auth-left auth-left--login"></div>
                 <div className="auth-right">
                     <div className="auth-content">
+                        <div className="auth-logo">
+                            <img src={logo} alt=""/>
+                        </div>
                         <h3 className="auth-title">
                             Welcome Back. Comparely is waiting...
                         </h3>

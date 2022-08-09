@@ -6,6 +6,8 @@ import Preloader from "./components/Preloader";
 
 import Auth from "./components/Auth";
 
+import Logout from "./pages/Logout";
+
 const Home = lazy(() => import("./pages/Home"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const Login = lazy(() => import("./pages/Login"));
@@ -14,6 +16,8 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const AddNewFile = lazy(() => import("./pages/AddNewFile"));
 const NewOperation = lazy(() => import("./pages/NewOperation"));
 const PreviewFile = lazy(() => import("./pages/PreviewFile"));
+const Settings = lazy(() => import("./pages/Settings"));
+const Files = lazy(() => import("./pages/Files"));
 
 const SearchHighlight = lazy(() =>
     import("./pages/operations/SearchHighlight")
@@ -176,6 +180,34 @@ const App = () => {
                             <Suspense fallback={<Preloader />}>
                                 <RemoveDuplicates />
                             </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/settings"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <Settings />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/files"
+                    element={
+                        <Auth>
+                            <Suspense fallback={<Preloader />}>
+                                <Files />
+                            </Suspense>
+                        </Auth>
+                    }
+                />
+                <Route
+                    path="/logout"
+                    element={
+                        <Auth>
+                            <Logout />
                         </Auth>
                     }
                 />

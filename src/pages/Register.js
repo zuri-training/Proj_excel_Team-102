@@ -1,3 +1,5 @@
+import logo from "../assets/img/logo.png";
+
 import { Link, useNavigate } from "react-router-dom";
 
 import { useState, useRef } from "react";
@@ -63,6 +65,9 @@ const Register = () => {
                 <div className="auth-left auth-left--signup"></div>
                 <div className="auth-right">
                     <div className="auth-content">
+                        <div className="auth-logo">
+                            <img src={logo} alt=""/>
+                        </div>
                         <h3 className="auth-title">
                             Create your account. No strings attached...
                         </h3>
