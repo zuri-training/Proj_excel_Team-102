@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins';
+}
+
+.lot{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 60px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.tok{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.yo{
+    color: blueviolet;
+    font:100 ;
+}
+
+.but{
+    color: aliceblue;
+    background-color:rgba(80, 23, 133, 0.808);
+    padding: 6px 16px 6px 16px;
+    /* float: right; */
+    border-radius: 10%;
+}
+
+.kot{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.viw{
+    display: flex;
+    gap: 10px;
+}
+
+.tet{
+    color: blueviolet;
+}
+
+.re{
+    margin-top: 25px;
+}
+
+.main{
+    display: grid;
+    width: 100%;
+    margin-right: 180px;
+    margin-left: 10px;
+    grid-template-areas: 
+    'a a a a a'
+    'b b b b b'
+    'c c c c c'
+    'd d d d d'
+    'e e e e e'
+    'f f f f f'
+    'g g g g g'
+    'h h h h h'
+    'i i i i i'
+    ;
+    margin-top: 30px;
+}
+
+.A{
+    grid-area: a;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+
+.B{
+    grid-area: b;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+.C{
+    grid-area: c;
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-top: 30px;
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+
+.D{
+    grid-area: d;
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-top: 35px; 
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+.E{
+    grid-area: e;
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-top: 40px; 
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+.F{
+    grid-area: f;
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-top: 45px; 
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+.G{
+    grid-area: g;
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-top: 50px; 
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+.H{
+    grid-area: h;
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-top: 55px; 
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+.I{
+    grid-area: i;
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-top: 60px; 
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 20px;
+}
+
+.li{
+    color: rgb(198, 211, 185);
+}
+
+.gr{
+    color: blueviolet;
+}
+
+.gr:hover{
+    color:rgb(198, 211, 185);
+}
+
+img{
+    width: 30px;
+    height: 30px;
+}
+
+.fil{
+    width: 30px;
+    height: 10px;
+    color: lawngreen;
+    display: flex;
+}
+
+/* .file{
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 180px;
+    display: flex;
+    align-items:center; 
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 101px;
+    width: 100%;
+    height: 100%;
+} */
+.ll{
+    margin-right: 100px;
+}
+.miv{
+    display: flex;
+}
+
+.tm{
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+/* .file_1{
+    display: flex;
+    justify-content: space-between;
+} */

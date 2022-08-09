@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins';
+}
+.lot{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 60px;
+}
+a{
+    text-decoration: none;
+}
+.kot{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.viw{
+    display: flex;
+    gap: 10px;
+}
+.tet{
+    color: blueviolet;
+}
+
+.li{
+    color: rgb(198, 211, 185);
+}
+
+.gr{
+    color: blueviolet;
+}
+
+.gr:hover{
+    color:rgb(198, 211, 185);
+}
+
+.N{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-bottom:1px solid;
+    border-color:black;
+    padding-bottom: 10px;
+}
+.miv{
+    display: flex;
+}
+.fil{
+    width: 60px;
+    height: 40px;
+    color: lawngreen;
+    display: flex;
+}
+.tm{
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.ty{
+    color: black;
+}
