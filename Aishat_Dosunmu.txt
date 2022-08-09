@@ -16,14 +16,15 @@ I worked on the following tasks:
 
 - Mobile nav bar
   https://github.com/zuri-training/Proj_excel_Team-102/issues/60
-- Creation of Survey
-  https://github.com/zuri-training/Proj_excel_Team-102/issues/45
 
 - Input text box style and notification
   https://github.com/zuri-training/Proj_excel_Team-102/issues/37
   
 - User flow
   https://github.com/zuri-training/Proj_excel_Team-102/issues/42
+  
+- Creation of Survey
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/45
   
 - Research Survey - Both Quantitative and Qualitative Interview
   https://github.com/zuri-training/Proj_excel_Team-102/issues/6
