@@ -1,0 +1,2 @@
+During the course of the project comparely, I was assigned to build the landing page which is the first point of interaction of our web app COMPARELY. I worked alongside Promise who designed the landing page and wrote the codes in accordance to the specifications given.
+Also, I proferred solutions during team meetings to designers and developers in my little capacity.
