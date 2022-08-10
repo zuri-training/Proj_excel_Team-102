@@ -1,0 +1,65 @@
+1. I worked with Ebele Okafor on the competitor analysis. 
+   We used figjam to perform this task. We were able to get three competitors for our software (Comparely).
+   We highlighted the unique value proposition, advantages, disadvantages and similar capabilities of each of the competitor in order to create unique features for our software.
+   Github link (issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/41
+   Link to the task : https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=9%3A665
+
+2. I worked on the desktop grid style for the style guide my team used.
+   I made the desktop grid style to be responsive. 
+   Github link (Issue): https://github.com/zuri-training/Proj_excel_Team-102/issues/35
+   Link to the task: https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=82%3A3
+
+3. I worked on the alerts for the style guide my team used.
+   I created alerts for all major alerts that users will get while using our software (Comparely)
+   Github link (Issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/35
+   Link to the task: https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=149%3A221
+
+4. I worked with Promise Okoh on the landing page. 
+   We made some research and decided to add four pages to the landing page. (About us, Product, Features, Contact us)
+   Github link (Issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/68
+   Link to the task: https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=778%3A5230
+		     
+
+5. I worked on the lowfi screens of the first page of the landing page which is the 'About Us' page.
+   This page was designed to tell users the background behind our software (Comparely) and also to introduce members of the team to users.
+   Github link (issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/77
+   Link to the task: Desktop screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=206%3A1042
+                     Tablet screen- https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=515%3A3666
+                     Mobile screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=346%3A2993
+                     
+
+6. I worked on the lowfi screens of the second page of the landing page which is the 'Product' page.
+   This page was designed to show users products of our software( Comparely).
+   Github link (issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/78
+   Link to the task: Desktop screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=240%3A1305
+                     Tablet screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=616%3A4198
+                     Mobile screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=346%3A3078
+
+7. I worked on the lowfi screens of the third page of the landing page which is the 'features' page.
+   This page was designed to tell users about the features of our software, This page offered a pictorial representation of our features in form of a slider to make it easy for our users to understand the processes.
+   Github link (issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/79
+   Link to the task : Destop screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=199%3A861
+                      Tablet screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=509%3A3598
+                      Mobile view - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=320%3A2720
+
+8. I worked on the Hifi screens of the first page of the landing page which is the 'About Us' page.
+   Github link (issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/74
+   Link to the task : Desktop screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1010%3A7487
+                      Tablet screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2003%3A34816
+                      Mobile screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1821%3A28248
+
+9.  I worked on the Hifi screens of the second page of the landing page which is the 'product' page.
+    Github link (issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/76
+    Link to the task : Desktop screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=812%3A5758
+                       Tablet screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2003%3A34696
+                       Mobile view - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1821%3A27831
+
+10. I worked on the Hifi screens of the third page of the landing page which is the 'features page'.
+    Github link (issue) : https://github.com/zuri-training/Proj_excel_Team-102/issues/75
+    Link to the task : Desktop screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1045%3A7455
+                       Tablet screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2003%3A34971
+                       Mobile screen - https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1690%3A28202
+
+11. I worked on the progress screen for our style guide
+    This page was designed to enable users know how long an action is taking to be completed.
+    Link to the task : https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=776%3A4951
