@@ -966,6 +966,7 @@ body {
 .team-member-img {
     width: 100%;
     height: 20rem;
+    display: block;
     object-fit: cover;
 
     transition: all 0.3s;
@@ -1964,6 +1965,58 @@ body {
     color: #fff;
 }
 
+/*Settings Page*/
+.settings-btn-1,
+.settings-btn-2 {
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.6rem;
+    font-family: inherit;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.settings-btn-1 {
+    border: 1px solid #24067a;
+    color: #24067a;
+}
+
+.settings-btn-1:hover {
+    background-color: #24067a;
+    color: #fff;
+}
+
+.settings-btn-2 {
+    border: 1px solid #a385f9;
+    color: #a385f9;
+}
+
+.settings-btn-2:hover {
+    background-color: #a385f9;
+    color: #fff;
+}
+
+.profile-edit {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    margin-bottom: 4.8rem;
+}
+
+.profile-image {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.info-edit {
+    display: flex;
+    align-items: flex-end;
+    gap: 2.4rem;
+    margin-bottom: 4.8rem;
+}
+
 @media (max-width: 1400px) {
     .files-list-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -2129,12 +2182,21 @@ body {
 
 @media (max-width: 900px) {
     .testimonial-container {
-        margin: 0 4.8rem;
+        margin: 0 2.4rem;
     }
     .footer-container {
         width: 60%;
         grid-template-columns: 1fr;
         row-gap: 4.8rem;
+    }
+
+    .info-edit {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-form-group {
+        width: 100%;
     }
 }
 
@@ -2174,6 +2236,14 @@ body {
 
     .recent-file:last-child {
         display: block;
+    }
+
+    .about-info-grid {
+        gap: 2.4rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -2231,9 +2301,16 @@ body {
     .modal--files-select {
         width: 70% !important;
     }
+
+    .about-info-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 630px) {
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
     /*Dashboard*/
     .files-list-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2301,9 +2378,14 @@ body {
         grid-template-columns: 1fr;
         row-gap: 4.8rem;
     }
-
     .modal {
         width: 80%;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .team-member-img {
+        height: 35rem;
     }
 
     /*Dashboard*/
@@ -2329,6 +2411,18 @@ body {
     /*Dashboard*/
     .files-select {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 430px) {
+    .testimonial-title {
+        font-size: 2.2rem;
+    }
+    .newsletter-form {
+        flex-direction: column;
+    }
+    .newsletter-form button {
+        flex: 1;
     }
 }
 

@@ -7,6 +7,13 @@ import avatar from "../assets/img/avatar.jpg";
 const DashboardHeader = () => {
     const { user_info } = useSelector((state) => state.user);
 
+    const profile_picture = useSelector(
+        (state) => state.user.user_info.profile_picture
+    );
+
+    const base_url = useSelector((state) => state.app_data.base_url);
+    const user_id = useSelector((state) => state.user.user_info.id);
+
     return (
         <>
             <header className="dashboard-header">
@@ -14,7 +21,15 @@ const DashboardHeader = () => {
                     <img src={logo} alt="" />
                 </div>
                 <div className="dashboard-user">
-                    <img className="dashboard-user-img" src={avatar} alt="" />
+                    <img
+                        className="dashboard-user-img"
+                        src={
+                            profile_picture
+                                ? `${base_url}dc/${user_id}/${profile_picture}`
+                                : avatar
+                        }
+                        alt=""
+                    />
                     <p className="dashboard-user-name">
                         {`${user_info.first_name}`}
                     </p>

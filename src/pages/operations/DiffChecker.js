@@ -36,7 +36,7 @@ const DiffChecker = () => {
     const doRenameFile = (e) => {
         e.preventDefault();
 
-        rn_btn.current.innerHTML = `<span className="fas fa-spinner fa-spin"></span> Renaming file`;
+        rn_btn.current.innerHTML = `<span class="fas fa-spinner fa-spin"></span> Renaming file`;
 
         $.ajax({
             type: "PATCH",
