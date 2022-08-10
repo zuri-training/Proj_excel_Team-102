@@ -20,6 +20,7 @@ class AddUser(BaseModel):
 
 class User(AddUser):
     id: int
+    profile_picture: Optional[str]
     time_added: datetime
 
 class GetUser(BaseModel):
@@ -31,6 +32,17 @@ class Login(BaseModel):
     access_token: Optional[str]
     token_type: Optional[str]
     user_info: Optional[User]
+
+class UserInfo(BaseModel):
+    first_name: str
+    last_name: str
+    email_address: str
+
+class ChangePassword(BaseModel):
+    current_password: str
+    new_password: str
+    confirm_new_password: str
+
 
 class File(BaseModel):
     id: int

@@ -8,6 +8,7 @@ class Users(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     first_name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
+    profile_picture = Column(String, nullable=True)
     email_address = Column(String, unique=True, nullable=False)
     password = Column(String, nullable=False)
     time_added = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
