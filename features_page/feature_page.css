@@ -14,7 +14,6 @@ body {
 .div_one {
   width: 100%;
   margin: 4% 0;
-  /* background-color: wheat; */
 }
 .first_div {
   width: 86%;
@@ -39,15 +38,14 @@ body {
   width: 80%;
   height: 600px;
   margin: 15px auto;
-  /* background-color: aqua; */
 }
 .first_div .img1 img {
-  object-fit: cover;
+  /* object-fit: cover; */
   width: 100%;
   height: 600px;
 }
 .small_imgs {
-  /* width: 50%; */
+  width: 50%;
   justify-content: center;
   display: flex;
   flex-direction: row;
