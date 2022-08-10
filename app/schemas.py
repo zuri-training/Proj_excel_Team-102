@@ -45,11 +45,11 @@ class File(BaseModel):
 
 class GetFile(BaseModel):
     message: str
-    meta_data: Optional[FetchMetaData]
     file: Optional[File]
 
 class GetFiles(BaseModel):
     message: str
+    meta_data: Optional[FetchMetaData]
     files: Optional[List[File]]
 
 
