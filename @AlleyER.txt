@@ -1,0 +1,41 @@
+At the beginning of the project we listed out the features our project is going to have which includes the feature in the project specification and our additional features. The backend developers were assigned to do each of those tasks separately in python files which would later be integrated to the web application. I worked on:
+
+- Diff Checker 
+  
+	This operation compare each cells of two excel files and highlights the cells where the value does not match
+
+  	Issue Link: https://github.com/zuri-training/Proj_excel_Team-102/issues/17
+
+- Highlight Duplicates and Return 2 Files
+
+ 	 Issue Link: https://github.com/zuri-training/Proj_excel_Team-102/issues/21
+
+- Remove Duplicates and Return 2 Files
+	
+	Issue Link: https://github.com/zuri-training/Proj_excel_Team-102/issues/11
+
+Other tasks I worked on
+
+- Collaborated with the backend developers in coming up with our database structure and schema
+	Issue Link: https://github.com/zuri-training/Proj_excel_Team-102/issues/8
+	Database Schema Link: https://www.figma.com/file/JHMZA7HUAgm2kryvuJQMrM/Database-Schema
+
+- Set up the FastAPI backend project in main branch and the React project in frontend_react branch
+	Backend Setup Commit Link: https://github.com/zuri-training/Proj_excel_Team-102/commit/672efe3bfd06a63a9c405498fdac463aab5d9bd9
+	React Setup Commit Link: https://github.com/zuri-training/Proj_excel_Team-102/commit/07020bd26c90c90939b82e85b1e313f1c214cb7d
+
+- Updated the README.md to be detailed on main branch
+	Commit Link: https://github.com/zuri-training/Proj_excel_Team-102/commit/4343b2f2d10ce196d92692312168b564c43b9db4
+
+- In charge of converting designs created by the frontend developers in HTML and CSS to ReactJS and integrating it with the backend functionality.
+	React Branch Link: https://github.com/zuri-training/Proj_excel_Team-102/tree/frontend_react
+
+- Worked on the upload file page: Developed both the user interface, the backend functionality which is to allow for upload of CSV and Excel files and linked both functionality and user interface
+
+- Worked on the operation page: Developed the user interface and linked it to the backend functionality developed by me and other backend developers
+
+- Developed dashboard responsiveness
+
+- Linked pages developed by the frontend developers
+
+- Created the developers documentation
