@@ -107,7 +107,15 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Google Fonts](https://fonts.google.com/)
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
-* [FIGMA](https://react-icons.github.io/react-icons/search)
+* [FIGMA](https://figma.com)
+* [Notion](https://notion.so)
+
+
+## Comparely Links
+
+* [figma Link](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=807%3A5378)
+* [Notion Link](https://www.notion.so/Notes-bbbf7116e5584b938e976aabaadcd118)
+
 
 
 ## Show your support
