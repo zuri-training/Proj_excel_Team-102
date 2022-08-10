@@ -25,6 +25,7 @@ const load_app_state = () => {
                         ? "http://localhost:3000/#"
                         : window.location.origin + "/#"
                 }`,
+                dashboard_navbar_active: "dashboard",
             },
             user: {
                 logged_in: false,
@@ -52,6 +53,13 @@ const update_app_state = (data_key, new_value) => {
 const app_data_slice = createSlice({
     name: "app_data",
     initialState: app_state.app_data,
+    reducers: {
+        set_dashboard_navbar_active: (state, data) => {
+            state.dashboard_navbar_active = data.payload;
+
+            update_app_state("app_data", state);
+        },
+    },
 });
 
 const user_slice = createSlice({
@@ -77,6 +85,7 @@ const user_slice = createSlice({
     },
 });
 
+export const app_data_actions = app_data_slice.actions;
 export const user_actions = user_slice.actions;
 
 export default configureStore({

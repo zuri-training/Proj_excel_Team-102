@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import $ from "jquery";
 
-import { user_actions } from "../store";
+import { user_actions, app_data_actions } from "../store";
 
 const Files = () => {
     const dispatch = useDispatch();
@@ -36,6 +36,8 @@ const Files = () => {
     const [division] = useState(10);
 
     useEffect(() => {
+        dispatch(app_data_actions.set_dashboard_navbar_active("files"));
+
         $.ajax({
             type: "GET",
             url: `${api_base_url}/files/?page=${page}&division=${division}&search=${search}`,
@@ -212,7 +214,7 @@ const Files = () => {
                                                     xlsx
                                                 </td>
                                                 <td className="file-size">
-                                                    2kb
+                                                    {file.size}kb
                                                 </td>
                                                 <td className="file-last-modified">
                                                     {file.time_added.substr(

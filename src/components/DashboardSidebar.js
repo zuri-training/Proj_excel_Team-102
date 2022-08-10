@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 import desktop_logo from "../assets/img/desktop-logo.png";
 
 const DashboardSidebar = () => {
+    const dashboard_navbar_active = useSelector(
+        (state) => state.app_data.dashboard_navbar_active
+    );
+
     return (
         <>
             <aside className="dashboard-sidenav">
@@ -10,7 +16,13 @@ const DashboardSidebar = () => {
                     <img src={desktop_logo} alt="" />
                 </div>
                 <ul className="dashboard-menu">
-                    <li className="dashboard-menu-item active">
+                    <li
+                        className={`dashboard-menu-item ${
+                            dashboard_navbar_active === "dashboard"
+                                ? "active"
+                                : ""
+                        }`}
+                    >
                         <ion-icon
                             name="bar-chart-outline"
                             class="dashboard-menu-icon"
@@ -19,7 +31,11 @@ const DashboardSidebar = () => {
                             Dashboard
                         </Link>
                     </li>
-                    <li className="dashboard-menu-item">
+                    <li
+                        className={`dashboard-menu-item ${
+                            dashboard_navbar_active === "files" ? "active" : ""
+                        }`}
+                    >
                         <ion-icon
                             name="document-text-outline"
                             class="dashboard-menu-icon"
@@ -28,7 +44,13 @@ const DashboardSidebar = () => {
                             Files
                         </Link>
                     </li>
-                    <li className="dashboard-menu-item">
+                    <li
+                        className={`dashboard-menu-item ${
+                            dashboard_navbar_active === "new_file"
+                                ? "active"
+                                : ""
+                        }`}
+                    >
                         <ion-icon
                             name="add-circle-outline"
                             class="dashboard-menu-icon"
@@ -42,7 +64,13 @@ const DashboardSidebar = () => {
                     </li>
                 </ul>
                 <ul className="dashboard-menu dashboard-menu-footer">
-                    <li className="dashboard-menu-item">
+                    <li
+                        className={`dashboard-menu-item ${
+                            dashboard_navbar_active === "settings"
+                                ? "active"
+                                : ""
+                        }`}
+                    >
                         <ion-icon
                             name="settings-outline"
                             class="dashboard-menu-icon"

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import $ from "jquery";
 
-import { user_actions } from "../store";
+import { user_actions, app_data_actions } from "../store";
 
 import DashboardSidebar from "../components/DashboardSidebar";
 import DashboardHeader from "../components/DashboardHeader";
@@ -78,6 +78,10 @@ const AddNewFile = () => {
             doUpload();
         }
     };
+
+    useEffect(() => {
+        dispatch(app_data_actions.set_dashboard_navbar_active("new_file"));
+    }, [dispatch]);
 
     return (
         <>

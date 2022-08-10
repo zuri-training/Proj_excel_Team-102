@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 import $ from "jquery";
 
-import { user_actions } from "../store";
+import { user_actions, app_data_actions } from "../store";
 
 import DashboardSidebar from "../components/DashboardSidebar";
 import DashboardHeader from "../components/DashboardHeader";
@@ -27,6 +27,8 @@ const Dashboard = () => {
     const [recent_files, set_recent_files] = useState([]);
 
     useEffect(() => {
+        dispatch(app_data_actions.set_dashboard_navbar_active("dashboard"));
+
         $.ajax({
             type: "GET",
             url: `${api_base_url}/files/?division=3`,
@@ -37,10 +39,10 @@ const Dashboard = () => {
                 set_recent_files(data.files);
             },
             statusCode: {
-                401: function() {
+                401: function () {
                     dispatch(user_actions.logout());
-                }
-            }
+                },
+            },
         });
     }, [access_token, api_base_url, dispatch]);
 
@@ -132,7 +134,10 @@ const Dashboard = () => {
                                                             20 && "..."}
                                                     </h4>
                                                     <p className="recent-file-date">
-                                                        {file.time_added.substr(0, 19)}
+                                                        {file.time_added.substr(
+                                                            0,
+                                                            19
+                                                        )}
                                                     </p>
                                                 </div>
                                             </div>

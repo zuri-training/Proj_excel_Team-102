@@ -11,7 +11,7 @@ const DashboardHeader = () => {
         <>
             <header className="dashboard-header">
                 <div className="dashboard-header-logo">
-                    <img src={logo} alt=""/>
+                    <img src={logo} alt="" />
                 </div>
                 <div className="dashboard-user">
                     <img className="dashboard-user-img" src={avatar} alt="" />
