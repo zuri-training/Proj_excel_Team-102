@@ -1,0 +1,14 @@
+I did the frotend development on the Features page. The features page is the page that contains all the working features of the comparely performs.
+I worked on the Desktop, Tablet and mobile views.
+
+Here's the link to the issues:
+
+https://github.com/zuri-training/Proj_excel_Team-102/issues/71-
+
+https://github.com/zuri-training/Proj_excel_Team-102/tree/frontend/features_page
+
+Incharge of assigning tasks on github and creation of branches.
+below is the LInk.
+Worked with Micah Rehoboth on the readme.md file.
+
+https://github.com/zuri-training/Proj_excel_Team-102/issues/48
