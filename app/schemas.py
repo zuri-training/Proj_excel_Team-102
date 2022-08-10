@@ -39,6 +39,7 @@ class File(BaseModel):
     status: int
     time_added: datetime
     file_content: Optional[List]
+    size: Optional[str]
 
     class Config:
         orm_mode = True

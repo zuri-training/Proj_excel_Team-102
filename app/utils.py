@@ -1,10 +1,11 @@
+import os
 from passlib.context import CryptContext
 from math import floor
 from datetime import datetime
 
 import aiofiles
 
-from openpyxl import load_workbook
+from openpyxl import load_workbook, Workbook
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -39,6 +40,22 @@ async def upload_file(filepath, file):
     async with aiofiles.open(filepath, 'wb') as out_file:
         while content := await file.read(1024):  
             await out_file.write(content)
+
+def create_excel_from_csv(filepath):
+
+    wb = Workbook()
+
+    ws = wb.active
+
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+
+        for line in lines:
+            ws.append(line.split(","))
+
+    wb.save(f"{filepath[:-4]}.xlsx")
+
+    os.remove(filepath)
 
 def get_excel_contents(filepath):
     workbook = load_workbook(filename=filepath)
