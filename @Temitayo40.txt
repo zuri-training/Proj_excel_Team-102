@@ -9,7 +9,7 @@ for the frontend i was assigned to work on:
    The page must be responsive [ the mobile view, tablet view and desktop view, all must respond well ]
    Actually i didn't have any issue implementing this task, it was smooth and awesome.
    
-   Issue Link:
+   Issue Link: https://github.com/zuri-training/Proj_excel_Team-102/issues/72
 
 ** The Product Page for the landing page:
 
@@ -18,7 +18,7 @@ for the frontend i was assigned to work on:
     while building the mobile view, i had issue aligning the icon and the text on the same line, but i later resolved 
     this by nesting them in the same div class and imbeding the <p> tag in the icon class.
 
-    Issued Link:
+    Issued Link: https://github.com/zuri-training/Proj_excel_Team-102/issues/73
 
 
 
@@ -31,7 +31,8 @@ we were assigned to work on some features:
   
   This features iterates throught the rows and columns in a work book, search replace it.
   
-  Issued Link:
+  Issued Link: https://github.com/zuri-training/Proj_excel_Team-102/issues/15
+  
 
 ** I collaborated with the backend developers in coming up with our database structure and schema
 
@@ -41,9 +42,11 @@ we were assigned to work on some features:
 
 Other task:
 
-* updating the main Readme file.
+* updated the main Readme file.
+ https://github.com/zuri-training/Proj_excel_Team-102/edit/main/README.md
 
 * Updating Developer's Document
+https://www.notion.so/Documentation-for-Developers-bae74c37314e400b8bf65fbc038e6034
 
 * Build on features page Desktop view.
 

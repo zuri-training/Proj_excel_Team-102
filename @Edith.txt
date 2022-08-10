@@ -1,0 +1,24 @@
+I am Edith Osisike.
+
+Joined in analyzing what the problem we are solving is and contributing possible solutions plus suggested other features that can be added aside the onces stated in the problem.
+
+Joined in distribution of the research questions for the project.
+
+Assigned to created the Login and Contact pages, which I did successfully.
+
+The Login page.
+Here is the link to the issue assigned and done.
+https://github.com/zuri-training/Proj_excel_Team-102/issues/12
+
+The Login page helps exiting users to gain access to the website for use when next they will be coming to use it.
+
+The Contact page.
+
+link to the assigned task below.
+https://github.com/zuri-training/Proj_excel_Team-102/issues/47
+
+The contact page is to get users complains, feedbacks and suggestions about our product.
+
+Link to where to find the contact and login page.
+
+https://github.com/zuri-training/Proj_excel_Team-102/tree/frontend
