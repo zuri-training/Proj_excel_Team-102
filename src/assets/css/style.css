@@ -764,6 +764,8 @@ body {
     background: none;
     cursor: pointer;
 
+    z-index: 99999;
+
     display: none;
 }
 
@@ -2080,6 +2082,8 @@ body {
         top: 0;
         left: 0;
         height: 100vh;
+
+        z-index: 9999;
 
         background-color: rgba(255, 255, 255, 0.904);
         opacity: 0;
