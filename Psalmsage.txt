@@ -1,0 +1,17 @@
+At the beginning of the project we listed out the features according to the specification and also other features we would add up. The backend developers were assigned to do each of those tasks separately in python files which would be integrated to the web application.
+My works:
+
+-Highlight Duplicate and return single 
+issue link:-https://github.com/zuri-training/Proj_excel_Team-102/issues/25
+
+-Search And Highlight
+This operation helps the user to search for a data and highlight it out to be know.
+issue link:-https://github.com/zuri-training/Proj_excel_Team-102/issues/14
+
+-Implement the file screen
+This screen is the page in which user are able to access their files to be download and rename 
+
+issue link:-https://github.com/zuri-training/Proj_excel_Team-102/issues/80
+
+https://github.com/zuri-training/Proj_excel_Team-102/issues/8
+https://www.figma.com/file/JHMZA7HUAgm2kryvuJQMrM/Database-Schema
