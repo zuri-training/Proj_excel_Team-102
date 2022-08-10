@@ -1,1 +1,55 @@
 Temitayo's contributions
+full stack developer
+
+At the initial stage of the project, features and task were assigned to everyone,
+for the frontend i was assigned to work on:
+
+** The About Us page for the landing page:
+ 
+   The page must be responsive [ the mobile view, tablet view and desktop view, all must respond well ]
+   Actually i didn't have any issue implementing this task, it was smooth and awesome.
+   
+   Issue Link:
+
+** The Product Page for the landing page:
+
+   The page must be responsive [ the mobile view, tablet view and desktop view, all must respond well ]
+   
+    while building the mobile view, i had issue aligning the icon and the text on the same line, but i later resolved 
+    this by nesting them in the same div class and imbeding the <p> tag in the icon class.
+
+    Issued Link:
+
+
+
+
+for Backend Project:
+
+we were assigned to work on some features:
+ 
+**I worked on the search and replace feature
+  
+  This features iterates throught the rows and columns in a work book, search replace it.
+  
+  Issued Link:
+
+** I collaborated with the backend developers in coming up with our database structure and schema
+
+	Issue Link: https://github.com/zuri-training/Proj_excel_Team-102/issues/8
+	Database Schema Link: https://www.figma.com/file/JHMZA7HUAgm2kryvuJQMrM/Database-Schema
+ 
+
+Other task:
+
+* updating the main Readme file.
+
+* Updating Developer's Document
+
+* Build on features page Desktop view.
+
+
+
+	
+   
+   
+ 

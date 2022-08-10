@@ -1,0 +1,22 @@
+I Work on the following tasks:
+
+- Compare files screen Hifi
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/67
+
+- Compare files screen Low-Fi
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/66
+
+- User Pain Points
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/65
+
+- Grids and Spacers
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/64
+
+- User Journey map, user Persona, User Flow, Information Architecture, Empathy Map, Pain Points, Priority Grid, Competitor Analysis
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/46
+
+- Empathy Map/User story 
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/43
+
+- Compare cells from the processes down to the result 
+  https://github.com/zuri-training/Proj_excel_Team-102/issues/28

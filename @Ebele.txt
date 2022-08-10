@@ -1,0 +1,32 @@
+Ebele's Contribution
+
+I worked on the following Task assigned to me:
+-Creation of Research Plan using goggle document
+https://github.com/zuri-training/Proj_excel_Team-102/issues/6#issuecomment-1200263907
+
+-Creation of Research survey(Both Qualitative and Quantitative) with Aishat Dosumu
+https://github.com/zuri-training/Proj_excel_Team-102/issues/45#issuecomment-1209515649
+
+-I worked with Favour Martins on Competitor's Analysis using Figjam
+https://github.com/zuri-training/Proj_excel_Team-102/issues/41#issuecomment-1201655542
+
+-Style Guide Iconography with variants (Outline and Filled icons)
+https://github.com/zuri-training/Proj_excel_Team-102/issues/5#issuecomment-1200106648
+
+-Low Fi on Desktop View Merge and Split Screens using Figma from the process down to the result
+https://github.com/zuri-training/Proj_excel_Team-102/issues/29#issuecomment-1200264931
+
+-High Fi on Desktop View Merge and Split Screens
+https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1289%3A9705
+
+-Low Fi on Mobile View for Merge and Split Screens
+https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=567%3A4094
+
+-High Fi on Mobile View for Merge and Split Screens
+https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1521%3A29649
+
+-Low Fi on Tablet View for Merge and Split Screens
+https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=204%3A1126
+
+-High Fi on Tablet View on Merge and Split Screens
+https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1375%3A27698
