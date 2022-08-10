@@ -1,0 +1,13 @@
+contributions of Bakare Fatimoh during the course of  project comparely
+
+I developed the user interface for the sign up page
+commit link:https://github.com/zuri-training/Proj_excel_Team-102/tree/frontend/sign%20up%20page
+issue link:https://github.com/zuri-training/Proj_excel_Team-102/issues/10
+
+I developed the user interface for the dashboard(desktop view)
+commit link: https://github.com/zuri-training/Proj_excel_Team-102/tree/frontend/dashboard
+issue link:  https://github.com/zuri-training/Proj_excel_Team-102/issues/59
+
+I developed the user interface for the upload page
+commit link: https://github.com/zuri-training/Proj_excel_Team-102/tree/frontend/upload%20page
+issue link:  https://github.com/zuri-training/Proj_excel_Team-102/issues/58
