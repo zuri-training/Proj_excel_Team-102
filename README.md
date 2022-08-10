@@ -23,6 +23,8 @@ Comparely is a web application that compare the contents of excel files
 3. `static/`: This contains the folder where excel files would be uploaded to also the ReactJS project would
 
 
+##
+
 ![Dash](https://user-images.githubusercontent.com/74157337/183977059-3c46aed6-fe78-406b-a73f-25a8a4082cd8.png)
 
 
@@ -68,11 +70,12 @@ Comparely is a web application that compare the contents of excel files
 
 ## Built With
 
-* [PostgreSQL](https://www.postgresql.org/)
-* [HTML](https://www.learn-html.org/)
+* [PostgreSQL](https://postgresql.org/)
+* [HTML](https://learn-html.org/)
 * [CSS](https://web.dev/learn/css/)
 * [REACT](https://reactjs.org/)
 * [FastAPI](https://fastapi.tiangolo.com/)
+* [FIGMa](www.figma.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
