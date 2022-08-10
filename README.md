@@ -119,5 +119,3 @@ Give a ⭐️ if you like this project!
 
 This project is [MIT](lic.url) licensed.
 
-
-   be built and pasted into this folder.
