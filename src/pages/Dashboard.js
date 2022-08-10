@@ -132,7 +132,7 @@ const Dashboard = () => {
                                                             20 && "..."}
                                                     </h4>
                                                     <p className="recent-file-date">
-                                                        {file.time_added}
+                                                        {file.time_added.substr(0, 19)}
                                                     </p>
                                                 </div>
                                             </div>

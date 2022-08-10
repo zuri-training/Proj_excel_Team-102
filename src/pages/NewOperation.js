@@ -10,6 +10,9 @@ import { user_actions } from "../store";
 
 import DashboardSidebar from "../components/DashboardSidebar";
 import DashboardHeader from "../components/DashboardHeader";
+import DashboardFooter from "../components/DashboardFooter";
+
+import excel_icon from "../assets/img/excel-icon.svg";
 
 const NewOperation = () => {
     const { files } = useParams();
@@ -364,8 +367,13 @@ const NewOperation = () => {
             success: function (data) {
                 set_user_files(data.files);
             },
+            statusCode: {
+                401: function () {
+                    dispatch(user_actions.logout());
+                },
+            },
         });
-    }, [access_token, api_base_url, files_search]);
+    }, [access_token, api_base_url, files_search, dispatch]);
 
     if (loading) {
         return (
@@ -402,10 +410,11 @@ const NewOperation = () => {
                                             doFileSelectOperation(file.id)
                                         }
                                     >
-                                        <ion-icon
-                                            name="document-text-outline"
-                                            class="file-select-icon"
-                                        ></ion-icon>
+                                        <img
+                                            src={excel_icon}
+                                            alt=""
+                                            className="file-select-img"
+                                        />
                                         <p title={file.file_name}>
                                             {file.file_name.substr(0, 12)}
                                             {file.file_name.length > 12 &&
@@ -1068,6 +1077,7 @@ const NewOperation = () => {
                             </div>
                         )}
                     </section>
+                    <DashboardFooter />
                 </div>
             </main>
         </>

@@ -19,9 +19,9 @@ const ContactUs = () => {
                         NOT BE USED OUTSIDE THE SCOPE OF CONTEXT.
                     </p>
                     <form className="contact-form">
-                        <div class="contact-form-group">
+                        <div className="contact-form-group">
                             <label
-                                for="full_name"
+                                htmlFor="full_name"
                                 className="contact-form-label"
                             >
                                 Full Name<span>*</span>
@@ -34,8 +34,11 @@ const ContactUs = () => {
                                 required
                             />
                         </div>
-                        <div class="contact-form-group">
-                            <label for="email" className="contact-form-label">
+                        <div className="contact-form-group">
+                            <label
+                                htmlFor="email"
+                                className="contact-form-label"
+                            >
                                 Email Address<span>*</span>
                             </label>
                             <input
@@ -46,15 +49,18 @@ const ContactUs = () => {
                                 required
                             />
                         </div>
-                        <div class="contact-form-group">
-                            <label for="message" className="contact-form-label">
+                        <div className="contact-form-group">
+                            <label
+                                htmlFor="message"
+                                className="contact-form-label"
+                            >
                                 How can we be better<span>*</span>
                             </label>
                             <textarea
                                 name="message"
                                 rows="5"
-                                minlength="10"
-                                maxlength="500"
+                                minLength="10"
+                                maxLength="500"
                                 placeholder="Write your suggestion here ..."
                                 className="contact-form-input"
                                 required

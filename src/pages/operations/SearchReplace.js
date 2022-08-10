@@ -10,6 +10,7 @@ import { user_actions } from "../../store";
 
 import DashboardSidebar from "../../components/DashboardSidebar";
 import DashboardHeader from "../../components/DashboardHeader";
+import DashboardFooter from "../../components/DashboardFooter";
 
 const SearchReplace = () => {
     const { operation_id } = useParams();
@@ -325,6 +326,7 @@ const SearchReplace = () => {
                             </div>
                         </div>
                     </section>
+                    <DashboardFooter />
                 </div>
             </main>
         </>

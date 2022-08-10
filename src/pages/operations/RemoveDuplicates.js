@@ -10,6 +10,7 @@ import { user_actions } from "../../store";
 
 import DashboardSidebar from "../../components/DashboardSidebar";
 import DashboardHeader from "../../components/DashboardHeader";
+import DashboardFooter from "../../components/DashboardFooter";
 
 const RemoveDuplicates = () => {
     const { operation_id } = useParams();
@@ -326,6 +327,7 @@ const RemoveDuplicates = () => {
                             </div>
                         </div>
                     </section>
+                    <DashboardFooter />
                 </div>
             </main>
         </>

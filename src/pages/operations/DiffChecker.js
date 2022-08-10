@@ -10,6 +10,7 @@ import { user_actions } from "../../store";
 
 import DashboardSidebar from "../../components/DashboardSidebar";
 import DashboardHeader from "../../components/DashboardHeader";
+import DashboardFooter from "../../components/DashboardFooter";
 
 const DiffChecker = () => {
     const { operation_id } = useParams();
@@ -489,6 +490,7 @@ const DiffChecker = () => {
                             </div>
                         </div>
                     </section>
+                    <DashboardFooter />
                 </div>
             </main>
         </>

@@ -10,6 +10,7 @@ import { user_actions } from "../store";
 
 import DashboardSidebar from "../components/DashboardSidebar";
 import DashboardHeader from "../components/DashboardHeader";
+import DashboardFooter from "../components/DashboardFooter";
 
 const AddNewFile = () => {
     const dispatch = useDispatch();
@@ -139,6 +140,12 @@ const AddNewFile = () => {
                             </div>
                             <div className="dashboard-breadcrumb-right"></div>
                         </div>
+                        <div>
+                            <p className="upload-info-div">
+                                <strong>Note:</strong> Uploaded csv files would
+                                be converted to excel file
+                            </p>
+                        </div>
                         <div
                             className="upload-file-box"
                             onClick={handleUploadBoxClick}
@@ -176,6 +183,7 @@ const AddNewFile = () => {
                             </div>
                         )}
                     </section>
+                    <DashboardFooter />
                 </div>
             </main>
         </>

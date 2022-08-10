@@ -18,6 +18,9 @@ const NewOperation = lazy(() => import("./pages/NewOperation"));
 const PreviewFile = lazy(() => import("./pages/PreviewFile"));
 const Settings = lazy(() => import("./pages/Settings"));
 const Files = lazy(() => import("./pages/Files"));
+const FAQs = lazy(() => import("./pages/FAQs"));
+const Product = lazy(() => import("./pages/Product"));
+const About = lazy(() => import("./pages/About"));
 
 const SearchHighlight = lazy(() =>
     import("./pages/operations/SearchHighlight")
@@ -46,6 +49,30 @@ const App = () => {
                     element={
                         <Suspense fallback={<Preloader />}>
                             <Home />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/about"
+                    element={
+                        <Suspense fallback={<Preloader />}>
+                            <About />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/faqs"
+                    element={
+                        <Suspense fallback={<Preloader />}>
+                            <FAQs />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/product"
+                    element={
+                        <Suspense fallback={<Preloader />}>
+                            <Product />
                         </Suspense>
                     }
                 />

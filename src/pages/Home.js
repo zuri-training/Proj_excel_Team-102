@@ -122,7 +122,7 @@ const Home = () => {
                     <h3 className="newsletter-title">
                         Subscribe for our updates
                     </h3>
-                    <form class="newsletter-form">
+                    <form className="newsletter-form">
                         <input
                             type="text"
                             name="email_address"

@@ -10,6 +10,7 @@ import { user_actions } from "../../store";
 
 import DashboardSidebar from "../../components/DashboardSidebar";
 import DashboardHeader from "../../components/DashboardHeader";
+import DashboardFooter from "../../components/DashboardFooter";
 
 const HighlightDuplicates2 = () => {
     const { operation_id } = useParams();
@@ -18,7 +19,7 @@ const HighlightDuplicates2 = () => {
 
     const api_base_url = useSelector((state) => state.app_data.api_base_url);
     const access_token = useSelector((state) => state.user.access_token);
-    
+
     const base_url = useSelector((state) => state.app_data.base_url);
     const user_id = useSelector((state) => state.user.user_info.id);
 
@@ -411,6 +412,7 @@ const HighlightDuplicates2 = () => {
                             </div>
                         </div>
                     </section>
+                    <DashboardFooter />
                 </div>
             </main>
         </>
