@@ -1,0 +1,30 @@
+Submitted a Dashboard Sketch
+Github: https://github.com/zuri-training/Proj_excel_Team-102/issues/22
+Figma: https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=658%3A4807
+
+I suggested the merge and split feature which will be implemented later
+Figma: https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=29%3A899
+
+Participated in the creation of the Style Guide
+Github: https://github.com/zuri-training/Proj_excel_Team-102/issues/5
+Figma: https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=0%3A1
+
+I made the Dashboard Prototype & components
+Github: https://github.com/zuri-training/Proj_excel_Team-102/issues/31
+Figma Prototype: https://www.figma.com/proto/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1199%3A7765&scaling=contain&page-id=2%3A3&starting-point-node-id=850%3A7321&show-proto-sidebar=1
+
+Myself & Wonderful made the User Journey Map
+Github: https://github.com/zuri-training/Proj_excel_Team-102/issues/40
+Figma: https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=410%3A900
+
+I worked on the Text style 
+Github: https://github.com/zuri-training/Proj_excel_Team-102/issues/55
+Figma: https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=0%3A1
+
+Designed the Dashboard (LoFi)
+Github: https://github.com/zuri-training/Proj_excel_Team-102/issues/56
+Figma: https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2%3A2
+
+Desined the Dashboard (HiFi)
+Github: https://github.com/zuri-training/Proj_excel_Team-102/issues/57
+Figma: https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2%3A3
