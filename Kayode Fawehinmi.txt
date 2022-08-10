@@ -1,0 +1,32 @@
+Contributions of Kayode Fawehinmi during the course of project comparely
+
+I worked on the following tasks 
+
+-Highlight duplicate screens (return single file and return 2 files)
+ github link https://github.com/zuri-training/Proj_excel_Team-102/issues/30
+
+ figma links
+ return single file- https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1344%3A13648
+ return 2 files- https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1344%3A13721
+
+-Remove duplicates screens(return single file and return 2 files)
+ https://github.com/zuri-training/Proj_excel_Team-102/issues/84
+
+ figma links
+ return single file- https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1344%3A13995
+ return 2 files-  https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1417%3A29856
+
+-Search for keywords screens
+ https://github.com/zuri-training/Proj_excel_Team-102/issues/30
+ figma link- https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=1417%3A30705
+ 
+
+-Desktop footer
+ https://github.com/zuri-training/Proj_excel_Team-102/issues/39
+ figma link-https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=554%3A3851
+
+-Userflow: this task was done by myself and Aishat Dosunmu
+ https://github.com/zuri-training/Proj_excel_Team-102/issues/42
+ figma link-https://www.figma.com/file/lmMqrFQpKQ04e1wAXdNw3E/Figjam-for-Comparely?node-id=9%3A554
+
+All these tasks were done by me
