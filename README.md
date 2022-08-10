@@ -8,7 +8,7 @@ Comparely is a web application that compare the contents of excel files
 ## Application Structure
 
 
-## Banches
+## Branches
 
 1. `frontend`: Frontend developers would push their code in HTML, CSS and JavaScript to this branch
 2. `main`: Backend code and code ready for deployment is contained in this branch
