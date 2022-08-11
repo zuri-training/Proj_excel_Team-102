@@ -1,6 +1,7 @@
 During the course of the project comparely, I was assigned to build the landing page which is the first point of interaction of our web app COMPARELY. 
 I worked alongside Promise who designed the landing page and wrote the codes in accordance to the specifications given.
 Also, I proferred solutions and contributions during team meetings to designers and developers in my little capacity.
+I worked on landing page videos and presentation video editing
 
 https://github.com/zuri-training/Proj_excel_Team-102/issues/70#issuecomment-1209103131
 https://github.com/zuri-training/Proj_excel_Team-102/issues/7
