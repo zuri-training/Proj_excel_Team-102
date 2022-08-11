@@ -2,6 +2,7 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const load_app_state = () => {
     const type = "development";
+    // const type = "production";
 
     const app_state = localStorage.getItem("app_state");
 
