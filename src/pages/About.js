@@ -299,7 +299,7 @@ const About = () => {
                                         Rehoboth Micah-Daniels
                                     </p>
                                     <p className="team-member-track">
-                                        Full stack
+                                        Fullstack developer
                                     </p>
                                 </div>
                             </div>

@@ -1251,6 +1251,81 @@ body {
     background-color: #eee;
 }
 
+/*Features Section*/
+.features-section {
+    padding: 17rem 0 12.8rem;
+}
+
+.features-header h2 {
+    font-size: 3.6rem;
+    margin-bottom: 5px;
+    color: rgba(59, 9, 202, 1);
+}
+
+.features-header p {
+    font-size: 1.8rem;
+    margin-bottom: 3.6rem;
+}
+
+.features-pg-container {
+    max-width: 130rem;
+    margin: auto;
+    padding: 0 4.8rem;
+}
+
+.feature-block {
+    width: 100%;
+    padding: 3.6rem;
+    background-color: #eee;
+    border-radius: 0.8rem;
+    margin-bottom: 4.8rem;
+}
+
+.feature-block h2 {
+    font-size: 2.4rem;
+    color: rgba(59, 9, 202, 1);
+    margin-bottom: 1.2rem;
+}
+
+.feature-block p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+}
+
+.feature-image-box {
+    width: 90%;
+    margin: auto;
+    margin-top: 3.6rem;
+}
+
+.feature-img {
+    width: 100%;
+}
+
+.feature-image-preview-box {
+    margin-top: 3.6rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+    min-width: 0;
+}
+
+.feature-img-preview {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+
+    transition: all 0.3s;
+}
+
+.feature-img-preview:hover,
+.feature-img-preview-active {
+    transform: translateY(-1.2rem);
+    box-shadow: 0 1.2em 2.4rem rgb(0 0 0 / 25%);
+}
+
 /*Features section*/
 .features2-section {
     padding-bottom: 9.6rem;
