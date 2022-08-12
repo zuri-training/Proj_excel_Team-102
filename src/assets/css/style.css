@@ -836,6 +836,73 @@ body {
     width: 80%;
 }
 
+/*Try it container*/
+.try-it-section {
+    padding: 9.6rem 0;
+}
+
+.try-it-title {
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 3.6rem;
+}
+
+.try-it-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4.8rem;
+    row-gap: 4.8rem;
+}
+
+.try-it {
+}
+
+.try-it-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+
+    cursor: pointer;
+    padding: 12.8rem 0;
+    border: 2px solid rgb(226, 226, 226);
+    margin-bottom: 1.2rem;
+}
+
+.try-it-header:hover {
+    background-color: rgba(245, 245, 245, 0.933);
+}
+
+.try-it-header img {
+    width: 7rem;
+    height: 7rem;
+}
+
+.try-it-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.try-it-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    visibility: visible;
+}
+
+.try-it-heading {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.try-it-paragraph {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
 /*Features section*/
 .features-section {
     padding: 9.6rem 0;
@@ -870,11 +937,16 @@ body {
 }
 
 .features-list li {
-    font-size: 2rem;
+    font-size: 1.8rem;
 
     display: flex;
     align-items: center;
     gap: 2rem;
+}
+
+.features-list li img {
+    width: 4.8rem;
+    height: 4.8rem;
 }
 
 .features-img-box {
@@ -1103,12 +1175,10 @@ body {
 }
 
 .item {
-    padding: 24px;
     border: 1px solid #24067a;
 
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 2.4rem;
     align-content: center;
 }
 
@@ -1118,8 +1188,13 @@ body {
 
 .number,
 .text {
+    padding: 2.4rem;
     font-size: 1.8rem;
     font-weight: 500;
+}
+
+.text {
+    padding-left: 0;
 }
 
 .number {
@@ -1158,6 +1233,15 @@ body {
     display: inline;
 }
 
+.divider {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 1px;
+    display: block;
+    background-color: #180451;
+    display: none;
+}
+
 .hidden-box {
     grid-row: 2;
     grid-column: 2;
@@ -1166,9 +1250,11 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     margin-top: 2.4rem;
+    padding-right: 2.4rem;
 }
 
-.item-active .hidden-box {
+.item-active .hidden-box,
+.item-active .divider {
     display: block;
 }
 
@@ -1395,6 +1481,18 @@ body {
 .video {
     width: 100%;
     border-radius: 1.6rem;
+}
+
+.video-paragraph {
+    text-align: center;
+    margin-top: 2.4rem;
+}
+
+.video-link:link,
+.video-link:active {
+    font-size: 1.6rem;
+    color: #2f07a2;
+    text-decoration: underline;
 }
 
 /*Testimonial Section*/

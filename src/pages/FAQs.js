@@ -1,7 +1,11 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+import { useState } from "react";
+
 const FAQs = () => {
+    const [active, set_active] = useState(1);
+
     return (
         <>
             <Header />
@@ -45,6 +49,7 @@ const FAQs = () => {
                                 How can I export duplicates to my personal
                                 laptop?
                             </p>
+                            <div className="divider"></div>
                             <div className="hidden-box">
                                 <p>
                                     Once you have duplicated or compared your

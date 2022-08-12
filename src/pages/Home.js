@@ -2,6 +2,10 @@ import hero_img from "../assets/img/hero-img.png";
 import features_img from "../assets/img/features-img.png";
 import checkicon from "../assets/img/checkicon.png";
 
+import howto_video from "../assets/video/howto_use_comparely.mp4";
+
+import excel_icon from "../assets/img/excel-icon.svg";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -32,6 +36,110 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <section className="try-it-section">
+                <div className="container">
+                    <h2 className="try-it-title">
+                        Try our service at the spot
+                    </h2>
+                </div>
+                <div className="container try-it-container">
+                    <div className="try-it">
+                        <div className="try-it-header">
+                            <img src={excel_icon} alt="" />
+                            <div className="try-it-icons">
+                                <ion-icon
+                                    name="arrow-forward-outline"
+                                    class="try-it-icon"
+                                ></ion-icon>
+                                <ion-icon
+                                    name="arrow-back-outline"
+                                    class="try-it-icon"
+                                ></ion-icon>
+                            </div>
+                            <img src={excel_icon} alt="" />
+                        </div>
+                        <p className="try-it-heading">Highlight Duplicates</p>
+                        <p className="try-it-paragraph">
+                            Comparely helps you highlight entities(rows)
+                            containing duplicate values for unique
+                            features(columns).
+                        </p>
+                    </div>
+                    <div className="try-it">
+                        <div className="try-it-header">
+                            <img src={excel_icon} alt="" />
+                            <div className="try-it-icons">
+                                <ion-icon
+                                    name="arrow-forward-outline"
+                                    class="try-it-icon"
+                                ></ion-icon>
+                                <ion-icon
+                                    name="arrow-back-outline"
+                                    class="try-it-icon"
+                                ></ion-icon>
+                            </div>
+                            <img src={excel_icon} alt="" />
+                        </div>
+                        <p className="try-it-heading">Remove Duplicates</p>
+                        <p className="try-it-paragraph">
+                            Comparely helps you remove entities(rows) containing
+                            duplicate values for unique features(columns).
+                        </p>
+                    </div>
+                    <div className="try-it">
+                        <div className="try-it-header">
+                            <img src={excel_icon} alt="" />
+                            <div className="try-it-icons">
+                                <ion-icon
+                                    name="arrow-forward-outline"
+                                    class="try-it-icon"
+                                ></ion-icon>
+                                <ion-icon
+                                    name="arrow-back-outline"
+                                    class="try-it-icon"
+                                ></ion-icon>
+                            </div>
+                            <img src={excel_icon} alt="" />
+                            <img src={excel_icon} alt="" />
+                        </div>
+                        <p className="try-it-heading">
+                            Highlight Duplicates and Return 2 Files
+                        </p>
+                        <p className="try-it-paragraph">
+                            Comparely helps you highlight entities(rows)
+                            containing duplicate values for unique
+                            features(columns) and also give analytics on what
+                            values were repeated or duplicated.
+                        </p>
+                    </div>
+                    <div className="try-it">
+                        <div className="try-it-header">
+                            <img src={excel_icon} alt="" />
+                            <div className="try-it-icons">
+                                <ion-icon
+                                    name="arrow-forward-outline"
+                                    class="try-it-icon"
+                                ></ion-icon>
+                                <ion-icon
+                                    name="arrow-back-outline"
+                                    class="try-it-icon"
+                                ></ion-icon>
+                            </div>
+                            <img src={excel_icon} alt="" />
+                            <img src={excel_icon} alt="" />
+                        </div>
+                        <p className="try-it-heading">
+                            Remove Duplicates and Return 2 Files
+                        </p>
+                        <p className="try-it-paragraph">
+                            Comparely helps you remove entities(rows) containing
+                            duplicate values for unique features(columns) and
+                            also give you a file containing the removed
+                            entities(rows).
+                        </p>
+                    </div>
+                </div>
+            </section>
             <section className="features-section">
                 <div className="container features-container">
                     <div className="features-header">
@@ -51,6 +159,10 @@ const Home = () => {
                                 <li>
                                     <img src={checkicon} alt="" />
                                     Search and Replace
+                                </li>
+                                <li>
+                                    <img src={checkicon} alt="" />
+                                    Diff Checker
                                 </li>
                                 <li>
                                     <img src={checkicon} alt="" />
@@ -83,7 +195,17 @@ const Home = () => {
             <section className="video-section">
                 <div className="container">
                     <h3 className="video-title">Get Firsthand Practice</h3>
-                    <video className="video" controls></video>
+                    <video className="video" src={howto_video} controls></video>
+                    <p className="video-paragraph">
+                        <a
+                            href="https://youtu.be/NIvCH-eOqZk"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="video-link"
+                        >
+                            Watch full video on youtube
+                        </a>
+                    </p>
                 </div>
             </section>
             <section className="testimonial-section">
