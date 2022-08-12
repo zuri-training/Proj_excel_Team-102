@@ -12,18 +12,19 @@
             width: 86%;
             margin: 30px auto;
         }
-        .h2 {
+        .service_section .h2 {
             display: flex;
             /* flex-direction: row; */
             margin: 15px auto;
             justify-content: center;
         }
-        .h2 img {
+        .service_section .h2 img {
             height: 10px;
         }
 
         .service_section .h2 h2 {
             color: blue;
+            text-transform: capitalize;
         }
 
         .pictures {
@@ -60,9 +61,6 @@
             justify-content: center;
             border-radius: 5px;
             margin: auto;
-            /* margin-left: 20px; */
-            /* flex-basis: 680%; */
-            /* margin: auto; */
         }
         .imgs .div_first:hover {
             background-color: #fff;
@@ -71,19 +69,44 @@
         .imgs img {
             display: block;
             text-align: center;
-            /* justify-content: center; */
-
             height: 40px;
             width: 40px;
             margin: auto 30px;
-
-            /* justify-content: center; */
         }
 
         .iconify {
             margin-top: 105px;
             height: 40px;
             width: 40px;
+        }
+
+        .why_choose {
+            width: 86%;
+            margin: 20px auto;
+        }
+        .why_choose .h2 {
+            display: flex;
+
+            margin: 15px auto;
+            justify-content: center;
+        }
+        .why_choose.h2 img {
+            height: 10px;
+        }
+
+        .why_choose .h2 h2 {
+            color: blue;
+            text-transform: capitalize;
+        }
+
+        .choose_us {
+            width: 100%;
+        }
+
+        .choose_us img {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 6%;
         }
     </style>
     <body>
@@ -96,8 +119,6 @@
                         alt=""
                     />
                 </h2>
-
-                <!-- <img irc="/rectanglepurple.png" alt="" /> -->
             </div>
 
             <div class="pictures">
@@ -158,14 +179,12 @@
         <div class="why_choose">
             <div class="h2">
                 <h2>
-                    <img src="/rectanglepurple.png" alt="" />&nbsp;Try our
-                    service at the spot &nbsp;<img
-                        src="/rectanglepurple.png"
-                        alt=""
-                    />
+                    <img src="/rectanglepurple.png" alt="" />&nbsp;Why Choose us
+                    &nbsp;<img src="/rectanglepurple.png" alt="" />
                 </h2>
-
-                <!-- <img irc="/rectanglepurple.png" alt="" /> -->
+            </div>
+            <div class="choose_us">
+                <img src="/whychoose.png" alt="" />
             </div>
         </div>
     </body>
