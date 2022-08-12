@@ -9,9 +9,11 @@ import excel_icon from "../assets/img/excel-icon.svg";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
+
     return (
         <>
             <Header />
@@ -44,7 +46,10 @@ const Home = () => {
                 </div>
                 <div className="container try-it-container">
                     <div className="try-it">
-                        <div className="try-it-header">
+                        <div
+                            className="try-it-header"
+                            onClick={() => navigate("/login")}
+                        >
                             <img src={excel_icon} alt="" />
                             <div className="try-it-icons">
                                 <ion-icon
@@ -66,7 +71,10 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="try-it">
-                        <div className="try-it-header">
+                        <div
+                            className="try-it-header"
+                            onClick={() => navigate("/login")}
+                        >
                             <img src={excel_icon} alt="" />
                             <div className="try-it-icons">
                                 <ion-icon
@@ -87,7 +95,10 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="try-it">
-                        <div className="try-it-header">
+                        <div
+                            className="try-it-header"
+                            onClick={() => navigate("/login")}
+                        >
                             <img src={excel_icon} alt="" />
                             <div className="try-it-icons">
                                 <ion-icon
@@ -113,7 +124,10 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="try-it">
-                        <div className="try-it-header">
+                        <div
+                            className="try-it-header"
+                            onClick={() => navigate("/login")}
+                        >
                             <img src={excel_icon} alt="" />
                             <div className="try-it-icons">
                                 <ion-icon

@@ -10,12 +10,13 @@ const Product = () => {
                     <div className="product-header">
                         <h2>Comparely-Excel Product</h2>
                         <p>
-                            Best tool to compare contents of an excel file on
-                            your web browser.
+                            Create, edit, merge, spilt, delete, duplicate,
+                            search and compare Excel sheets in your favorite
+                            browser
                         </p>
                     </div>
                     <div className="product-body">
-                        <h2>Comparely-Excel Features Include: </h2>
+                        <h2>Comparely-Excel High Code APIs Include: </h2>
                         <div className="product">
                             <div className="product-feature">
                                 <div className="product-info">
@@ -24,8 +25,8 @@ const Product = () => {
                                         class="product-icon"
                                     ></ion-icon>
                                     <p>
-                                        <strong>Accept</strong> Excel File
-                                        Upload
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
                                     </p>
                                 </div>
                                 <div className="product-icon-box">
@@ -42,7 +43,8 @@ const Product = () => {
                                         class="product-icon"
                                     ></ion-icon>
                                     <p>
-                                        <strong>Accept</strong> CSV File Upload
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
                                     </p>
                                 </div>
                                 <div className="product-icon-box">
@@ -59,7 +61,8 @@ const Product = () => {
                                         class="product-icon"
                                     ></ion-icon>
                                     <p>
-                                        <strong>Highlight</strong> Duplicates
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
                                     </p>
                                 </div>
                                 <div className="product-icon-box">
@@ -76,7 +79,8 @@ const Product = () => {
                                         class="product-icon"
                                     ></ion-icon>
                                     <p>
-                                        <strong>Remove</strong> Duplicates
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
                                     </p>
                                 </div>
                                 <div className="product-icon-box">
@@ -93,59 +97,8 @@ const Product = () => {
                                         class="product-icon"
                                     ></ion-icon>
                                     <p>
-                                        <strong>Highlight</strong> Duplicates
-                                        and Return 2 Files
-                                    </p>
-                                </div>
-                                <div className="product-icon-box">
-                                    <ion-icon
-                                        name="checkmark-outline"
-                                        class="product-icon"
-                                    ></ion-icon>
-                                </div>
-                            </div>
-                            <div className="product-feature">
-                                <div className="product-info">
-                                    <ion-icon
-                                        name="document-text-outline"
-                                        class="product-icon"
-                                    ></ion-icon>
-                                    <p>
-                                        <strong>Search</strong> and Highlight
-                                    </p>
-                                </div>
-                                <div className="product-icon-box">
-                                    <ion-icon
-                                        name="checkmark-outline"
-                                        class="product-icon"
-                                    ></ion-icon>
-                                </div>
-                            </div>
-                            <div className="product-feature">
-                                <div className="product-info">
-                                    <ion-icon
-                                        name="document-text-outline"
-                                        class="product-icon"
-                                    ></ion-icon>
-                                    <p>
-                                        <strong>Search</strong> and Replace
-                                    </p>
-                                </div>
-                                <div className="product-icon-box">
-                                    <ion-icon
-                                        name="checkmark-outline"
-                                        class="product-icon"
-                                    ></ion-icon>
-                                </div>
-                            </div>
-                            <div className="product-feature">
-                                <div className="product-info">
-                                    <ion-icon
-                                        name="document-text-outline"
-                                        class="product-icon"
-                                    ></ion-icon>
-                                    <p>
-                                        <strong>Diff</strong> Checker
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
                                     </p>
                                 </div>
                                 <div className="product-icon-box">
@@ -156,7 +109,9 @@ const Product = () => {
                                 </div>
                             </div>
                         </div>
-                        <h2 className="mt-2">Comparely-Excel Future Updates</h2>
+                        <h2 className="mt-2">
+                            Comparely-Excel No Code APIs Include:{" "}
+                        </h2>
                         <div className="product">
                             <div className="product-feature">
                                 <div className="product-info">
@@ -165,7 +120,8 @@ const Product = () => {
                                         class="product-icon"
                                     ></ion-icon>
                                     <p>
-                                        <strong>Merge</strong> Excel Files
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
                                     </p>
                                 </div>
                                 <div className="product-icon-box">
@@ -182,7 +138,62 @@ const Product = () => {
                                         class="product-icon"
                                     ></ion-icon>
                                     <p>
-                                        <strong>Split</strong> Excel File
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
+                                    </p>
+                                </div>
+                                <div className="product-icon-box">
+                                    <ion-icon
+                                        name="checkmark-outline"
+                                        class="product-icon"
+                                    ></ion-icon>
+                                </div>
+                            </div>
+                            <div className="product-feature">
+                                <div className="product-info">
+                                    <ion-icon
+                                        name="document-text-outline"
+                                        class="product-icon"
+                                    ></ion-icon>
+                                    <p>
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
+                                    </p>
+                                </div>
+                                <div className="product-icon-box">
+                                    <ion-icon
+                                        name="checkmark-outline"
+                                        class="product-icon"
+                                    ></ion-icon>
+                                </div>
+                            </div>
+                            <div className="product-feature">
+                                <div className="product-info">
+                                    <ion-icon
+                                        name="document-text-outline"
+                                        class="product-icon"
+                                    ></ion-icon>
+                                    <p>
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
+                                    </p>
+                                </div>
+                                <div className="product-icon-box">
+                                    <ion-icon
+                                        name="checkmark-outline"
+                                        class="product-icon"
+                                    ></ion-icon>
+                                </div>
+                            </div>
+                            <div className="product-feature">
+                                <div className="product-info">
+                                    <ion-icon
+                                        name="document-text-outline"
+                                        class="product-icon"
+                                    ></ion-icon>
+                                    <p>
+                                        <strong>Comparely-Excel</strong> for
+                                        Android via Java
                                     </p>
                                 </div>
                                 <div className="product-icon-box">
