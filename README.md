@@ -128,6 +128,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 -   [figma Link](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=807%3A5378)
 -   [Notion Link](https://www.notion.so/Notes-bbbf7116e5584b938e976aabaadcd118)
+-   [final Video Presentation](https://drive.google.com/drive/folders/1hMH4tWl4aAQcFido2yK2JMgRd9O8sNaK?usp=sharing)
 
 ## Show your support
 
