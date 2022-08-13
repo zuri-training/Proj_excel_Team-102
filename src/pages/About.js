@@ -14,7 +14,7 @@ import kayode from "../assets/img/team/kayode.jpeg";
 import micheal from "../assets/img/team/micheal.jpeg";
 import promise from "../assets/img/team/promise.jpeg";
 import rachel from "../assets/img/team/rachel.jpeg";
-import raphael from "../assets/img/team/raphael.jpeg";
+import sammy from "../assets/img/team/sammy.jpeg";
 import ugonna from "../assets/img/team/ugonna.jpeg";
 import rehoboth from "../assets/img/team/rehoboth.jpg";
 
@@ -232,15 +232,17 @@ const About = () => {
                             </div>
                             <div className="team-member">
                                 <img
-                                    src={raphael}
+                                    src={sammy}
                                     alt=""
                                     className="team-member-img"
                                 />
                                 <div className="team-member-info">
                                     <p className="team-member-name">
-                                        Raphael Okai
+                                        Olonijaye Samson Tobi
                                     </p>
-                                    <p className="team-member-track"></p>
+                                    <p className="team-member-track">
+                                        Fullstack developer
+                                    </p>
                                 </div>
                             </div>
                             <div className="team-member">
