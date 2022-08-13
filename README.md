@@ -36,7 +36,7 @@ Comparely is a web application that compare the contents of excel files
 -   {DB_USERNAME} with database username
 -   {DB_PASSWORD} with database password
 
-9. Run `alembic upgrade head`
+9. Run database migrations: `alembic upgrade head`
 10. You can test project with `uvicorn app.index:app` that would spin up a local server that you can test with `curl localhost:8000` if you get an html format response the project is up and running. Hit `ctrl c` to stop test server.
 11. Follow this link on how to deploy a FastAPI project on ubuntu and using nginx and Ignore the steps already done above. [Hot to deploy a FastAPI project](https://www.vultr.com/docs/how-to-deploy-fastapi-applications-with-gunicorn-and-nginx-on-ubuntu-20-04/)
 
