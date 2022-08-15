@@ -322,6 +322,11 @@ body {
     justify-content: center;
 }
 
+/*Scrapped due to wrong behaviour*/
+.upload-file-box-active {
+    border: 2px dashed #2f07a2;
+}
+
 .upload-icon-box,
 .upload-info1,
 .upload-info2 {

@@ -20,7 +20,6 @@ const AddNewFile = () => {
     const access_token = useSelector((state) => state.user.access_token);
 
     const file_input_ref = useRef();
-    const upload_box_ref = useRef();
 
     const [upload_progress, set_upload_progress] = useState("");
 
@@ -32,6 +31,8 @@ const AddNewFile = () => {
     };
 
     const doUpload = (replace = 0) => {
+        set_upload_progress(true);
+
         const [file] = file_input_ref.current.files;
 
         const form_data = new FormData();
@@ -73,8 +74,38 @@ const AddNewFile = () => {
         const [file] = e.target.files;
 
         if (file) {
-            set_upload_progress(true);
+            file_input_ref.current.files = e.target.files;
+            doUpload();
+        }
+    };
 
+    const handleDragEnter = (e) => {
+        e.preventDefault();
+        // e.target.classList.add("upload-file-box-active");
+        e.stopPropagation();
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    };
+
+    const handleDragLeave = (e) => {
+        e.preventDefault();
+        // e.target.classList.remove("upload-file-box-active");
+        e.stopPropagation();
+    };
+
+    const handleDrop = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        const dt = e.dataTransfer;
+
+        const [file] = dt.files;
+
+        if (file) {
+            file_input_ref.current.files = dt.files;
             doUpload();
         }
     };
@@ -153,7 +184,10 @@ const AddNewFile = () => {
                         <div
                             className="upload-file-box"
                             onClick={handleUploadBoxClick}
-                            ref={upload_box_ref}
+                            onDragEnter={handleDragEnter}
+                            onDragOver={handleDragOver}
+                            onDragLeave={handleDragLeave}
+                            onDrop={handleDrop}
                         >
                             <div className="upload-icon-box">
                                 <ion-icon
