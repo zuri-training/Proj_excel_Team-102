@@ -126,7 +126,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 ## Comparely Links
 
--   [figma Link](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=807%3A5378)
+-   [figma Link](https://www.figma.com/file/bxyWr1yL7bF1wrqU8gVYAk/Comparely?node-id=2%3A3)
 -   [Notion Link](https://www.notion.so/Notes-bbbf7116e5584b938e976aabaadcd118)
 -   [final Video Presentation](https://drive.google.com/file/d/1PZvT_0BKroghGQ9ubGEDkGDKmi5Zt7_O/view?usp=sharing)
 
