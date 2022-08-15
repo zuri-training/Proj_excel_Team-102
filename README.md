@@ -108,7 +108,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## Live Demo
 
-<a href="" target="_blank">Video</a>
+[Live Demo Video](https://www.youtube.com/watch?v=NIvCH-eOqZk)
 
 <!-- ACKNOWLEDGMENTS -->
 
