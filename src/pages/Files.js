@@ -6,7 +6,7 @@ import DashboardFooter from "../components/DashboardFooter";
 
 import { Link } from "react-router-dom";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -35,6 +35,73 @@ const Files = () => {
     const [page, set_page] = useState(1);
     const [division] = useState(10);
 
+    const rn_btn = useRef();
+
+    const [rn_modal_open, set_rn_modal_open] = useState(false);
+    const [rn_file_id, set_rn_file_id] = useState(null);
+    const [new_filename, set_new_filename] = useState("");
+    const [rename_server_response, set_rename_server_response] = useState("");
+
+    const doRenameFile = (e) => {
+        e.preventDefault();
+
+        rn_btn.current.innerHTML = `<span class="fas fa-spinner fa-spin"></span> Renaming file`;
+
+        $.ajax({
+            type: "PATCH",
+            url: `${api_base_url}/files/${rn_file_id}?new_filename=${new_filename}`,
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+            },
+            success: function () {
+                window.location.reload();
+            },
+            statusCode: {
+                406: function ({ responseJSON: response }) {
+                    set_rename_server_response(response.message);
+                    rn_btn.current.innerHTML = "Rename";
+                },
+                401: function () {
+                    dispatch(user_actions.logout());
+                },
+            },
+        });
+
+        e.stopPropagation();
+    };
+
+    const renameFile = (file_id, filename) => {
+        set_rn_file_id(file_id);
+        set_new_filename(filename);
+        set_rn_modal_open(true);
+    };
+
+    const closeRenameFile = () => {
+        set_rn_modal_open(false);
+        set_rn_file_id(null);
+        set_new_filename("");
+    };
+
+    const deleteFile = (trigger_element, file_id) => {
+        trigger_element.innerHTML = `<span class="fas fa-spinner fa-spin"></span>`;
+
+        $.ajax({
+            type: "DELETE",
+            url: `${api_base_url}/files/${file_id}`,
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+            },
+            success: function () {
+                window.location.reload();
+            },
+            statusCode: {
+                401: function () {
+                    dispatch(user_actions.logout());
+                },
+            },
+        });
+    };
+
     useEffect(() => {
         dispatch(app_data_actions.set_dashboard_navbar_active("files"));
 
@@ -58,6 +125,40 @@ const Files = () => {
 
     return (
         <>
+            {rn_modal_open && (
+                <div className={`modal modal-open`}>
+                    <div className="modal-header">
+                        Rename File{" "}
+                        <span onClick={closeRenameFile}>&times;</span>
+                    </div>
+                    <form onSubmit={doRenameFile}>
+                        <div
+                            className="modal-body"
+                            style={{ textAlign: "left" }}
+                        >
+                            <label className="modal-label">New name</label>
+                            <input
+                                type="text"
+                                className="modal-input"
+                                placeholder="Enter new file name"
+                                value={new_filename}
+                                onChange={(e) =>
+                                    set_new_filename(e.target.value)
+                                }
+                            />
+                        </div>
+                        <div
+                            className="modal-footer"
+                            style={{ textAlign: "right" }}
+                        >
+                            {rename_server_response}&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button className="modal-btn" ref={rn_btn}>
+                                Rename
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            )}
             <main className="dashboard-container">
                 <DashboardSidebar />
                 <div className="dashboard-content">
@@ -119,7 +220,15 @@ const Files = () => {
                                                 class="files-list-action-icon"
                                             ></ion-icon>
                                         </button>
-                                        <button className="files-list-action">
+                                        <button
+                                            className="files-list-action"
+                                            onClick={() =>
+                                                renameFile(
+                                                    active_file.id,
+                                                    active_file.file_name
+                                                )
+                                            }
+                                        >
                                             <ion-icon
                                                 name="create-outline"
                                                 class="files-list-action-icon"
@@ -137,7 +246,15 @@ const Files = () => {
                                                 class="files-list-action-icon"
                                             ></ion-icon>
                                         </button>
-                                        <button className="files-list-action">
+                                        <button
+                                            className="files-list-action"
+                                            onClick={(e) =>
+                                                deleteFile(
+                                                    e.target,
+                                                    active_file.id
+                                                )
+                                            }
+                                        >
                                             <ion-icon
                                                 name="trash-outline"
                                                 class="files-list-action-icon"
