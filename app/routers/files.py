@@ -156,3 +156,19 @@ user: Users = Depends(get_current_user), new_filename: str = ""):
     os.rename(f"{files_root_path}{current_name}", f"{files_root_path}{file.file_name}")
 
     return {"message": "File renamed successfully"}
+
+@router.delete("/{file_id}", status_code=status.HTTP_200_OK)
+def delete_file(file_id: int, response: Response, db: Session = Depends(get_db), user: Users = Depends(get_current_user)):
+    
+    file_query = db.query(Files).filter(Files.id == file_id, Files.user_id == user.id)
+    file = file_query.first()
+
+    if not file:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {"message": "Error identifying file"}
+
+    file_query.update({"status": 0}, synchronize_session=False)
+    db.commit()
+    db.refresh(file)
+
+    return {"message": "File deleted successfully"}
